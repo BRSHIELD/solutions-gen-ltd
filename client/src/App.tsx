@@ -5,16 +5,33 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Portfolio from "./pages/Portfolio";
+import Contact from "./pages/Contact";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 function Router() {
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <main className="flex-grow">
+        <Switch>
+          <Route path={"/"} component={Home} />
+          <Route path={"/about"} component={About} />
+          <Route path={"/services"} component={Services} />
+          <Route path={"/portfolio"} component={Portfolio} />
+          <Route path={"/contact"} component={Contact} />
+          <Route path={"/404"} component={NotFound} />
+          {/* Final fallback route */}
+          <Route component={NotFound} />
+        </Switch>
+      </main>
+      <Footer />
+      <WhatsAppButton />
+    </div>
   );
 }
 
@@ -26,10 +43,7 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
+      <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
           <Router />
