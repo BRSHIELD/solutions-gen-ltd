@@ -241,10 +241,8 @@ export default function Portfolio() {
                 Contact Us
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
-              <Link href="/contact">
-                <a className="border-2 border-[#1E3A5F] text-[#1E3A5F] px-8 py-4 rounded-lg font-bold hover:bg-[#1E3A5F] hover:text-white transition-all duration-300">
-                  Send Message
-                </a>
+              <Link href="/contact" className="border-2 border-[#1E3A5F] text-[#1E3A5F] px-8 py-4 rounded-lg font-bold hover:bg-[#1E3A5F] hover:text-white transition-all duration-300">
+                Send Message
               </Link>
             </div>
           </motion.div>

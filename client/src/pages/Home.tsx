@@ -211,11 +211,9 @@ export default function Home() {
               <p className="text-gray-700 text-lg mb-6">
                 We specialize in delivering innovative, reliable, and sustainable solutions that drive business growth and operational excellence for our clients.
               </p>
-              <Link href="/about">
-                <a className="text-[#00D084] font-bold hover:text-[#0FA55F] transition-colors flex items-center gap-2">
-                  Learn more about us
-                  <ArrowRight size={20} />
-                </a>
+              <Link href="/about" className="text-[#00D084] font-bold hover:text-[#0FA55F] transition-colors flex items-center gap-2">
+                Learn more about us
+                <ArrowRight size={20} />
               </Link>
             </motion.div>
             <motion.div
@@ -410,11 +408,9 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-center mt-12"
           >
-            <Link href="/portfolio">
-              <a className="bg-[#1E3A5F] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#0FA55F] transition-all duration-300 inline-flex items-center gap-2 group">
-                View All Projects
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </a>
+            <Link href="/portfolio" className="bg-[#1E3A5F] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#0FA55F] transition-all duration-300 inline-flex items-center gap-2 group">
+              View All Projects
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
         </div>
@@ -498,10 +494,8 @@ export default function Home() {
                 Contact Us Now
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
-              <Link href="/contact">
-                <a className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-[#1E3A5F] transition-all duration-300">
-                  Send Message
-                </a>
+              <Link href="/contact" className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-[#1E3A5F] transition-all duration-300">
+                Send Message
               </Link>
             </div>
           </motion.div>

@@ -280,10 +280,8 @@ export default function About() {
             <p className="text-xl text-gray-100 mb-8 max-w-2xl mx-auto">
               Ready to partner with us? Contact our team to discuss your project needs.
             </p>
-            <Link href="/contact">
-              <a className="bg-white text-[#1E3A5F] px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all duration-300 inline-block">
-                Get In Touch
-              </a>
+            <Link href="/contact" className="bg-white text-[#1E3A5F] px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all duration-300 inline-block">
+              Get In Touch
             </Link>
           </motion.div>
         </div>

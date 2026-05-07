@@ -23,24 +23,20 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/">
-          <a className="flex items-center gap-2 cursor-pointer">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">SG</span>
-            </div>
-            <span className="font-bold text-lg text-[#1E3A5F] hidden sm:inline">
-              Solutions Gen
-            </span>
-          </a>
+        <Link href="/" className="flex items-center gap-2 cursor-pointer">
+          <div className="w-10 h-10 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center">
+            <span className="text-white font-bold text-lg">SG</span>
+          </div>
+          <span className="font-bold text-lg text-[#1E3A5F] hidden sm:inline">
+            Solutions Gen
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href}>
-              <a className="text-gray-700 hover:text-[#1E3A5F] transition-colors font-medium">
-                {item.label}
-              </a>
+            <Link key={item.href} href={item.href} className="text-gray-700 hover:text-[#1E3A5F] transition-colors font-medium">
+              {item.label}
             </Link>
           ))}
         </div>
@@ -51,7 +47,7 @@ export default function Navbar() {
             href="https://wa.me/254700000000"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#1E3A5F] text-white px-6 py-2 rounded-lg hover:bg-[#0FA55F] transition-all duration-300 font-medium"
+            className="bg-[#1E3A5F] text-white px-6 py-2 rounded-lg hover:bg-[#0FA55F] transition-all duration-300 font-medium inline-block"
           >
             Get Started
           </a>
@@ -76,13 +72,13 @@ export default function Navbar() {
         >
           <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href}>
-                <a
-                  onClick={() => setIsOpen(false)}
-                  className="text-gray-700 hover:text-[#1E3A5F] transition-colors font-medium"
-                >
-                  {item.label}
-                </a>
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className="text-gray-700 hover:text-[#1E3A5F] transition-colors font-medium"
+              >
+                {item.label}
               </Link>
             ))}
             <a
