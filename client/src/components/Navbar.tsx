@@ -11,6 +11,7 @@ export default function Navbar() {
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
     { label: "Portfolio", href: "/portfolio" },
+    { label: "Certifications", href: "/certifications" },
     { label: "Contact", href: "/contact" },
   ];
 

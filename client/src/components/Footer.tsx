@@ -45,6 +45,11 @@ export default function Footer() {
                   Portfolio
                 </Link>
               </li>
+              <li>
+                <Link href="/certifications" className="hover:text-[#00D084] transition-colors">
+                  Certifications
+                </Link>
+              </li>
             </ul>
           </div>
 
