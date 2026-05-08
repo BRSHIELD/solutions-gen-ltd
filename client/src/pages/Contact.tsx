@@ -59,26 +59,26 @@ export default function Contact() {
               {
                 icon: Phone,
                 title: "Phone",
-                content: "+254 700 000 000",
-                subtext: "Available 24/7",
+                content: "+254 722 588 932",
+                subtext: "+254 792 405 667",
               },
               {
                 icon: Mail,
                 title: "Email",
                 content: "info@solutionsgen.co.ke",
-                subtext: "Response within 24 hours",
+                subtext: "info@solutionsgen.com",
               },
               {
                 icon: MapPin,
                 title: "Address",
-                content: "Nairobi, Kenya",
-                subtext: "East Africa",
+                content: "Fortis Industrial Park",
+                subtext: "Off Mombassa Road, Godown No.17, Nairobi",
               },
               {
                 icon: Clock,
                 title: "Business Hours",
-                content: "Mon - Fri: 8AM - 6PM",
-                subtext: "Saturday: 9AM - 2PM",
+                content: "Mon - Fri: 8AM - 5PM",
+                subtext: "Saturday: 9AM - 1PM",
               },
             ].map((item, index) => {
               const Icon = item.icon;
@@ -247,7 +247,7 @@ export default function Contact() {
               Chat with us directly on WhatsApp for immediate support
             </p>
             <a
-              href="https://wa.me/254700000000"
+              href="https://wa.me/254722588932"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-[#1E3A5F] px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all duration-300 inline-block"

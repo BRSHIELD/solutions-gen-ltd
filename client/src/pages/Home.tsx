@@ -4,21 +4,12 @@ import { Link } from "wouter";
 import { useState, useEffect } from "react";
 
 export default function Home() {
-  // Hero Images
+  // Hero Images (kept as fallback)
   const heroImages = [
     "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/hero-solar-panels-4c6Ho7bh8WnuPHwxJNzaP7.webp",
     "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/hero-electrical-engineering-b6t2TwgVtKmjn68WK3Qp3m.webp",
     "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/hero-security-systems-hMNq4cKafjsfpKBfrWerRL.webp",
   ];
-
-  const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentHeroIndex((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
 
   const services = [
     {
@@ -137,19 +128,26 @@ export default function Home() {
         transition={{ duration: 0.8 }}
         className="relative h-[600px] md:h-[700px] overflow-hidden"
       >
-        {/* Background Image Carousel */}
+        {/* Background Video */}
         <div className="absolute inset-0">
-          {heroImages.map((image, index) => (
-            <motion.img
-              key={index}
-              src={image}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source
+              src="https://videos.pexels.com/video-files/8964378/8964378-sd_640_360_24fps.mp4"
+              type="video/mp4"
+            />
+            {/* Fallback to first hero image if video doesn't load */}
+            <img
+              src={heroImages[0]}
               alt="Hero"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: index === currentHeroIndex ? 1 : 0 }}
-              transition={{ duration: 1 }}
               className="absolute inset-0 w-full h-full object-cover"
             />
-          ))}
+          </video>
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/50" />
         </div>
@@ -170,7 +168,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://wa.me/254700000000"
+                href="https://wa.me/254722588932"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#00D084] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#0FA55F] transition-all duration-300 flex items-center justify-center gap-2 group"
@@ -178,10 +176,8 @@ export default function Home() {
                 Get Started
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
-              <Link href="/contact">
-                <a className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-[#1E3A5F] transition-all duration-300">
-                  Learn More
-                </a>
+              <Link href="/contact" className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-[#1E3A5F] transition-all duration-300">
+                Learn More
               </Link>
             </div>
           </motion.div>

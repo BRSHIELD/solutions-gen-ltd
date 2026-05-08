@@ -7,67 +7,87 @@ export default function Certifications() {
   const [certificates] = useState([
     {
       id: 1,
-      title: "ISO 9001:2015",
-      description: "Quality Management System Certification",
-      category: "Quality",
-      issuer: "International Organization for Standardization",
-      issueDate: "2023-06-15",
-      expiryDate: "2026-06-14",
-      pdfUrl: "#", // Replace with actual PDF URL
+      title: "EPRA Electrical Contractor License",
+      description: "Class A-1 Electrical Contractor License",
+      category: "Licensing",
+      issuer: "Energy and Petroleum Regulatory Authority",
+      issueDate: "2026-02-19",
+      expiryDate: "2026-12-31",
+      pdfUrl: "#",
     },
     {
       id: 2,
-      title: "ISO 27001:2013",
-      description: "Information Security Management System",
-      category: "Security",
-      issuer: "International Organization for Standardization",
-      issueDate: "2023-08-20",
-      expiryDate: "2026-08-19",
+      title: "Solar PV License T3",
+      description: "Solar Photovoltaic Manufacturer/Importer License",
+      category: "Solar",
+      issuer: "Energy and Petroleum Regulatory Authority",
+      issueDate: "2026-02-21",
+      expiryDate: "2027-02-20",
       pdfUrl: "#",
     },
     {
       id: 3,
-      title: "OHSAS 18001",
-      description: "Occupational Health and Safety Management",
-      category: "Safety",
-      issuer: "British Standards Institution",
-      issueDate: "2023-04-10",
-      expiryDate: "2026-04-09",
+      title: "NCA 1 License",
+      description: "Electrical Engineering Service Contractor",
+      category: "Licensing",
+      issuer: "National Construction Authority",
+      issueDate: "2025-08-05",
+      expiryDate: "2028-07-31",
       pdfUrl: "#",
     },
     {
       id: 4,
-      title: "Electrical Contractors License",
-      description: "Professional Electrical Installation License",
+      title: "NCA Building Works License",
+      description: "Building Works Contractor - Category NCA8",
       category: "Licensing",
-      issuer: "Energy and Petroleum Regulatory Authority",
-      issueDate: "2022-12-01",
-      expiryDate: "2027-11-30",
+      issuer: "National Construction Authority",
+      issueDate: "2025-08-05",
+      expiryDate: "2028-07-31",
       pdfUrl: "#",
     },
     {
       id: 5,
-      title: "Solar Installation Certification",
-      description: "Certified Solar Energy System Installer",
-      category: "Solar",
-      issuer: "Renewable Energy Association",
-      issueDate: "2023-03-15",
-      expiryDate: "2025-03-14",
+      title: "NCA Mechanical Engineering License",
+      description: "Mechanical Engineering Service Contractor - Category NCA8",
+      category: "Licensing",
+      issuer: "National Construction Authority",
+      issueDate: "2025-08-05",
+      expiryDate: "2028-07-31",
       pdfUrl: "#",
     },
     {
       id: 6,
-      title: "Network Security Certification",
-      description: "Advanced Network Security Professional",
-      category: "ICT",
-      issuer: "CompTIA",
-      issueDate: "2023-09-01",
-      expiryDate: "2026-08-31",
+      title: "Tax Compliance Certificate",
+      description: "Business Tax Compliance Certificate from KRA",
+      category: "Compliance",
+      issuer: "Kenya Revenue Authority",
+      issueDate: "2026-01-20",
+      expiryDate: "2027-01-19",
+      pdfUrl: "#",
+    },
+    {
+      id: 7,
+      title: "OSHA Workplace Registration",
+      description: "Occupational Safety and Health Registration",
+      category: "Safety",
+      issuer: "Department of Occupational Safety and Health",
+      issueDate: "2025-11-17",
+      expiryDate: "2026-11-17",
+      pdfUrl: "#",
+    },
+    {
+      id: 8,
+      title: "CRB Clearance Certificate",
+      description: "Credit Reference Bureau Clearance Certificate",
+      category: "Compliance",
+      issuer: "Creditinfo Kenya",
+      issueDate: "2024-04-11",
+      expiryDate: "2027-04-10",
       pdfUrl: "#",
     },
   ]);
 
-  const categories = ["All", "Quality", "Security", "Safety", "Licensing", "Solar", "ICT"];
+  const categories = ["All", "Licensing", "Solar", "Safety", "Compliance"];
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredCertificates =
@@ -197,10 +217,10 @@ export default function Certifications() {
 
                   <div className="space-y-3 mb-6 text-sm">
                     <div>
-                      <p className="text-gray-600 font-semibold">Issuer</p>
-                      <p className="text-gray-800">{cert.issuer}</p>
+                        <p className="text-gray-600 font-semibold">Issuer</p>
+                      <p className="text-gray-800 mb-4">{cert.issuer}</p>
                     </div>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-2 gap-4 text-sm">
                       <div>
                         <p className="text-gray-600 font-semibold">Issue Date</p>
                         <p className="text-gray-800">
