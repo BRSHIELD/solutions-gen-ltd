@@ -243,6 +243,69 @@ export default function About() {
         </div>
       </motion.section>
 
+      {/* Managing Director Section */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="py-20 bg-gradient-to-r from-[#1E3A5F] to-[#0FA55F] text-white"
+      >
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Director Image */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="rounded-lg overflow-hidden shadow-2xl"
+            >
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/director-portrait-ESNL7f2KGPid4BZdR8NbLr.webp"
+                alt="Patrick K. Nduva - Managing Director & Founder"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+
+            {/* Director Info */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl font-bold mb-4">Mr. Patrick K. Nduva</h2>
+              <p className="text-xl text-gray-100 mb-2 font-semibold">Managing Director & Founder</p>
+              <p className="text-gray-200 text-lg mb-6">
+                Electrical Engineer & Strategic Visionary
+              </p>
+              <p className="text-gray-100 mb-6 leading-relaxed">
+                With over 20 years of experience in electrical engineering and business development, Mr. Patrick K. Nduva founded Solutions General Ltd in 2006 with a vision to transform East Africa's engineering landscape. His strategic leadership, technical expertise, and commitment to excellence have positioned the company as a premier provider of comprehensive engineering and technology solutions.
+              </p>
+              <p className="text-gray-100 mb-8 leading-relaxed">
+                Mr. Nduva's visionary approach combines cutting-edge technology with sustainable practices, ensuring that every project delivers exceptional value to clients while contributing to regional development and environmental responsibility.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-[#00D084] rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-100">20+ Years in Electrical Engineering</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-[#00D084] rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-100">Founded Solutions General Ltd in 2006</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-[#00D084] rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-100">Strategic Leader & Innovation Champion</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-[#00D084] rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-100">Committed to Sustainable Engineering Solutions</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
+
       {/* Leadership Team */}
       <motion.section
         initial={{ opacity: 0 }}
