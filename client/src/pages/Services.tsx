@@ -147,20 +147,22 @@ export default function Services() {
                       </ul>
                     </motion.div>
 
-                    {/* Image Placeholder */}
+                    {/* Service Image */}
                     <motion.div
                       initial={{ opacity: 0, x: isEven ? 30 : -30 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.8 }}
-                      className={`h-64 md:h-full bg-gradient-to-br ${
-                        index % 3 === 0
-                          ? "from-[#1E3A5F] to-[#00D084]"
-                          : index % 3 === 1
-                          ? "from-[#FF6B35] to-[#1E3A5F]"
-                          : "from-[#00D084] to-[#FF6B35]"
-                      } flex items-center justify-center`}
+                      className="h-64 md:h-full overflow-hidden"
                     >
-                      <Icon size={80} className="text-white opacity-30" />
+                      <img
+                        src={[
+                          "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/services-electrical-SdMnP3spt8TQAzvdyzgw8h.webp",
+                          "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/services-solar-MEtDeWUTugeBuSj388mU6r.webp",
+                          "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/services-security-GCvfCrxGWkqjTgQKK9g73F.webp",
+                        ][index % 3]}
+                        alt={service.title}
+                        className="w-full h-full object-cover"
+                      />
                     </motion.div>
                   </div>
                 </motion.div>

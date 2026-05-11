@@ -138,16 +138,13 @@ export default function Portfolio() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
               >
-                {/* Image Placeholder */}
-                <div
-                  className={`h-48 bg-gradient-to-br ${project.image} flex items-center justify-center group-hover:scale-105 transition-transform duration-300`}
-                >
-                  <div className="text-white text-center">
-                    <div className="text-4xl font-bold opacity-30 mb-2">
-                      {project.id}
-                    </div>
-                    <p className="text-sm opacity-50">{project.category}</p>
-                  </div>
+                {/* Project Image */}
+                <div className="h-48 overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                  <img
+                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/portfolio-commercial-FwiMkmWHhFpNbZttmgw8on.webp"
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 {/* Content */}

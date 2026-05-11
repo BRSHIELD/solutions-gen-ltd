@@ -105,26 +105,13 @@ export default function About() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="bg-white rounded-lg shadow-lg p-8"
+              className="rounded-lg overflow-hidden shadow-lg"
             >
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-[#1E3A5F] mb-2">Founded</h3>
-                  <p className="text-gray-600">2006 in Nairobi, Kenya</p>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-[#1E3A5F] mb-2">Founder & MD</h3>
-                  <p className="text-gray-600">Mr. Patrick K. Nduva</p>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-[#1E3A5F] mb-2">Headquarters</h3>
-                  <p className="text-gray-600">Fortis Industrial Park, Nairobi</p>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-[#1E3A5F] mb-2">Scope</h3>
-                  <p className="text-gray-600">East Africa & Continental Projects</p>
-                </div>
-              </div>
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/about-section-team-dmfX5mxWUhtKHCGPDA2HbN.webp"
+                alt="Solutions General Ltd Team"
+                className="w-full h-full object-cover"
+              />
             </motion.div>
           </div>
         </div>
