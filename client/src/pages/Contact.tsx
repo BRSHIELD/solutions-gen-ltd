@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "wouter";
 
 export default function Contact() {
+  const [location] = useLocation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -10,6 +12,36 @@ export default function Contact() {
     service: "",
     message: "",
   });
+
+  useEffect(() => {
+    // Parse URL query parameters
+    const params = new URLSearchParams(location.split('?')[1]);
+    const service = params.get('service');
+    const type = params.get('type');
+
+    if (service || type) {
+      let serviceValue = "";
+      let messagePrefix = "";
+
+      // Map service names to form values
+      if (service === "Electrical Engineering") serviceValue = "electrical";
+      else if (service === "Solar & Green Energy") serviceValue = "solar";
+      else if (service === "CCTV & Security Systems") serviceValue = "security";
+      else if (service === "Networking & Communication") serviceValue = "networking";
+      else if (service === "Access Control Systems") serviceValue = "access";
+      else if (service === "ICT Solutions") serviceValue = "ict";
+
+      if (type === "site-visit") {
+        messagePrefix = `I would like to request a site visit for ${service || 'your services'}. `;
+      }
+
+      setFormData((prev) => ({
+        ...prev,
+        service: serviceValue,
+        message: messagePrefix,
+      }));
+    }
+  }, [location]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -21,6 +53,8 @@ export default function Contact() {
     console.log("Form submitted:", formData);
     alert("Thank you for your message! We will get back to you soon.");
     setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -193,7 +227,7 @@ export default function Contact() {
                     <option value="">Select a service</option>
                     <option value="electrical">Electrical Engineering</option>
                     <option value="solar">Solar & Green Energy</option>
-                    <option value="security">Security Systems</option>
+                    <option value="security">CCTV & Security Systems</option>
                     <option value="networking">Networking & Communication</option>
                     <option value="access">Access Control Systems</option>
                     <option value="ict">ICT Solutions</option>

@@ -134,7 +134,7 @@ export default function Services() {
                         {service.description}
                       </p>
                       <h4 className="font-bold text-[#1E3A5F] mb-4">Key Benefits:</h4>
-                      <ul className="space-y-3">
+                      <ul className="space-y-3 mb-8">
                         {service.benefits.map((benefit, i) => (
                           <li key={i} className="flex items-start gap-3">
                             <CheckCircle
@@ -145,6 +145,12 @@ export default function Services() {
                           </li>
                         ))}
                       </ul>
+                      <Link href={`/contact?service=${encodeURIComponent(service.title)}&type=site-visit`} className="inline-block">
+                        <button className="w-full bg-[#00D084] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#0FA55F] transition-all duration-300 flex items-center justify-center gap-2 group">
+                          Request for Site Visit
+                          <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                        </button>
+                      </Link>
                     </motion.div>
 
                     {/* Service Image */}
