@@ -126,19 +126,21 @@ export default function Gallery() {
                 onClick={() => setSelectedImage(item.id)}
                 className="group cursor-pointer"
               >
-                <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 h-64">
-                  <img
+                <motion.div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 h-64" whileHover={{ boxShadow: "0 25px 50px rgba(0, 0, 0, 0.2)" }}>
+                  <motion.img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    whileHover={{ scale: 1.15 }}
+                    transition={{ duration: 0.5 }}
+                    className="w-full h-full object-cover cursor-pointer"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                  <motion.div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center" whileHover={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}>
+                    <motion.div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center" initial={{ opacity: 0, scale: 0.8 }} whileHover={{ opacity: 1, scale: 1 }}>
                       <p className="text-white text-lg font-bold">{item.title}</p>
                       <p className="text-gray-200 text-sm">{item.description}</p>
-                    </div>
-                  </div>
-                </div>
+                    </motion.div>
+                  </motion.div>
+                </motion.div>
               </motion.div>
             ))}
           </div>

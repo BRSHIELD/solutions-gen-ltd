@@ -51,24 +51,6 @@ export default function Home() {
     { value: 15, label: "Years Experience" },
   ];
 
-  const projects = [
-    {
-      title: "Commercial Solar Installation",
-      category: "Solar Energy",
-      description: "Large-scale solar panel installation for a major retail chain.",
-    },
-    {
-      title: "Security System Upgrade",
-      category: "Security",
-      description: "Complete CCTV and access control system for corporate offices.",
-    },
-    {
-      title: "Electrical Infrastructure",
-      category: "Electrical",
-      description: "High-voltage electrical system design and installation.",
-    },
-  ];
-
   const testimonials = [
     {
       name: "John Mwangi",
@@ -98,7 +80,7 @@ export default function Home() {
       const increment = value / 50;
       const timer = setInterval(() => {
         start += increment;
-        if (start >= value) {
+        if (start > value) {
           setCount(value);
           clearInterval(timer);
         } else {
@@ -110,44 +92,34 @@ export default function Home() {
 
     return (
       <div className="text-center">
-        <div className="text-4xl md:text-5xl font-bold text-[#00D084] mb-2">
+        <div className="text-5xl font-bold text-[#00D084] mb-2">
           {count}
-          {label.includes("%") ? "%" : "+"}
+          {label.includes("%") ? "%" : label.includes("+") ? "+" : ""}
         </div>
-        <p className="text-gray-600">{label}</p>
+        <p className="text-gray-600 font-medium">{label}</p>
       </div>
     );
   };
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
+      {/* Hero Section with Video Background */}
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative h-[600px] md:h-[700px] overflow-hidden"
+        className="relative h-screen flex items-center justify-center overflow-hidden"
       >
-        {/* Background Video */}
+        {/* Video Background */}
         <div className="absolute inset-0">
           <video
             autoPlay
             muted
             loop
             playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source
-              src="https://videos.pexels.com/video-files/8964378/8964378-sd_640_360_24fps.mp4"
-              type="video/mp4"
-            />
-            {/* Fallback to first hero image if video doesn't load */}
-            <img
-              src={heroImages[0]}
-              alt="Hero"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          </video>
+            className="w-full h-full object-cover"
+            src="https://videos.pexels.com/video-files/3571201/3571201-sd_640_360_25fps.mp4"
+          />
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/50" />
         </div>
@@ -167,18 +139,22 @@ export default function Home() {
               Delivering excellence in electrical engineering, solar energy, security systems, and ICT solutions across East Africa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
+              <motion.a
                 href="https://wa.me/254722588932"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#00D084] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#0FA55F] transition-all duration-300 flex items-center justify-center gap-2 group"
+                whileHover={{ scale: 1.05, boxShadow: "0 15px 35px rgba(0, 208, 132, 0.4)" }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-[#00D084] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#0FA55F] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
               >
                 Get Started
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-              <Link href="/contact" className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-[#1E3A5F] transition-all duration-300">
-                Learn More
-              </Link>
+              </motion.a>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link href="/contact" className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-[#1E3A5F] transition-all duration-300 block text-center">
+                  Learn More
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         </div>
@@ -207,10 +183,12 @@ export default function Home() {
               <p className="text-gray-700 text-lg mb-6">
                 We specialize in delivering innovative, reliable, and sustainable solutions that drive business growth and operational excellence for our clients.
               </p>
-              <Link href="/about" className="text-[#00D084] font-bold hover:text-[#0FA55F] transition-colors flex items-center gap-2">
-                Learn more about us
-                <ArrowRight size={20} />
-              </Link>
+              <motion.div whileHover={{ x: 5 }}>
+                <Link href="/about" className="text-[#00D084] font-bold hover:text-[#0FA55F] transition-colors flex items-center gap-2">
+                  Learn more about us
+                  <ArrowRight size={20} />
+                </Link>
+              </motion.div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 30 }}
@@ -224,15 +202,19 @@ export default function Home() {
                 { number: "50+", label: "Engineers" },
                 { number: "98%", label: "Satisfaction" },
               ].map((item, index) => (
-                <div
+                <motion.div
                   key={index}
-                  className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)" }}
+                  transition={{ duration: 0.6, delay: index * 0.05 }}
+                  className="bg-white p-6 rounded-lg shadow-md text-center cursor-pointer"
                 >
                   <div className="text-3xl font-bold text-[#00D084] mb-2">
                     {item.number}
                   </div>
                   <p className="text-gray-600">{item.label}</p>
-                </div>
+                </motion.div>
               ))}
             </motion.div>
           </div>
@@ -257,11 +239,11 @@ export default function Home() {
               Our Services
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Comprehensive solutions tailored to meet your business needs
+              Comprehensive solutions tailored to your business needs
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
@@ -269,16 +251,28 @@ export default function Home() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ y: -12, boxShadow: "0 25px 50px rgba(0, 0, 0, 0.1)" }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#00D084]"
+                  className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-lg shadow-md border border-gray-100 cursor-pointer group"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center mb-6">
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center mb-6 group-hover:shadow-lg transition-shadow"
+                  >
                     <Icon size={32} className="text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-[#1E3A5F] mb-3">
+                  </motion.div>
+                  <h3 className="text-2xl font-bold text-[#1E3A5F] mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600">{service.description}</p>
+                  <p className="text-gray-600 leading-relaxed">
+                    {service.description}
+                  </p>
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "100%" }}
+                    transition={{ duration: 0.6, delay: index * 0.1 + 0.3 }}
+                    className="h-1 bg-gradient-to-r from-[#1E3A5F] to-[#00D084] mt-4 rounded"
+                  />
                 </motion.div>
               );
             })}
@@ -291,7 +285,7 @@ export default function Home() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="py-20 bg-[#1E3A5F] text-white"
+        className="py-20 bg-gradient-to-r from-[#1E3A5F] to-[#0FA55F] text-white"
       >
         <div className="container mx-auto px-4">
           <motion.div
@@ -319,12 +313,16 @@ export default function Home() {
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
+                whileHover={{ x: 10 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="flex items-start gap-4"
+                className="flex items-start gap-4 cursor-pointer"
               >
-                <div className="w-8 h-8 bg-[#00D084] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <motion.div
+                  whileHover={{ scale: 1.2, rotate: 360 }}
+                  className="w-8 h-8 bg-[#00D084] rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+                >
                   <span className="text-white font-bold">✓</span>
-                </div>
+                </motion.div>
                 <p className="text-lg">{item}</p>
               </motion.div>
             ))}
@@ -346,6 +344,7 @@ export default function Home() {
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
+                whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <AnimatedCounter value={stat.value} label={stat.label} />
@@ -393,8 +392,9 @@ export default function Home() {
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
+                whileHover={{ scale: 1.1, boxShadow: "0 15px 35px rgba(0, 208, 132, 0.2)" }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
-                className="flex items-center justify-center bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#00D084]"
+                className="flex items-center justify-center bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#00D084] cursor-pointer"
               >
                 <div className="text-center">
                   {/* Client Logo/Icon Space - Replace with your icon or image */}
@@ -437,18 +437,25 @@ export default function Home() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow"
+                className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-[#FF6B35]">
+                    <motion.span
+                      key={i}
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: i * 0.1 }}
+                      className="text-[#FF6B35]"
+                    >
                       ★
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
-                <p className="text-gray-700 mb-6 italic">"{testimonial.text}"</p>
-                <div className="border-t border-gray-200 pt-4">
+                <p className="text-gray-700 mb-6 leading-relaxed">"{testimonial.text}"</p>
+                <div>
                   <p className="font-bold text-[#1E3A5F]">{testimonial.name}</p>
                   <p className="text-gray-600 text-sm">{testimonial.company}</p>
                 </div>
@@ -463,34 +470,25 @@ export default function Home() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="py-20 bg-gradient-to-r from-[#1E3A5F] to-[#0FA55F]"
+        className="py-20 bg-gradient-to-r from-[#1E3A5F] to-[#0FA55F] text-white"
       >
-        <div className="container mx-auto px-4 text-center text-white">
+        <div className="container mx-auto px-4 text-center">
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl font-bold mb-6">
-              Ready to Transform Your Business?
-            </h2>
+            <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Facility?</h2>
             <p className="text-xl text-gray-100 mb-8 max-w-2xl mx-auto">
-              Get in touch with our team today and discover how Solutions Gen can help you achieve your goals.
+              Let's discuss how our expertise can deliver exceptional engineering and technology solutions for your business.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://wa.me/254700000000"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white text-[#1E3A5F] px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all duration-300 flex items-center justify-center gap-2 group"
-              >
-                Contact Us Now
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <a href="https://wa.me/254722588932" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <button className="bg-white text-[#1E3A5F] font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 text-lg cursor-pointer">
+                  Contact Us Today
+                </button>
               </a>
-              <Link href="/contact" className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-[#1E3A5F] transition-all duration-300">
-                Send Message
-              </Link>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </motion.section>

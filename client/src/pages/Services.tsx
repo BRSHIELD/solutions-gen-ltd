@@ -124,9 +124,9 @@ export default function Services() {
                       transition={{ duration: 0.8 }}
                       className="p-8 md:p-12"
                     >
-                      <div className="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center mb-6">
+                      <motion.div className="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center mb-6" whileHover={{ scale: 1.1, rotate: 5, boxShadow: "0 10px 25px rgba(0, 208, 132, 0.3)" }}>
                         <Icon size={32} className="text-white" />
-                      </div>
+                      </motion.div>
                       <h3 className="text-3xl font-bold text-[#1E3A5F] mb-4">
                         {service.title}
                       </h3>
@@ -136,20 +136,22 @@ export default function Services() {
                       <h4 className="font-bold text-[#1E3A5F] mb-4">Key Benefits:</h4>
                       <ul className="space-y-3 mb-8">
                         {service.benefits.map((benefit, i) => (
-                          <li key={i} className="flex items-start gap-3">
-                            <CheckCircle
-                              size={20}
-                              className="text-[#00D084] flex-shrink-0 mt-1"
-                            />
-                            <span className="text-gray-700">{benefit}</span>
-                          </li>
+                          <motion.li key={i} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.1 }} className="flex items-start gap-3 cursor-pointer group">
+                            <motion.div whileHover={{ scale: 1.2, rotate: 360 }}>
+                              <CheckCircle
+                                size={20}
+                                className="text-[#00D084] flex-shrink-0 mt-1 group-hover:text-[#FF6B35] transition-colors"
+                              />
+                            </motion.div>
+                            <span className="text-gray-700 group-hover:text-[#1E3A5F] transition-colors">{benefit}</span>
+                          </motion.li>
                         ))}
                       </ul>
-                      <Link href={`/contact?service=${encodeURIComponent(service.title)}&type=site-visit`} className="inline-block">
-                        <button className="w-full bg-[#00D084] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#0FA55F] transition-all duration-300 flex items-center justify-center gap-2 group">
+                      <Link href={`/contact?service=${encodeURIComponent(service.title)}&type=site-visit`} className="inline-block w-full">
+                        <motion.button whileHover={{ scale: 1.05, boxShadow: "0 15px 35px rgba(0, 208, 132, 0.3)" }} whileTap={{ scale: 0.95 }} className="w-full bg-[#00D084] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#0FA55F] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer">
                           Request for Site Visit
                           <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                        </button>
+                        </motion.button>
                       </Link>
                     </motion.div>
 
@@ -160,14 +162,16 @@ export default function Services() {
                       transition={{ duration: 0.8 }}
                       className="h-64 md:h-full overflow-hidden"
                     >
-                      <img
+                      <motion.img
                         src={[
                           "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/services-electrical-SdMnP3spt8TQAzvdyzgw8h.webp",
                           "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/services-solar-MEtDeWUTugeBuSj388mU6r.webp",
                           "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/services-security-GCvfCrxGWkqjTgQKK9g73F.webp",
                         ][index % 3]}
                         alt={service.title}
-                        className="w-full h-full object-cover"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.5 }}
+                        className="w-full h-full object-cover cursor-pointer"
                       />
                     </motion.div>
                   </div>
