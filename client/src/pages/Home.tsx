@@ -355,7 +355,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Featured Projects */}
+      {/* Our Clients */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -370,45 +370,32 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-[#1E3A5F] mb-4">
-              Featured Projects
+              Our Clients
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Showcase of our recent successful implementations
+              Trusted by leading organizations across East Africa
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {[...Array(12)].map((_, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.05 }}
+                className="flex items-center justify-center bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#00D084]"
               >
-                <div className="w-12 h-12 bg-[#FF6B35] rounded-lg mb-4" />
-                <h3 className="text-xl font-bold text-[#1E3A5F] mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-[#00D084] font-semibold mb-3">
-                  {project.category}
-                </p>
-                <p className="text-gray-600">{project.description}</p>
+                <div className="text-center">
+                  {/* Client Logo/Icon Space - Replace with your icon or image */}
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center mb-2 mx-auto">
+                    <span className="text-white text-2xl font-bold">C{index + 1}</span>
+                  </div>
+                  <p className="text-sm text-gray-600 font-medium">Client {index + 1}</p>
+                </div>
               </motion.div>
             ))}
           </div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-center mt-12"
-          >
-            <Link href="/portfolio" className="bg-[#1E3A5F] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#0FA55F] transition-all duration-300 inline-flex items-center gap-2 group">
-              View All Projects
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </motion.div>
         </div>
       </motion.section>
 
