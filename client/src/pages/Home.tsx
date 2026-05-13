@@ -352,6 +352,16 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-center mt-12"
+          >
+            <p className="text-lg text-gray-600 font-semibold">
+              <span className="text-[#00D084]">+</span> and more ongoing projects
+            </p>
+          </motion.div>
         </div>
       </motion.section>
 
