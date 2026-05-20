@@ -174,6 +174,12 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
+              <motion.img 
+                src="/manus-storage/company-logo_c997ea5e.png" 
+                alt="Solutions General Ltd Logo"
+                className="w-20 h-20 object-contain mb-6"
+                whileHover={{ scale: 1.1 }}
+              />
               <h2 className="text-4xl font-bold text-[#1E3A5F] mb-6">
                 About Solutions Gen Ltd
               </h2>

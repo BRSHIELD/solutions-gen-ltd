@@ -11,9 +11,11 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#00D084] to-[#FF6B35] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">SG</span>
-              </div>
+              <img 
+                src="/manus-storage/company-logo_c997ea5e.png" 
+                alt="Solutions General Ltd Logo"
+                className="w-10 h-10 object-contain"
+              />
               <span className="font-bold text-lg">Solutions Gen Ltd</span>
             </div>
             <p className="text-gray-300 text-sm">

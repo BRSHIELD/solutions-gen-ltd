@@ -65,11 +65,20 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="flex items-center gap-6"
           >
-            <h1 className="text-5xl font-bold mb-6">About Solutions General Ltd</h1>
-            <p className="text-xl text-gray-100 max-w-2xl">
-              East Africa's leading provider of comprehensive Electrical, ICT, Security, and Solar PV Engineering solutions
-            </p>
+            <motion.img 
+              src="/manus-storage/company-logo_c997ea5e.png" 
+              alt="Solutions General Ltd Logo"
+              className="w-24 h-24 object-contain"
+              whileHover={{ scale: 1.1 }}
+            />
+            <div>
+              <h1 className="text-5xl font-bold mb-6">About Solutions General Ltd</h1>
+              <p className="text-xl text-gray-100 max-w-2xl">
+                East Africa's leading provider of comprehensive Electrical, ICT, Security, and Solar PV Engineering solutions
+              </p>
+            </div>
           </motion.div>
         </div>
       </motion.section>

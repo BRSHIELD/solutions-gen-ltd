@@ -27,9 +27,12 @@ export default function Navbar() {
         {/* Logo */}
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Link href="/" className="flex items-center gap-2 cursor-pointer">
-            <motion.div className="w-10 h-10 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center" whileHover={{ boxShadow: "0 0 20px rgba(0, 208, 132, 0.4)" }}>
-              <span className="text-white font-bold text-lg">SG</span>
-            </motion.div>
+            <motion.img 
+              src="/manus-storage/company-logo_c997ea5e.png" 
+              alt="Solutions General Ltd Logo"
+              className="w-10 h-10 object-contain"
+              whileHover={{ boxShadow: "0 0 20px rgba(0, 208, 132, 0.4)" }}
+            />
             <span className="font-bold text-lg text-[#1E3A5F] hidden sm:inline">
               Solutions Gen
             </span>
