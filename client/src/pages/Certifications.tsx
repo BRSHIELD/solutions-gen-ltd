@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { Award, Download, Upload, Trash2, Calendar, FileText } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Award, Download, Upload, Trash2, Calendar, FileText, Search, ArrowUpDown } from "lucide-react";
+import { useState, useEffect, useMemo } from "react";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 
@@ -9,6 +9,9 @@ export default function Certifications() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [certificates, setCertificates] = useState<any[]>([]);
   const [uploading, setUploading] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [sortBy, setSortBy] = useState<"title" | "issuer" | "issueDate" | "expiryDate" | "status">("title");
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
 
   const certificatesQuery = trpc.certificates.list.useQuery();
   const uploadMutation = trpc.certificates.upload.useMutation();
@@ -30,10 +33,61 @@ export default function Certifications() {
     "ICT",
   ];
 
-  const filteredCertificates =
+  const isExpired = (expiryDate: Date | null) => {
+    if (!expiryDate) return false;
+    return new Date(expiryDate) < new Date();
+  };
+
+  // Filter by category
+  const categoryFiltered =
     selectedCategory === "All"
       ? certificates
       : certificates.filter((cert) => cert.category === selectedCategory);
+
+  // Filter by search query
+  const searchFiltered = categoryFiltered.filter((cert) => {
+    const query = searchQuery.toLowerCase();
+    return (
+      cert.title.toLowerCase().includes(query) ||
+      cert.issuer.toLowerCase().includes(query) ||
+      cert.category.toLowerCase().includes(query)
+    );
+  });
+
+  // Sort certificates
+  const sortedCertificates = useMemo(() => {
+    const sorted = [...searchFiltered];
+    
+    sorted.sort((a, b) => {
+      let compareValue = 0;
+
+      switch (sortBy) {
+        case "title":
+          compareValue = a.title.localeCompare(b.title);
+          break;
+        case "issuer":
+          compareValue = a.issuer.localeCompare(b.issuer);
+          break;
+        case "issueDate":
+          compareValue = new Date(a.issueDate || 0).getTime() - new Date(b.issueDate || 0).getTime();
+          break;
+        case "expiryDate":
+          compareValue = new Date(a.expiryDate || 0).getTime() - new Date(b.expiryDate || 0).getTime();
+          break;
+        case "status":
+          const aExpired = isExpired(a.expiryDate);
+          const bExpired = isExpired(b.expiryDate);
+          compareValue = aExpired === bExpired ? 0 : aExpired ? 1 : -1;
+          break;
+        default:
+          compareValue = 0;
+      }
+
+      return sortOrder === "asc" ? compareValue : -compareValue;
+    });
+
+    return sorted;
+  }, [searchFiltered, sortBy, sortOrder]);
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -82,11 +136,6 @@ export default function Certifications() {
     } catch (error) {
       alert("Failed to delete certificate");
     }
-  };
-
-  const isExpired = (expiryDate: Date | null) => {
-    if (!expiryDate) return false;
-    return new Date(expiryDate) < new Date();
   };
 
   return (
@@ -176,6 +225,85 @@ export default function Certifications() {
         </div>
       </motion.section>
 
+      {/* Search and Sort Section */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="py-12 bg-white border-b border-gray-200"
+      >
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-6 items-end">
+            {/* Search Bar */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="md:col-span-2"
+            >
+              <label className="block text-sm font-semibold text-[#1E3A5F] mb-2">
+                Search Certificates
+              </label>
+              <div className="relative">
+                <Search size={20} className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Search by title, issuer, or category..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-12 pr-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#00D084] focus:outline-none transition-colors"
+                />
+              </div>
+            </motion.div>
+
+            {/* Sort Options */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="space-y-2"
+            >
+              <label className="block text-sm font-semibold text-[#1E3A5F] mb-2">
+                Sort By
+              </label>
+              <div className="flex gap-2">
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value as any)}
+                  className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#00D084] focus:outline-none transition-colors"
+                >
+                  <option value="title">Title</option>
+                  <option value="issuer">Issuer</option>
+                  <option value="issueDate">Issue Date</option>
+                  <option value="expiryDate">Expiry Date</option>
+                  <option value="status">Status</option>
+                </select>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setSortOrder(sortOrder === "asc" ? "desc" : "asc")}
+                  className="px-4 py-3 bg-[#00D084] text-white rounded-lg hover:bg-[#0FA55F] transition-colors flex items-center gap-2 font-semibold"
+                >
+                  <ArrowUpDown size={18} />
+                  {sortOrder === "asc" ? "↑" : "↓"}
+                </motion.button>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Results Count */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-4 text-sm text-gray-600"
+          >
+            Showing <span className="font-semibold text-[#1E3A5F]">{sortedCertificates.length}</span> of{" "}
+            <span className="font-semibold text-[#1E3A5F]">{certificates.length}</span> certificates
+          </motion.div>
+        </div>
+      </motion.section>
+
       {/* Certificates Grid */}
       <motion.section
         initial={{ opacity: 0 }}
@@ -184,7 +312,7 @@ export default function Certifications() {
         className="py-20 bg-white"
       >
         <div className="container mx-auto px-4">
-          {filteredCertificates.length === 0 ? (
+          {sortedCertificates.length === 0 ? (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -192,12 +320,14 @@ export default function Certifications() {
             >
               <FileText size={48} className="mx-auto text-gray-300 mb-4" />
               <p className="text-gray-600 text-lg">
-                No certificates available in this category
+                {searchQuery
+                  ? "No certificates match your search"
+                  : "No certificates available in this category"}
               </p>
             </motion.div>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredCertificates.map((cert, index) => {
+              {sortedCertificates.map((cert, index) => {
                 const expired = isExpired(cert.expiryDate);
                 return (
                   <motion.div
