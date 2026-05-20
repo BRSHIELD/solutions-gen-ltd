@@ -68,6 +68,54 @@ export const appRouter = router({
         
         return await deleteCertificate(input.id);
       }),
+    batchUpload: protectedProcedure
+      .input(z.object({
+        certificates: z.array(z.object({
+          title: z.string(),
+          issuer: z.string(),
+          category: z.string(),
+          issueDate: z.string().optional(),
+          expiryDate: z.string().optional(),
+          fileBuffer: z.string(),
+        })),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        if (ctx.user?.role !== 'admin') {
+          throw new Error('Only admins can upload certificates');
+        }
+
+        const results = {
+          successful: 0,
+          failed: 0,
+          errors: [] as string[],
+        };
+
+        for (const cert of input.certificates) {
+          try {
+            const buffer = Buffer.from(cert.fileBuffer, 'base64');
+            const fileKey = `certificates/${cert.category}/${Date.now()}-${cert.title}.pdf`;
+            const { url } = await storagePut(fileKey, buffer, 'application/pdf');
+            
+            await createCertificate({
+              title: cert.title,
+              issuer: cert.issuer,
+              category: cert.category,
+              fileKey,
+              fileUrl: url,
+              issueDate: cert.issueDate ? new Date(cert.issueDate) : undefined,
+              expiryDate: cert.expiryDate ? new Date(cert.expiryDate) : undefined,
+              isActive: 1,
+            });
+            
+            results.successful++;
+          } catch (error) {
+            results.failed++;
+            results.errors.push(`Failed to upload ${cert.title}: ${error instanceof Error ? error.message : 'Unknown error'}`);
+          }
+        }
+
+        return results;
+      }),
   }),
 });
 

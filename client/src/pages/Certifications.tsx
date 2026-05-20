@@ -3,6 +3,7 @@ import { Award, Download, Upload, Trash2, Calendar, FileText, Search, ArrowUpDow
 import { useState, useEffect, useMemo } from "react";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
+import BatchCertificateUpload from "@/components/BatchCertificateUpload";
 
 export default function Certifications() {
   const { user } = useAuth();
@@ -174,25 +175,35 @@ export default function Certifications() {
           className="py-12 bg-blue-50 border-b-2 border-blue-200"
         >
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl font-bold text-[#1E3A5F] mb-6">
+            <h2 className="text-2xl font-bold text-[#1E3A5F] mb-8">
               Manage Certificates
             </h2>
-            <label className="flex items-center gap-3 bg-white p-6 rounded-lg border-2 border-dashed border-[#00D084] cursor-pointer hover:bg-green-50 transition-colors">
-              <Upload size={24} className="text-[#00D084]" />
-              <span className="text-lg font-semibold text-[#1E3A5F]">
-                {uploading ? "Uploading..." : "Click to upload PDF certificate"}
-              </span>
-              <input
-                type="file"
-                accept=".pdf"
-                onChange={handleFileUpload}
-                disabled={uploading}
-                className="hidden"
-              />
-            </label>
-            <p className="text-sm text-gray-600 mt-3">
-              You will be prompted to enter certificate details (title, issuer, category, dates)
-            </p>
+            
+            {/* Batch Upload Component */}
+            <div className="mb-8">
+              <BatchCertificateUpload />
+            </div>
+
+            {/* Single Upload */}
+            <div>
+              <h3 className="text-lg font-bold text-[#1E3A5F] mb-4">Single Certificate Upload</h3>
+              <label className="flex items-center gap-3 bg-white p-6 rounded-lg border-2 border-dashed border-[#00D084] cursor-pointer hover:bg-green-50 transition-colors">
+                <Upload size={24} className="text-[#00D084]" />
+                <span className="text-lg font-semibold text-[#1E3A5F]">
+                  {uploading ? "Uploading..." : "Click to upload PDF certificate"}
+                </span>
+                <input
+                  type="file"
+                  accept=".pdf"
+                  onChange={handleFileUpload}
+                  disabled={uploading}
+                  className="hidden"
+                />
+              </label>
+              <p className="text-sm text-gray-600 mt-3">
+                You will be prompted to enter certificate details (title, issuer, category, dates)
+              </p>
+            </div>
           </div>
         </motion.section>
       )}
