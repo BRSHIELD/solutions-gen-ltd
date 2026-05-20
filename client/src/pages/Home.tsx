@@ -2,9 +2,14 @@ import { motion } from "framer-motion";
 import { ArrowRight, Zap, Sun, Shield, Wifi, Lock, Code, TrendingUp } from "lucide-react";
 import { Link } from "wouter";
 import { useState, useEffect } from "react";
+import { useAuth } from "@/_core/hooks/useAuth";
 
 export default function Home() {
-  // Hero Images (kept as fallback)
+  // The userAuth hooks provides authentication state
+  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
+
+  // Hero Images (kept as fallback) - Not used in current version
   const heroImages = [
     "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/hero-solar-panels-4c6Ho7bh8WnuPHwxJNzaP7.webp",
     "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/hero-electrical-engineering-b6t2TwgVtKmjn68WK3Qp3m.webp",
