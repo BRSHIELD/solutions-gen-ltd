@@ -244,7 +244,7 @@ export default function Home() {
         transition={{ duration: 0.8 }}
         className="py-20 relative overflow-hidden"
         style={{
-          backgroundImage: 'url("/manus-storage/service-electrical-engineering_2e5c3d9f.png")',
+          backgroundImage: 'url("/manus-storage/solar-panels-bg_961116f3.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
