@@ -91,52 +91,94 @@ export default function Contact() {
       >
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
-            {[
-              {
-                icon: Phone,
-                title: "Phone",
-                content: "+254 722 588 932",
-                subtext: "+254 792 405 667",
-              },
-              {
-                icon: Mail,
-                title: "Email",
-                content: "info@solutionsgen.co.ke",
-                subtext: "info@solutionsgen.com",
-              },
-              {
-                icon: MapPin,
-                title: "Address",
-                content: "Fortis Industrial Park",
-                subtext: "Off Mombassa Road, Godown No.17, Nairobi",
-              },
-              {
-                icon: Clock,
-                title: "Business Hours",
-                content: "Mon - Fri: 8AM - 5PM",
-                subtext: "Saturday: 9AM - 1PM",
-              },
-            ].map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow"
-                >
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Icon size={32} className="text-white" />
-                  </div>
-                  <h3 className="text-lg font-bold text-[#1E3A5F] mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-700 font-semibold mb-1">{item.content}</p>
-                  <p className="text-gray-600 text-sm">{item.subtext}</p>
-                </motion.div>
-              );
-            })}
+            {/* Phone */}
+            <motion.a
+              href="tel:+254722588932"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0 }}
+              className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow cursor-pointer group"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <Phone size={32} className="text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-[#1E3A5F] mb-2">
+                Phone
+              </h3>
+              <p className="text-gray-700 font-semibold mb-1 hover:text-[#00D084] transition-colors">
+                +254 722 588 932
+              </p>
+              <p className="text-gray-600 text-sm hover:text-[#00D084] transition-colors">
+                +254 792 405 667
+              </p>
+            </motion.a>
+
+            {/* Email */}
+            <motion.a
+              href="mailto:info@solutionsgen.co.ke"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow cursor-pointer group"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <Mail size={32} className="text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-[#1E3A5F] mb-2">
+                Email
+              </h3>
+              <p className="text-gray-700 font-semibold mb-1 hover:text-[#00D084] transition-colors">
+                info@solutionsgen.co.ke
+              </p>
+              <p className="text-gray-600 text-sm hover:text-[#00D084] transition-colors">
+                info@solutionsgen.com
+              </p>
+            </motion.a>
+
+            {/* Address */}
+            <motion.a
+              href="https://maps.google.com/?q=Fortis+Industrial+Park,+Mombassa+Road,+Nairobi"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow cursor-pointer group"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <MapPin size={32} className="text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-[#1E3A5F] mb-2">
+                Address
+              </h3>
+              <p className="text-gray-700 font-semibold mb-1 hover:text-[#00D084] transition-colors">
+                Fortis Industrial Park
+              </p>
+              <p className="text-gray-600 text-sm hover:text-[#00D084] transition-colors">
+                Off Mombassa Road, Godown No.17, Nairobi
+              </p>
+            </motion.a>
+
+            {/* Business Hours */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Clock size={32} className="text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-[#1E3A5F] mb-2">
+                Business Hours
+              </h3>
+              <p className="text-gray-700 font-semibold mb-1">
+                Mon - Fri: 8AM - 5PM
+              </p>
+              <p className="text-gray-600 text-sm">
+                Saturday: 9AM - 1PM
+              </p>
+            </motion.div>
           </div>
         </div>
       </motion.section>
