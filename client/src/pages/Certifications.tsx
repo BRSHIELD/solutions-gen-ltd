@@ -193,9 +193,9 @@ export default function Certifications() {
                     key={cert.id}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    whileHover={{ y: -4, boxShadow: "0 12px 24px rgba(0, 0, 0, 0.1)" }}
-                    transition={{ duration: 0.6, delay: index * 0.05 }}
-                    className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:border-[#00D084] transition-all group"
+                    whileHover={{ y: -8, scale: 1.08, boxShadow: "0 20px 40px rgba(0, 208, 132, 0.2)" }}
+                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                    className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:border-[#00D084] transition-all group cursor-pointer relative"
                   >
                     {/* Certificate Image */}
                     <div className="relative h-32 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
@@ -234,7 +234,7 @@ export default function Certifications() {
                     </div>
 
                     {/* Certificate Details */}
-                    <div className="p-3">
+                    <div className="p-3 relative">
                       <div className="mb-2">
                         <h3 className="text-sm font-bold text-[#1E3A5F] mb-1 line-clamp-1">
                           {cert.title}
@@ -288,6 +288,27 @@ export default function Certifications() {
                         <ExternalLink size={12} />
                         View
                       </motion.a>
+
+                      {/* Hover Description Overlay */}
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                        transition={{ duration: 0.3 }}
+                        className="absolute inset-0 bg-gradient-to-t from-[#1E3A5F] via-[#1E3A5F]/85 to-[#1E3A5F]/40 rounded-lg p-3 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                      >
+                        <p className="text-white text-xs leading-tight font-medium mb-2">
+                          {cert.description}
+                        </p>
+                        <p className="text-[#00D084] text-xs font-semibold flex items-center gap-1">
+                          <span>Learn more</span>
+                          <motion.span
+                            animate={{ x: [0, 3, 0] }}
+                            transition={{ duration: 1, repeat: Infinity }}
+                          >
+                            →
+                          </motion.span>
+                        </p>
+                      </motion.div>
                     </div>
                   </motion.div>
                 );
