@@ -201,9 +201,18 @@ export default function Home() {
               <p className="text-gray-200 mb-4 leading-relaxed">
                 Founded in 2006, Solutions General Ltd has been a leading provider of engineering and technology solutions across East Africa. With over 15 years of experience, we've successfully completed 500+ projects and maintained a 98% client satisfaction rate.
               </p>
-              <p className="text-gray-200 leading-relaxed">
+              <p className="text-gray-200 leading-relaxed mb-8">
                 Our team of 50+ expert engineers is dedicated to delivering innovative, reliable, and cost-effective solutions that drive business growth and operational excellence.
               </p>
+              <Link href="/portfolio">
+                <motion.button
+                  whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(0, 208, 132, 0.3)" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-[#00D084] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#00B870] transition-colors inline-flex items-center gap-2"
+                >
+                  View Our Projects <ArrowRight size={18} />
+                </motion.button>
+              </Link>
             </motion.div>
 
             <motion.div
