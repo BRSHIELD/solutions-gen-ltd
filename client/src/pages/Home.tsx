@@ -210,34 +210,55 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="grid grid-cols-2 gap-4"
-            >
-              {[
-                { number: "15+", label: "Years Experience" },
-                { number: "500+", label: "Projects" },
-                { number: "50+", label: "Engineers" },
-                { number: "98%", label: "Satisfaction" },
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)" }}
-                  transition={{ duration: 0.6, delay: index * 0.05 }}
-                  className="bg-white/10 backdrop-blur p-6 rounded-lg text-center cursor-pointer border border-white/20"
-                >
-                  <div className="text-3xl font-bold text-[#00D084] mb-2">
-                    {item.number}
-                  </div>
-                  <p className="text-gray-200">{item.label}</p>
-                </motion.div>
-              ))}
-            </motion.div>
+
           </div>
+        </div>
+      </motion.section>
+
+      {/* Statistics Section with Background */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="py-20 relative overflow-hidden"
+        style={{
+          backgroundImage: 'url("/manus-storage/service-electrical-engineering_2e5c3d9f.png")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+        }}
+      >
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/60 z-0"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6"
+          >
+            {[
+              { number: "15+", label: "Years Experience" },
+              { number: "500+", label: "Projects" },
+              { number: "50+", label: "Engineers" },
+              { number: "98%", label: "Satisfaction" },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0, 208, 132, 0.3)" }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white/10 backdrop-blur p-8 rounded-lg text-center border border-white/20 hover:border-[#00D084]/50 transition-colors"
+              >
+                <div className="text-4xl font-bold text-[#00D084] mb-3">
+                  {item.number}
+                </div>
+                <p className="text-gray-100 font-medium">{item.label}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </motion.section>
 
