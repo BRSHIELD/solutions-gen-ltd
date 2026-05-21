@@ -435,12 +435,23 @@ export default function Home() {
             Our Clients
           </motion.h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {[
-              "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/AeroClubofEastafrica-Uh8jZgKZhpJBKmvJnWpfBm.webp",
-              "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/ASL-7sBJKzQVCvXJYzZhVQg.webp",
-              null, null, null, null,
-              null, null, null, null, null, null,
+              "/manus-storage/Aero Club of East africa_48ee7478.jfif",
+              "/manus-storage/ASL_ec49564c.PNG",
+              "/manus-storage/British High Commission_2e72512f.jfif",
+              "/manus-storage/Coast General Hospital_2d2e9282.jfif",
+              "/manus-storage/Cooperative Bank of Kenya_2ffe6529.jfif",
+              "/manus-storage/Cytonn Real Estate_9f10fd5d.png",
+              "/manus-storage/Equity bank_3b94943b.jfif",
+              "/manus-storage/Junction mall_a6156fd1.jfif",
+              "/manus-storage/KCB Group_cdb87458.jfif",
+              "/manus-storage/KTR Hospital_edb58f61.jpg",
+              "/manus-storage/Muthaiga Country club_78615bc4.png",
+              "/manus-storage/NSSF_cd15d3dd.jfif",
+              "/manus-storage/Nairobi West Hospital_bb3e9dd0.jpg",
+              "/manus-storage/Ndege Chai_a742b213.jfif",
+              "/manus-storage/images_176d6a12.png",
             ].map((logo, index) => (
               <motion.div
                 key={index}
@@ -450,17 +461,11 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: index * 0.05 }}
                 className="bg-gray-50 rounded-lg p-6 flex items-center justify-center min-h-[120px] border border-gray-200 cursor-pointer group"
               >
-                {logo ? (
-                  <img
-                    src={logo}
-                    alt={`Client ${index + 1}`}
-                    className="max-w-full max-h-20 object-contain group-hover:opacity-80 transition-opacity"
-                  />
-                ) : (
-                  <div className="text-gray-400 text-center">
-                    <p className="text-sm font-semibold">Your Logo Here</p>
-                  </div>
-                )}
+                <img
+                  src={logo}
+                  alt={`Client ${index + 1}`}
+                  className="max-w-full max-h-20 object-contain group-hover:opacity-80 transition-opacity"
+                />
               </motion.div>
             ))}
           </div>
