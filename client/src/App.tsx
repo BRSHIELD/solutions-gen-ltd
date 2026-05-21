@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
+import ProjectDetail from "./pages/ProjectDetail";
 import Gallery from "./pages/Gallery";
 import Certifications from "./pages/Certifications";
 import Contact from "./pages/Contact";
@@ -25,6 +26,7 @@ function Router() {
           <Route path={"/about"} component={About} />
           <Route path={"/services"} component={Services} />
           <Route path={"/portfolio"} component={Portfolio} />
+          <Route path={"/portfolio/:id"} component={ProjectDetail} />
           <Route path={"/gallery"} component={Gallery} />
           <Route path={"/certifications"} component={Certifications} />
           <Route path={"/contact"} component={Contact} />

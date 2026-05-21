@@ -166,13 +166,18 @@ export default function Portfolio() {
                       Results: {project.results}
                     </p>
                   </div>
-                  <button className="w-full text-[#1E3A5F] font-semibold hover:text-[#00D084] transition-colors flex items-center justify-center gap-2 group">
-                    View Details
-                    <ArrowRight
-                      size={16}
-                      className="group-hover:translate-x-1 transition-transform"
-                    />
-                  </button>
+                  <Link href={`/portfolio/${project.id}`}>
+                    <motion.button
+                      whileHover={{ x: 5 }}
+                      className="w-full text-[#1E3A5F] font-semibold hover:text-[#00D084] transition-colors flex items-center justify-center gap-2 group"
+                    >
+                      View Details
+                      <ArrowRight
+                        size={16}
+                        className="group-hover:translate-x-1 transition-transform"
+                      />
+                    </motion.button>
+                  </Link>
                 </div>
               </motion.div>
             ))}
