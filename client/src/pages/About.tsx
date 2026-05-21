@@ -68,7 +68,7 @@ export default function About() {
             className="flex items-center gap-6"
           >
             <motion.img 
-              src="/manus-storage/company-logo_c997ea5e.png" 
+              src="/manus-storage/EnhancedOriginalLogo_20c92336.png" 
               alt="Solutions General Ltd Logo"
               className="w-24 h-24 object-contain"
               whileHover={{ scale: 1.1 }}

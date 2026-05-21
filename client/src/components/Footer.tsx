@@ -12,7 +12,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img 
-                src="/manus-storage/company-logo_c997ea5e.png" 
+                src="/manus-storage/EnhancedOriginalLogo_20c92336.png" 
                 alt="Solutions General Ltd Logo"
                 className="w-10 h-10 object-contain"
               />

@@ -28,7 +28,7 @@ export default function Navbar() {
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Link href="/" className="flex items-center gap-2 cursor-pointer">
             <motion.img 
-              src="/manus-storage/company-logo_c997ea5e.png" 
+              src="/manus-storage/EnhancedOriginalLogo_20c92336.png" 
               alt="Solutions General Ltd Logo"
               className="w-10 h-10 object-contain"
               whileHover={{ boxShadow: "0 0 20px rgba(0, 208, 132, 0.4)" }}

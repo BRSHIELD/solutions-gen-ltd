@@ -180,7 +180,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <motion.img 
-                src="/manus-storage/company-logo_c997ea5e.png" 
+                src="/manus-storage/EnhancedOriginalLogo_20c92336.png" 
                 alt="Solutions General Ltd Logo"
                 className="w-20 h-20 object-contain mb-6"
                 whileHover={{ scale: 1.1 }}
