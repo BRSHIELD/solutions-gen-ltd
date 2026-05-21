@@ -33,6 +33,8 @@ export default function Contact() {
 
       if (type === "site-visit") {
         messagePrefix = `I would like to request a site visit for ${service || 'your services'}. `;
+      } else if (service) {
+        messagePrefix = `I would like to request a quote for ${service}. `;
       }
 
       setFormData((prev) => ({

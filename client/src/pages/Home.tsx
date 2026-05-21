@@ -273,21 +273,34 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </motion.div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-[#1E3A5F] mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed mb-4">
-                    {service.description}
-                  </p>
-                  <Link href={`/services?service=${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                    <motion.button
-                      whileHover={{ x: 5 }}
-                      className="text-[#00D084] font-semibold flex items-center gap-2 hover:text-[#00B870] transition-colors"
-                    >
-                      Request for Site Visit <ArrowRight size={16} />
-                    </motion.button>
-                  </Link>
+                <div className="p-8 flex flex-col h-full">
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-[#1E3A5F] mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                      {service.description}
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-3 mt-6">
+                    <Link href={`/contact?service=${service.title}`}>
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="w-full bg-[#00D084] text-white px-4 py-3 rounded-lg font-semibold hover:bg-[#00B870] transition-colors"
+                      >
+                        Request a Quote
+                      </motion.button>
+                    </Link>
+                    <Link href={`/services?service=${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                      <motion.button
+                        whileHover={{ x: 5 }}
+                        className="text-[#00D084] font-semibold flex items-center gap-2 hover:text-[#00B870] transition-colors"
+                      >
+                        Request for Site Visit <ArrowRight size={16} />
+                      </motion.button>
+                    </Link>
+                  </div>
                 </div>
               </motion.div>
             ))}
