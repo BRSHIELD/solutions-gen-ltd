@@ -398,21 +398,33 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {[...Array(12)].map((_, index) => (
+            {[
+              { name: "Aero Club of East Africa", logo: "/manus-storage/AeroClubofEastafrica_58176696.jfif" },
+              { name: "ASL - Airline Services", logo: "/manus-storage/ASL_65bdd2d0.PNG" },
+              ...Array(10).fill(null).map((_, i) => ({ name: `Client ${i + 3}`, logo: null }))
+            ].map((client, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 1.1, boxShadow: "0 15px 35px rgba(0, 208, 132, 0.2)" }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
-                className="flex items-center justify-center bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#00D084] cursor-pointer"
+                className="flex items-center justify-center bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#00D084] cursor-pointer min-h-[150px]"
               >
                 <div className="text-center">
-                  {/* Client Logo/Icon Space - Replace with your icon or image */}
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center mb-2 mx-auto">
-                    <span className="text-white text-2xl font-bold">C{index + 1}</span>
-                  </div>
-                  <p className="text-sm text-gray-600 font-medium">Client {index + 1}</p>
+                  {client.logo ? (
+                    <motion.img
+                      src={client.logo}
+                      alt={client.name}
+                      className="max-w-full max-h-24 object-contain mx-auto mb-2"
+                      whileHover={{ scale: 1.05 }}
+                    />
+                  ) : (
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center mb-2 mx-auto">
+                      <span className="text-white text-2xl font-bold">C{index + 1}</span>
+                    </div>
+                  )}
+                  <p className="text-sm text-gray-600 font-medium">{client.name}</p>
                 </div>
               </motion.div>
             ))}
