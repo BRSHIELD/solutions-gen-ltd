@@ -15,6 +15,7 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
+import LiveChatWidget from "./components/LiveChatWidget";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -37,6 +38,7 @@ function Router() {
       </main>
       <Footer />
       <WhatsAppButton />
+      <LiveChatWidget />
     </div>
   );
 }

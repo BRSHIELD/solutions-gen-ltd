@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
-import { Award, Download, Calendar, ExternalLink } from "lucide-react";
-import { useState, useMemo } from "react";
+import { Award, Download, Calendar, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useMemo, useEffect, useRef } from "react";
 
 export default function Certifications() {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [autoScroll, setAutoScroll] = useState(true);
 
   // Sample certificates data
   const certificates = [
@@ -102,6 +105,21 @@ export default function Certifications() {
       : certificates.filter((cert) => cert.category === selectedCategory);
   }, [selectedCategory]);
 
+  useEffect(() => {
+    if (!autoScroll || filteredCertificates.length === 0) return;
+    const interval = setInterval(() => {
+      if (scrollContainerRef.current) {
+        const container = scrollContainerRef.current;
+        if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
+          container.scrollLeft = 0;
+        } else {
+          container.scrollLeft += 300;
+        }
+      }
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [autoScroll, filteredCertificates.length]);
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -185,7 +203,7 @@ export default function Certifications() {
               </p>
             </motion.div>
           ) : (
-            <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="flex gap-4 overflow-x-auto pb-4 scroll-smooth" ref={scrollContainerRef} onMouseEnter={() => setAutoScroll(false)} onMouseLeave={() => setAutoScroll(true)}>
               {filteredCertificates.map((cert, index) => {
                 const expired = isExpired(cert.expiryDate);
                 return (
@@ -195,7 +213,7 @@ export default function Certifications() {
                     whileInView={{ opacity: 1, y: 0 }}
                     whileHover={{ y: -8, scale: 1.08, boxShadow: "0 20px 40px rgba(0, 208, 132, 0.2)" }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
-                    className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:border-[#00D084] transition-all group cursor-pointer relative"
+                    className="flex-shrink-0 w-64 bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:border-[#00D084] transition-all group cursor-pointer relative"
                   >
                     {/* Certificate Image */}
                     <div className="relative h-32 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">

@@ -99,10 +99,10 @@ export default function Home() {
     }, [value]);
 
     return (
-      <div className="text-center">
-        <div className="text-5xl font-bold text-[#00D084] mb-2">{count}+</div>
-        <p className="text-gray-600">{label}</p>
-      </div>
+      <>
+        <div className="text-4xl font-bold text-[#00D084]">{count}+</div>
+        <p className="text-gray-100 font-medium mt-2">{label}</p>
+      </>
     );
   };
 
@@ -276,12 +276,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-6"
           >
-            {[
-              { number: "15+", label: "Years Experience" },
-              { number: "500+", label: "Projects" },
-              { number: "50+", label: "Engineers" },
-              { number: "98%", label: "Satisfaction" },
-            ].map((item, index) => (
+            {stats.map((stat, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -291,9 +286,8 @@ export default function Home() {
                 className="bg-white/10 backdrop-blur p-8 rounded-lg text-center border border-white/20 hover:border-[#00D084]/50 transition-colors"
               >
                 <div className="text-4xl font-bold text-[#00D084] mb-3">
-                  {item.number}
+                  <AnimatedCounter value={stat.value} label={stat.label} />
                 </div>
-                <p className="text-gray-100 font-medium">{item.label}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -517,6 +511,62 @@ export default function Home() {
                   <p className="font-semibold text-white">{testimonial.name}</p>
                   <p className="text-gray-300 text-sm">{testimonial.company}</p>
                 </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Industries We Serve Section */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="py-20 bg-white"
+      >
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-[#1E3A5F] mb-4">
+              Industries We Serve
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Solutions tailored for diverse sectors across East Africa
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { name: "Manufacturing", icon: "🏭", description: "Industrial automation and electrical systems" },
+              { name: "Hospitality", icon: "🏨", description: "Security and energy solutions for hotels" },
+              { name: "Healthcare", icon: "🏥", description: "Critical power and security systems" },
+              { name: "Retail", icon: "🛍️", description: "Point of sale and security infrastructure" },
+              { name: "Education", icon: "🎓", description: "Campus-wide networking and security" },
+              { name: "Finance", icon: "🏦", description: "Secure data centers and backup power" },
+              { name: "Government", icon: "🏛️", description: "Infrastructure and security solutions" },
+              { name: "Agriculture", icon: "🌾", description: "Solar and renewable energy systems" },
+            ].map((industry, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0, 208, 132, 0.15)" }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#00D084] transition-all group cursor-pointer"
+              >
+                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">
+                  {industry.icon}
+                </div>
+                <h3 className="text-xl font-bold text-[#1E3A5F] mb-2">
+                  {industry.name}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {industry.description}
+                </p>
               </motion.div>
             ))}
           </div>

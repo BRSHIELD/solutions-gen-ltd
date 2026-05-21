@@ -108,11 +108,7 @@ export default function Portfolio() {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
-                className={`px-6 py-2 rounded-lg font-semibold transition-all duration-300 ${
-                  selectedCategory === category
-                    ? "bg-[#1E3A5F] text-white shadow-lg"
-                    : "bg-white text-[#1E3A5F] border-2 border-[#1E3A5F] hover:bg-[#1E3A5F] hover:text-white"
-                }`}
+                className={`px-6 py-2 rounded-lg font-semibold transition-all duration-300 ${selectedCategory === category ? "bg-[#00D084] text-white shadow-lg" : "bg-white text-[#1E3A5F] border-2 border-[#1E3A5F] hover:bg-[#00D084] hover:text-white hover:border-[#00D084]"}`}
               >
                 {category}
               </motion.button>
