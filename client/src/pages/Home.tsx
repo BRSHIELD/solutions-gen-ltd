@@ -192,12 +192,7 @@ export default function Home() {
                 className="w-32 h-32 mb-6 object-contain"
                 whileHover={{ scale: 1.05 }}
               />
-              <div className="flex flex-col gap-2 mb-6">
-                <h2 className="text-3xl font-bold">About Solutions Gen Ltd</h2>
-                <div className="inline-flex items-center gap-2 bg-[#00D084] bg-opacity-10 px-4 py-2 rounded-lg w-fit">
-                  <span className="text-2xl font-bold text-[#00D084]">Since 2006</span>
-                </div>
-              </div>
+              <h2 className="text-3xl font-bold mb-6">About Solutions Gen Ltd</h2>
               <p className="text-gray-200 mb-4 leading-relaxed">
                 Founded in 2006, Solutions General Ltd has been a leading provider of engineering and technology solutions across East Africa. With over 15 years of experience, we've successfully completed 500+ projects and maintained a 98% client satisfaction rate.
               </p>
