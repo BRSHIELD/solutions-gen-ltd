@@ -123,7 +123,7 @@ export default function Home() {
             loop
             playsInline
             className="w-full h-full object-cover"
-            src="https://videos.pexels.com/video-files/3571201/3571201-sd_640_360_25fps.mp4"
+            src="https://videos.pexels.com/video-files/16499745/16499745-hd_1920_1080_24fps.mp4"
           />
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/50" />
