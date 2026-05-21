@@ -45,7 +45,7 @@ export default function Navbar() {
             <motion.div key={item.href} whileHover={{ y: -2 }}>
               <Link href={item.href} className="text-gray-700 hover:text-[#1E3A5F] transition-colors font-medium relative group">
                 {item.label}
-                <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#1E3A5F] to-[#00D084] group-hover:w-full transition-all duration-300" />
+                <motion.span className="absolute bottom-0 left-0 w-0 h-1 bg-[#00D084] group-hover:w-full transition-all duration-300 rounded-full" />
               </Link>
             </motion.div>
           ))}
