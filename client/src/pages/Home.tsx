@@ -467,12 +467,12 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)" }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
-                className="bg-gray-50 rounded-lg p-6 flex items-center justify-center min-h-[120px] border border-gray-200 cursor-pointer group"
+                className="bg-gray-50 rounded-lg p-6 flex items-center justify-center min-h-[150px] md:min-h-[120px] border border-gray-200 cursor-pointer group"
               >
                 <img
                   src={logo}
                   alt={`Client ${index + 1}`}
-                  className="max-w-full max-h-20 object-contain group-hover:opacity-80 transition-opacity"
+                  className="max-w-[180px] max-h-[100px] object-contain group-hover:opacity-80 transition-opacity"
                 />
               </motion.div>
             ))}
