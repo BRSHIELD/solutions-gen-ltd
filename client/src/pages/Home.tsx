@@ -18,35 +18,38 @@ export default function Home() {
 
   const services = [
     {
-      icon: Zap,
       title: "Electrical Engineering",
       description: "Expert electrical installations, maintenance, and system design for commercial and industrial applications.",
     },
     {
-      icon: Sun,
       title: "Solar & Green Energy",
       description: "Sustainable solar power solutions and renewable energy systems for businesses and communities.",
     },
     {
-      icon: Shield,
       title: "Security Systems",
       description: "Advanced CCTV and security solutions with 24/7 monitoring and access control systems.",
     },
     {
-      icon: Wifi,
       title: "Networking & Communication",
       description: "Robust networking infrastructure and communication systems for seamless connectivity.",
     },
     {
-      icon: Lock,
       title: "Access Control Systems",
       description: "Modern access control and biometric security solutions for enhanced facility protection.",
     },
     {
-      icon: Code,
       title: "ICT Solutions",
       description: "Comprehensive IT infrastructure, cloud solutions, and digital transformation services.",
     },
+  ];
+
+  const serviceImages = [
+    "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/service-electrical-engineering-o8rWkt4bLrHi88Q2CmNbQg.webp",
+    "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/service-solar-green-energy-2Yh2YQ6DNp9JaTnx55qZMw.webp",
+    "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/service-security-systems-BXH8QsiCs39t3FNeoZGtdQ.webp",
+    "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/service-networking-communication-bYyowKL4YKKyHp3MiDLo9F.webp",
+    "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/service-access-control-AuMmvhwSovWkY2GCW62pYW.webp",
+    "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/service-ict-solutions-Prei2sFUthrrGDfXaQtMxt.webp",
   ];
 
   const stats = [
@@ -97,18 +100,15 @@ export default function Home() {
 
     return (
       <div className="text-center">
-        <div className="text-5xl font-bold text-[#00D084] mb-2">
-          {count}
-          {label.includes("%") ? "%" : label.includes("+") ? "+" : ""}
-        </div>
-        <p className="text-gray-600 font-medium">{label}</p>
+        <div className="text-5xl font-bold text-[#00D084] mb-2">{count}+</div>
+        <p className="text-gray-600">{label}</p>
       </div>
     );
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section with Video Background */}
+    <div className="min-h-screen">
+      {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -135,72 +135,71 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-2xl text-white"
+            className="max-w-2xl"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Premium Engineering & Smart Technology Solutions
             </h1>
-            <p className="text-xl md:text-2xl text-gray-100 mb-8">
+            <p className="text-xl text-gray-200 mb-8">
               Delivering excellence in electrical engineering, solar energy, security systems, and ICT solutions across East Africa.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <motion.a
-                href="https://wa.me/254722588932"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05, boxShadow: "0 15px 35px rgba(0, 208, 132, 0.4)" }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-[#00D084] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#0FA55F] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
-              >
-                Get Started
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </motion.a>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link href="/contact" className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-[#1E3A5F] transition-all duration-300 block text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex gap-4"
+            >
+              <Link href="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0, 208, 132, 0.4)" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-[#00D084] text-white px-8 py-4 rounded-lg font-semibold flex items-center gap-2 hover:bg-[#00B870] transition-colors"
+                >
+                  Get Started <ArrowRight size={20} />
+                </motion.button>
+              </Link>
+              <Link href="/services">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#1E3A5F] transition-colors"
+                >
                   Learn More
-                </Link>
-              </motion.div>
-            </div>
+                </motion.button>
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </motion.section>
 
-      {/* Company Overview */}
+      {/* Company Overview Section */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="py-20 bg-gray-50"
+        className="py-20 bg-gradient-to-r from-[#1E3A5F] to-[#2A5A7F] text-white"
       >
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <motion.img 
-                src="/manus-storage/EnhancedOriginalLogo_20c92336.png" 
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/EnhancedOriginalLogo-7nCKmQjGgkBBfQKQmjRhvD.webp"
                 alt="Solutions General Ltd Logo"
-                className="w-20 h-20 object-contain mb-6"
-                whileHover={{ scale: 1.1 }}
+                className="w-32 h-32 mb-6"
               />
-              <h2 className="text-4xl font-bold text-[#1E3A5F] mb-6">
-                About Solutions Gen Ltd
-              </h2>
-              <p className="text-gray-700 text-lg mb-4">
-                With over 15 years of experience, Solutions Gen Ltd has established itself as a leading provider of premium engineering and smart technology solutions across East Africa.
+              <h2 className="text-4xl font-bold mb-4">About Solutions Gen Ltd</h2>
+              <p className="text-gray-200 mb-4 leading-relaxed">
+                Founded in 2006, Solutions General Ltd has been a leading provider of engineering and technology solutions across East Africa. With over 15 years of experience, we've successfully completed 500+ projects and maintained a 98% client satisfaction rate.
               </p>
-              <p className="text-gray-700 text-lg mb-6">
-                We specialize in delivering innovative, reliable, and sustainable solutions that drive business growth and operational excellence for our clients.
+              <p className="text-gray-200 leading-relaxed">
+                Our team of 50+ expert engineers is dedicated to delivering innovative, reliable, and cost-effective solutions that drive business growth and operational excellence.
               </p>
-              <motion.div whileHover={{ x: 5 }}>
-                <Link href="/about" className="text-[#00D084] font-bold hover:text-[#0FA55F] transition-colors flex items-center gap-2">
-                  Learn more about us
-                  <ArrowRight size={20} />
-                </Link>
-              </motion.div>
             </motion.div>
+
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -217,14 +216,14 @@ export default function Home() {
                   key={index}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)" }}
+                  whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)" }}
                   transition={{ duration: 0.6, delay: index * 0.05 }}
-                  className="bg-white p-6 rounded-lg shadow-md text-center cursor-pointer"
+                  className="bg-white/10 backdrop-blur p-6 rounded-lg text-center cursor-pointer border border-white/20"
                 >
                   <div className="text-3xl font-bold text-[#00D084] mb-2">
                     {item.number}
                   </div>
-                  <p className="text-gray-600">{item.label}</p>
+                  <p className="text-gray-200">{item.label}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -255,93 +254,48 @@ export default function Home() {
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -12, boxShadow: "0 25px 50px rgba(0, 0, 0, 0.1)" }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-gradient-to-br from-gray-50 to-white rounded-lg shadow-md border border-gray-100 cursor-pointer group overflow-hidden"
+              >
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={{ y: -12, boxShadow: "0 25px 50px rgba(0, 0, 0, 0.1)" }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-lg shadow-md border border-gray-100 cursor-pointer group"
+                  whileHover={{ scale: 1.05 }}
+                  className="w-full h-48 overflow-hidden"
                 >
-                  <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center mb-6 group-hover:shadow-lg transition-shadow"
-                  >
-                    <Icon size={32} className="text-white" />
-                  </motion.div>
+                  <img
+                    src={serviceImages[index]}
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+                <div className="p-8">
                   <h3 className="text-2xl font-bold text-[#1E3A5F] mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed mb-4">
                     {service.description}
                   </p>
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "100%" }}
-                    transition={{ duration: 0.6, delay: index * 0.1 + 0.3 }}
-                    className="h-1 bg-gradient-to-r from-[#1E3A5F] to-[#00D084] mt-4 rounded"
-                  />
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Why Choose Us */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="py-20 bg-gradient-to-r from-[#1E3A5F] to-[#0FA55F] text-white"
-      >
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-4">Why Choose Solutions Gen?</h2>
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-              We combine expertise, innovation, and commitment to deliver exceptional results
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              "Expert Team: 50+ experienced engineers and technicians",
-              "Proven Track Record: 500+ successful projects delivered",
-              "Quality Assurance: ISO certified processes and standards",
-              "24/7 Support: Round-the-clock customer service",
-              "Innovative Solutions: Latest technology and best practices",
-              "Competitive Pricing: Value for money without compromising quality",
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                whileHover={{ x: 10 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="flex items-start gap-4 cursor-pointer"
-              >
-                <motion.div
-                  whileHover={{ scale: 1.2, rotate: 360 }}
-                  className="w-8 h-8 bg-[#00D084] rounded-full flex items-center justify-center flex-shrink-0 mt-1"
-                >
-                  <span className="text-white font-bold">✓</span>
-                </motion.div>
-                <p className="text-lg">{item}</p>
+                  <Link href={`/services?service=${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                    <motion.button
+                      whileHover={{ x: 5 }}
+                      className="text-[#00D084] font-semibold flex items-center gap-2 hover:text-[#00B870] transition-colors"
+                    >
+                      Request for Site Visit <ArrowRight size={16} />
+                    </motion.button>
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </motion.section>
 
-      {/* Animated Statistics */}
+      {/* Why Choose Us Section */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -349,33 +303,40 @@ export default function Home() {
         className="py-20 bg-gray-50"
       >
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl font-bold text-[#1E3A5F] text-center mb-16"
+          >
+            Why Choose Solutions Gen?
+          </motion.h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { icon: "✓", title: "Expert Team", description: "50+ experienced engineers with proven track record" },
+              { icon: "✓", title: "Quality Assurance", description: "ISO certified processes and quality standards" },
+              { icon: "✓", title: "On-Time Delivery", description: "Committed to project timelines and deadlines" },
+              { icon: "✓", title: "24/7 Support", description: "Dedicated customer support and maintenance" },
+            ].map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 1.05 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -8 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white p-8 rounded-lg shadow-md text-center cursor-pointer"
               >
-                <AnimatedCounter value={stat.value} label={stat.label} />
+                <div className="text-4xl font-bold text-[#00D084] mb-4">{item.icon}</div>
+                <h3 className="text-xl font-bold text-[#1E3A5F] mb-3">{item.title}</h3>
+                <p className="text-gray-600">{item.description}</p>
               </motion.div>
             ))}
           </div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-center mt-12"
-          >
-            <p className="text-lg text-gray-600 font-semibold">
-              <span className="text-[#00D084]">+</span> and more ongoing projects
-            </p>
-          </motion.div>
         </div>
       </motion.section>
 
-      {/* Our Clients */}
+      {/* Our Clients Section */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -383,76 +344,63 @@ export default function Home() {
         className="py-20 bg-white"
       >
         <div className="container mx-auto px-4">
-          <motion.div
+          <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-4xl font-bold text-[#1E3A5F] text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-[#1E3A5F] mb-4">
-              Our Clients
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Trusted by leading organizations across East Africa
-            </p>
-          </motion.div>
+            Our Clients
+          </motion.h2>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {[
-              { name: "Aero Club of East Africa", logo: "/manus-storage/AeroClubofEastafrica_58176696.jfif" },
-              { name: "ASL - Airline Services", logo: "/manus-storage/ASL_65bdd2d0.PNG" },
-              ...Array(10).fill(null).map((_, i) => ({ name: `Client ${i + 3}`, logo: null }))
-            ].map((client, index) => (
+              "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/AeroClubofEastafrica-Uh8jZgKZhpJBKmvJnWpfBm.webp",
+              "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/ASL-7sBJKzQVCvXJYzZhVQg.webp",
+              null, null, null, null,
+              null, null, null, null, null, null,
+            ].map((logo, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 1.1, boxShadow: "0 15px 35px rgba(0, 208, 132, 0.2)" }}
+                whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)" }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
-                className="flex items-center justify-center bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-[#00D084] cursor-pointer min-h-[150px]"
+                className="bg-gray-50 rounded-lg p-6 flex items-center justify-center min-h-[120px] border border-gray-200 cursor-pointer group"
               >
-                <div className="text-center">
-                  {client.logo ? (
-                    <motion.img
-                      src={client.logo}
-                      alt={client.name}
-                      className="max-w-full max-h-24 object-contain mx-auto mb-2"
-                      whileHover={{ scale: 1.05 }}
-                    />
-                  ) : (
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center mb-2 mx-auto">
-                      <span className="text-white text-2xl font-bold">C{index + 1}</span>
-                    </div>
-                  )}
-                  <p className="text-sm text-gray-600 font-medium">{client.name}</p>
-                </div>
+                {logo ? (
+                  <img
+                    src={logo}
+                    alt={`Client ${index + 1}`}
+                    className="max-w-full max-h-20 object-contain group-hover:opacity-80 transition-opacity"
+                  />
+                ) : (
+                  <div className="text-gray-400 text-center">
+                    <p className="text-sm font-semibold">Your Logo Here</p>
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
         </div>
       </motion.section>
 
-      {/* Testimonials */}
+      {/* Testimonials Section */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="py-20 bg-gray-50"
+        className="py-20 bg-gradient-to-r from-[#1E3A5F] to-[#2A5A7F] text-white"
       >
         <div className="container mx-auto px-4">
-          <motion.div
+          <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-4xl font-bold text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-[#1E3A5F] mb-4">
-              Client Testimonials
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              What our satisfied clients say about us
-            </p>
-          </motion.div>
+            What Our Clients Say
+          </motion.h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
@@ -460,27 +408,19 @@ export default function Home() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)" }}
+                whileHover={{ y: -8 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer"
+                className="bg-white/10 backdrop-blur p-8 rounded-lg border border-white/20 cursor-pointer"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <motion.span
-                      key={i}
-                      initial={{ opacity: 0, scale: 0 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: i * 0.1 }}
-                      className="text-[#FF6B35]"
-                    >
-                      ★
-                    </motion.span>
+                    <span key={i} className="text-[#FFD700] text-xl">★</span>
                   ))}
                 </div>
-                <p className="text-gray-700 mb-6 leading-relaxed">"{testimonial.text}"</p>
+                <p className="text-gray-200 mb-6 italic">"{testimonial.text}"</p>
                 <div>
-                  <p className="font-bold text-[#1E3A5F]">{testimonial.name}</p>
-                  <p className="text-gray-600 text-sm">{testimonial.company}</p>
+                  <p className="font-semibold text-white">{testimonial.name}</p>
+                  <p className="text-gray-300 text-sm">{testimonial.company}</p>
                 </div>
               </motion.div>
             ))}
@@ -493,26 +433,34 @@ export default function Home() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="py-20 bg-gradient-to-r from-[#1E3A5F] to-[#0FA55F] text-white"
+        className="py-20 bg-[#00D084]"
       >
         <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            className="text-4xl font-bold text-white mb-6"
           >
-            <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Facility?</h2>
-            <p className="text-xl text-gray-100 mb-8 max-w-2xl mx-auto">
-              Let's discuss how our expertise can deliver exceptional engineering and technology solutions for your business.
-            </p>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <a href="https://wa.me/254722588932" target="_blank" rel="noopener noreferrer" className="inline-block">
-                <button className="bg-white text-[#1E3A5F] font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 text-lg cursor-pointer">
-                  Contact Us Today
-                </button>
-              </a>
-            </motion.div>
-          </motion.div>
+            Ready to Transform Your Business?
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-xl text-white/90 mb-8 max-w-2xl mx-auto"
+          >
+            Contact us today for a free consultation and discover how Solutions Gen can help you achieve your goals.
+          </motion.p>
+          <Link href="/contact">
+            <motion.button
+              whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.2)" }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white text-[#00D084] px-10 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
+            >
+              Get In Touch
+            </motion.button>
+          </Link>
         </div>
       </motion.section>
     </div>
