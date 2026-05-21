@@ -179,26 +179,50 @@ export default function Home() {
         transition={{ duration: 0.8 }}
         className="py-20 bg-gradient-to-r from-[#1E3A5F] to-[#2A5A7F] text-white"
       >
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
+        <div className="container mx-auto px-4 max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            {/* Logo */}
+            <motion.img
+              src="/manus-storage/EnhancedOriginalLogo_20c92336.png"
+              alt="Solutions General Ltd Logo"
+              className="w-24 h-24 mb-6 object-contain mx-auto"
+              whileHover={{ scale: 1.05 }}
+            />
+            
+            {/* Title */}
+            <h2 className="text-3xl font-bold mb-6">Powering Possibilities</h2>
+            
+            {/* First paragraph - full width */}
+            <motion.p
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-gray-200 mb-4 leading-relaxed max-w-2xl mx-auto"
             >
-              <motion.img
-                src="/manus-storage/EnhancedOriginalLogo_20c92336.png"
-                alt="Solutions General Ltd Logo"
-                className="w-32 h-32 mb-6 object-contain"
-                whileHover={{ scale: 1.05 }}
-              />
-              <h2 className="text-3xl font-bold mb-6">About Solutions Gen Ltd</h2>
-              <p className="text-gray-200 mb-4 leading-relaxed">
-                Founded in 2006, Solutions General Ltd has been a leading provider of engineering and technology solutions across East Africa. With over 15 years of experience, we've successfully completed 500+ projects and maintained a 98% client satisfaction rate.
-              </p>
-              <p className="text-gray-200 leading-relaxed mb-8">
-                Our team of 50+ expert engineers is dedicated to delivering innovative, reliable, and cost-effective solutions that drive business growth and operational excellence.
-              </p>
+              Founded in 2006, Solutions General Ltd has been a leading provider of engineering and technology solutions across East Africa. With over 15 years of experience, we've successfully completed 500+ projects and maintained a 98% client satisfaction rate.
+            </motion.p>
+            
+            {/* Second paragraph - narrower */}
+            <motion.p
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-gray-200 leading-relaxed mb-8 max-w-xl mx-auto"
+            >
+              Our team of 50+ expert engineers is dedicated to delivering innovative, reliable, and cost-effective solutions that drive business growth and operational excellence.
+            </motion.p>
+            
+            {/* Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
               <Link href="/portfolio">
                 <motion.button
                   whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(0, 208, 132, 0.3)" }}
@@ -209,9 +233,7 @@ export default function Home() {
                 </motion.button>
               </Link>
             </motion.div>
-
-
-          </div>
+          </motion.div>
         </div>
       </motion.section>
 
@@ -232,6 +254,22 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/60 z-0"></div>
         
         <div className="container mx-auto px-4 relative z-10">
+          {/* Graffiti-style heading */}
+          <motion.h2
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-2xl md:text-3xl font-black text-white mb-12 italic skew-x-[-12deg] drop-shadow-lg"
+            style={{
+              fontFamily: '"Georgia", serif',
+              letterSpacing: '-0.02em',
+              textShadow: '3px 3px 0px rgba(0, 208, 132, 0.4), 6px 6px 0px rgba(0, 0, 0, 0.3)',
+              fontWeight: '700',
+            }}
+          >
+            Your Trusted Solution Partner
+          </motion.h2>
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
