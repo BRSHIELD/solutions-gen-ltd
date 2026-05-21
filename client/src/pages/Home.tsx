@@ -186,12 +186,16 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/EnhancedOriginalLogo-7nCKmQjGgkBBfQKQmjRhvD.webp"
+              <motion.img
+                src="/manus-storage/EnhancedOriginalLogo_20c92336.png"
                 alt="Solutions General Ltd Logo"
-                className="w-32 h-32 mb-6"
+                className="w-32 h-32 mb-6 object-contain"
+                whileHover={{ scale: 1.05 }}
               />
-              <h2 className="text-4xl font-bold mb-4">About Solutions Gen Ltd</h2>
+              <div className="flex items-baseline gap-3 mb-4">
+                <h2 className="text-4xl font-bold">About Solutions Gen Ltd</h2>
+                <span className="text-lg text-[#00D084] font-semibold">Since 2006</span>
+              </div>
               <p className="text-gray-200 mb-4 leading-relaxed">
                 Founded in 2006, Solutions General Ltd has been a leading provider of engineering and technology solutions across East Africa. With over 15 years of experience, we've successfully completed 500+ projects and maintained a 98% client satisfaction rate.
               </p>
