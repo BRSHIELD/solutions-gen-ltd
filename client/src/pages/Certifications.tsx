@@ -185,7 +185,7 @@ export default function Certifications() {
               </p>
             </motion.div>
           ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
               {filteredCertificates.map((cert, index) => {
                 const expired = isExpired(cert.expiryDate);
                 return (
@@ -193,19 +193,19 @@ export default function Certifications() {
                     key={cert.id}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)" }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    whileHover={{ y: -4, boxShadow: "0 12px 24px rgba(0, 0, 0, 0.1)" }}
+                    transition={{ duration: 0.6, delay: index * 0.05 }}
                     className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:border-[#00D084] transition-all group"
                   >
                     {/* Certificate Image */}
-                    <div className="relative h-64 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                    <div className="relative h-32 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                       <motion.div
                         whileHover={{ scale: 1.05 }}
                         className="w-full h-full flex items-center justify-center"
                       >
                         <div className="text-center">
-                          <Award size={64} className="mx-auto text-[#00D084] mb-4 opacity-50" />
-                          <p className="text-gray-600 font-semibold text-sm px-4">
+                          <Award size={32} className="mx-auto text-[#00D084] mb-2 opacity-50" />
+                          <p className="text-gray-600 font-semibold text-xs px-2 line-clamp-2">
                             {cert.title}
                           </p>
                         </div>
@@ -234,30 +234,30 @@ export default function Certifications() {
                     </div>
 
                     {/* Certificate Details */}
-                    <div className="p-6">
-                      <div className="mb-4">
-                        <h3 className="text-xl font-bold text-[#1E3A5F] mb-2">
+                    <div className="p-3">
+                      <div className="mb-2">
+                        <h3 className="text-sm font-bold text-[#1E3A5F] mb-1 line-clamp-1">
                           {cert.title}
                         </h3>
-                        <p className="text-sm text-gray-600 mb-1">{cert.issuer}</p>
-                        <p className="text-xs text-gray-500 italic">{cert.description}</p>
+                        <p className="text-xs text-gray-600 mb-0.5 line-clamp-1">{cert.issuer}</p>
+                        <p className="text-xs text-gray-500 italic line-clamp-1">{cert.description}</p>
                       </div>
 
                       {/* Category Badge */}
-                      <div className="mb-4">
-                        <span className="inline-block bg-[#00D084]/10 text-[#00D084] px-3 py-1 rounded-full text-xs font-semibold">
+                      <div className="mb-2">
+                        <span className="inline-block bg-[#00D084]/10 text-[#00D084] px-2 py-0.5 rounded-full text-xs font-semibold">
                           {cert.category}
                         </span>
                       </div>
 
                       {/* Dates */}
-                      <div className="space-y-2 mb-6 text-sm text-gray-600 border-t border-gray-200 pt-4">
+                      <div className="space-y-1 mb-3 text-xs text-gray-600 border-t border-gray-200 pt-2">
                         {cert.issueDate && (
-                          <div className="flex items-center gap-2">
-                            <Calendar size={16} className="text-[#00D084]" />
-                            <span>
+                          <div className="flex items-center gap-1">
+                            <Calendar size={12} className="text-[#00D084]" />
+                            <span className="line-clamp-1">
                               Issued: {new Date(cert.issueDate).toLocaleDateString("en-US", {
-                                year: "numeric",
+                                year: "2-digit",
                                 month: "short",
                                 day: "numeric",
                               })}
@@ -265,11 +265,11 @@ export default function Certifications() {
                           </div>
                         )}
                         {cert.expiryDate && (
-                          <div className="flex items-center gap-2">
-                            <Calendar size={16} className={expired ? "text-red-500" : "text-[#00D084]"} />
-                            <span className={expired ? "text-red-600 font-semibold" : ""}>
-                              Expires: {new Date(cert.expiryDate).toLocaleDateString("en-US", {
-                                year: "numeric",
+                          <div className="flex items-center gap-1">
+                            <Calendar size={12} className={expired ? "text-red-500" : "text-[#00D084]"} />
+                            <span className={`line-clamp-1 ${expired ? "text-red-600 font-semibold" : ""}`}>
+                              Exp: {new Date(cert.expiryDate).toLocaleDateString("en-US", {
+                                year: "2-digit",
                                 month: "short",
                                 day: "numeric",
                               })}
@@ -281,18 +281,12 @@ export default function Certifications() {
                       {/* View Certificate Button */}
                       <motion.a
                         href="#"
-                        whileHover={{ scale: 1.05, x: 5 }}
+                        whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="w-full inline-flex items-center justify-center gap-2 bg-[#00D084] text-white px-4 py-3 rounded-lg font-semibold hover:bg-[#0FA55F] transition-colors group"
+                        className="w-full inline-flex items-center justify-center gap-1 bg-[#00D084] text-white px-2 py-2 rounded text-xs font-semibold hover:bg-[#0FA55F] transition-colors"
                       >
-                        <ExternalLink size={18} />
-                        View Certificate
-                        <motion.span
-                          animate={{ x: [0, 3, 0] }}
-                          transition={{ duration: 1.5, repeat: Infinity }}
-                        >
-                          →
-                        </motion.span>
+                        <ExternalLink size={12} />
+                        View
                       </motion.a>
                     </div>
                   </motion.div>
