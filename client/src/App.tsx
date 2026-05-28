@@ -11,6 +11,7 @@ import Portfolio from "./pages/Portfolio";
 import ProjectDetail from "./pages/ProjectDetail";
 import Gallery from "./pages/Gallery";
 import Certifications from "./pages/Certifications";
+import Testimonials from "./pages/Testimonials";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -30,6 +31,7 @@ function Router() {
           <Route path={"/portfolio/:id"} component={ProjectDetail} />
           <Route path={"/gallery"} component={Gallery} />
           <Route path={"/certifications"} component={Certifications} />
+          <Route path={"/testimonials"} component={Testimonials} />
           <Route path={"/contact"} component={Contact} />
           <Route path={"/404"} component={NotFound} />
           {/* Final fallback route */}

@@ -474,48 +474,6 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Testimonials Section */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="py-20 bg-gradient-to-r from-[#1E3A5F] to-[#2A5A7F] text-white"
-      >
-        <div className="container mx-auto px-4">
-          <motion.h2
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl font-bold text-center mb-16"
-          >
-            What Our Clients Say
-          </motion.h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -8 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white/10 backdrop-blur p-8 rounded-lg border border-white/20 cursor-pointer"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-[#FFD700] text-xl">★</span>
-                  ))}
-                </div>
-                <p className="text-gray-200 mb-6 italic">"{testimonial.text}"</p>
-                <div>
-                  <p className="font-semibold text-white">{testimonial.name}</p>
-                  <p className="text-gray-300 text-sm">{testimonial.company}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
 
       {/* Industries We Serve Section */}
       <motion.section
