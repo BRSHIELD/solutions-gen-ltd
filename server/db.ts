@@ -1,6 +1,6 @@
 import { eq, desc } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users, certificates, InsertCertificate } from "../drizzle/schema";
+import { InsertUser, users, certificates, InsertCertificate, contactSubmissions, InsertContactSubmission } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -152,6 +152,55 @@ export async function deleteCertificate(id: number) {
     return true;
   } catch (error) {
     console.error("[Database] Failed to delete certificate:", error);
+    throw error;
+  }
+}
+
+// Contact submission queries
+export async function createContactSubmission(submission: InsertContactSubmission) {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot create contact submission: database not available");
+    return null;
+  }
+
+  try {
+    const result = await db.insert(contactSubmissions).values(submission);
+    return result;
+  } catch (error) {
+    console.error("[Database] Failed to create contact submission:", error);
+    throw error;
+  }
+}
+
+export async function getContactSubmissions() {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot get contact submissions: database not available");
+    return [];
+  }
+
+  try {
+    const result = await db.select().from(contactSubmissions).orderBy(desc(contactSubmissions.createdAt));
+    return result;
+  } catch (error) {
+    console.error("[Database] Failed to get contact submissions:", error);
+    return [];
+  }
+}
+
+export async function updateContactSubmissionStatus(id: number, status: "new" | "read" | "responded") {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot update contact submission: database not available");
+    return false;
+  }
+
+  try {
+    await db.update(contactSubmissions).set({ status }).where(eq(contactSubmissions.id, id));
+    return true;
+  } catch (error) {
+    console.error("[Database] Failed to update contact submission:", error);
     throw error;
   }
 }

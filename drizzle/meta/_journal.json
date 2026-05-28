@@ -15,6 +15,13 @@
       "when": 1779302861057,
       "tag": "0001_useful_bill_hollister",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1779994641108,
+      "tag": "0002_rainy_nekra",
+      "breakpoints": true
     }
   ]
 }

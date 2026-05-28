@@ -30,8 +30,8 @@
 - [x] Optimize font sizes for compact layout
 - [x] Implement "Related Projects" carousels on ProjectDetail pages
 - [x] Add certificate download links or modal viewers
-- [ ] Integrate backend service for contact form submissions
-- [ ] Add smooth scroll animations for section transitions
+- [x] Integrate backend service for contact form submissions
+- [x] Add smooth scroll animations for section transitions
 
 ## Completed Features
 - [x] Light green hover line effect on navigation

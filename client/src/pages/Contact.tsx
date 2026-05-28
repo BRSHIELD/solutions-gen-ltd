@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Clock, CheckCircle, AlertCircle } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
+import { trpc } from "@/lib/trpc";
 
 export default function Contact() {
   const [location] = useLocation();
@@ -165,6 +166,31 @@ export default function Contact() {
     return Object.values(newErrors).every((error) => error === "");
   };
 
+  const submitContactMutation = trpc.contact.submit.useMutation({
+    onSuccess: () => {
+      console.log("Form submitted successfully:", formData);
+      setSubmitSuccess(true);
+      setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+      setTouched({ name: false, email: false, phone: false, service: false, message: false });
+      setErrors({ name: "", email: "", phone: "", service: "", message: "" });
+
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        setSubmitSuccess(false);
+      }, 5000);
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    },
+    onError: (error) => {
+      console.error("Form submission error:", error);
+      setErrors((prev) => ({
+        ...prev,
+        message: "Failed to submit form. Please try again.",
+      }));
+    },
+  });
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -174,23 +200,20 @@ export default function Contact() {
 
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
-      setSubmitSuccess(true);
-      setFormData({ name: "", email: "", phone: "", service: "", message: "" });
-      setTouched({ name: false, email: false, phone: false, service: false, message: false });
-      setErrors({ name: "", email: "", phone: "", service: "", message: "" });
+    try {
+      await submitContactMutation.mutateAsync({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || "",
+        service: formData.service,
+        message: formData.message,
+        timestamp: new Date().toISOString(),
+      });
+    } catch (error) {
+      console.error("Form submission error:", error);
+    } finally {
       setIsSubmitting(false);
-
-      // Hide success message after 5 seconds
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
-
-      // Scroll to top
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 1500);
+    }
   };
 
   const isFormValid = Object.values(errors).every((error) => error === "") &&
