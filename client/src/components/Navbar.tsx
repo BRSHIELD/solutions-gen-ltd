@@ -67,8 +67,8 @@ export default function Navbar() {
               >
                 <motion.span
                   animate={{
-                    color: isNavHovered && hoveredItem === item.href ? "#00D084" : "#374151",
-                    textShadow: isNavHovered && hoveredItem === item.href 
+                    color: hoveredItem === item.href ? "#00D084" : "#374151",
+                    textShadow: hoveredItem === item.href 
                       ? "0 0 10px rgba(0, 208, 132, 0.5)" 
                       : "none",
                   }}
