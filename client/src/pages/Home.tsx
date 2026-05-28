@@ -172,72 +172,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Company Overview Section */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="py-12 bg-gradient-to-r from-[#1E3A5F] to-[#2A5A7F] text-white"
-      >
-        <div className="container mx-auto px-4 max-w-2xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            {/* Logo */}
-            <motion.img
-              src="/manus-storage/EnhancedOriginalLogo_20c92336.png"
-              alt="Solutions General Ltd Logo"
-              className="w-16 h-16 mb-3 object-contain mx-auto"
-              whileHover={{ scale: 1.05 }}
-            />
-            
-            {/* Title */}
-            <h2 className="text-2xl font-bold mb-3">Powering Possibilities</h2>
-            
-            {/* First paragraph - full width */}
-            <motion.p
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-gray-200 mb-2 leading-relaxed max-w-xl mx-auto text-sm"
-            >
-              Founded in 1996, Solutions General Ltd has been a leading provider of engineering and technology solutions across East Africa. With over 30 years of experience, we've successfully completed 500+ projects and maintained a 98% client satisfaction rate.
-            </motion.p>
-            
-            {/* Second paragraph - narrower */}
-            <motion.p
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-gray-200 leading-relaxed mb-4 max-w-lg mx-auto text-sm"
-            >
-              Our team of 50+ expert engineers is dedicated to delivering innovative, reliable, and cost-effective solutions that drive business growth and operational excellence.
-            </motion.p>
-            
-            {/* Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <Link href="/portfolio">
-                <motion.button
-                  whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(0, 208, 132, 0.3)" }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-[#00D084] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#00B870] transition-colors inline-flex items-center gap-2"
-                >
-                  View Our Projects <ArrowRight size={18} />
-                </motion.button>
-              </Link>
-            </motion.div>
-          </motion.div>
-        </div>
-      </motion.section>
-
-      {/* Statistics Section with Background */}
+      {/* Combined Company Overview & Statistics Section */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -253,48 +188,115 @@ export default function Home() {
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/60 z-0"></div>
         
-        <div className="container mx-auto px-4 relative z-10 max-w-3xl">
-          {/* Graffiti-style heading */}
-          <motion.h2
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-lg md:text-xl font-black text-white mb-8 italic skew-x-[-12deg] drop-shadow-lg"
-            style={{
-              fontFamily: '"Georgia", serif',
-              letterSpacing: '-0.02em',
-              textShadow: '3px 3px 0px rgba(0, 208, 132, 0.4), 6px 6px 0px rgba(0, 0, 0, 0.3)',
-              fontWeight: '700',
-            }}
-          >
-            Your Trusted Solution Partner
-          </motion.h2>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0, 208, 132, 0.3)" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white/10 backdrop-blur p-4 rounded-lg text-center border border-white/20 hover:border-[#00D084]/50 transition-colors"
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Left Column - Powering Possibilities */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-white text-center md:text-left flex flex-col justify-center"
+            >
+              {/* Logo */}
+              <motion.img
+                src="/manus-storage/EnhancedOriginalLogo_20c92336.png"
+                alt="Solutions General Ltd Logo"
+                className="w-12 h-12 mb-3 object-contain md:mx-0 mx-auto"
+                whileHover={{ scale: 1.05 }}
+              />
+              
+              {/* Title */}
+              <h2 className="text-xl font-bold mb-3">Powering Possibilities</h2>
+              
+              {/* First paragraph */}
+              <motion.p
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="text-gray-200 mb-2 leading-relaxed text-sm"
               >
-                <div className="text-2xl font-bold text-[#00D084] mb-2">
-                  <AnimatedCounter value={stat.value} label={stat.label} />
-                </div>
+                Founded in 1996, Solutions General Ltd has been a leading provider of engineering and technology solutions across East Africa. With over 30 years of experience, we've successfully completed 500+ projects and maintained a 98% client satisfaction rate.
+              </motion.p>
+              
+              {/* Second paragraph */}
+              <motion.p
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-gray-200 leading-relaxed mb-4 text-sm"
+              >
+                Our team of 50+ expert engineers is dedicated to delivering innovative, reliable, and cost-effective solutions that drive business growth and operational excellence.
+              </motion.p>
+              
+              {/* Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <Link href="/portfolio">
+                  <motion.button
+                    whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(0, 208, 132, 0.3)" }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-[#00D084] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#00B870] transition-colors inline-flex items-center gap-2 text-sm"
+                  >
+                    View Our Projects <ArrowRight size={16} />
+                  </motion.button>
+                </Link>
               </motion.div>
-            ))}
-          </motion.div>
+            </motion.div>
+
+            {/* Right Column - Your Trusted Solution Partner (Statistics) */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-white flex flex-col justify-center"
+            >
+              {/* Graffiti-style heading */}
+              <motion.h2
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-lg md:text-xl font-black text-white mb-6 italic skew-x-[-12deg] drop-shadow-lg"
+                style={{
+                  fontFamily: '"Georgia", serif',
+                  letterSpacing: '-0.02em',
+                  textShadow: '3px 3px 0px rgba(0, 208, 132, 0.4), 6px 6px 0px rgba(0, 0, 0, 0.3)',
+                  fontWeight: '700',
+                }}
+              >
+                Your Trusted Solution Partner
+              </motion.h2>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="grid grid-cols-2 gap-4"
+              >
+                {stats.map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0, 208, 132, 0.3)" }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="bg-white/10 backdrop-blur p-4 rounded-lg text-center border border-white/20 hover:border-[#00D084]/50 transition-colors"
+                  >
+                    <div className="text-2xl font-bold text-[#00D084] mb-2">
+                      <AnimatedCounter value={stat.value} label={stat.label} />
+                    </div>
+                    <div className="text-xs text-gray-300">{stat.label}</div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
       </motion.section>
 
-      {/* Services Grid */}
+            {/* Services Grid */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
