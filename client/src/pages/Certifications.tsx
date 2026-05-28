@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { Award, Download, Calendar, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Award, Download, Calendar, X } from "lucide-react";
 import { useState, useMemo, useEffect, useRef } from "react";
 
 export default function Certifications() {
@@ -7,6 +7,7 @@ export default function Certifications() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [autoScroll, setAutoScroll] = useState(true);
+  const [selectedCertificate, setSelectedCertificate] = useState<any>(null);
 
   // Sample certificates data
   const certificates = [
@@ -297,15 +298,15 @@ export default function Certifications() {
                       </div>
 
                       {/* View Certificate Button */}
-                      <motion.a
-                        href="#"
+                      <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
+                        onClick={() => setSelectedCertificate(cert)}
                         className="w-full inline-flex items-center justify-center gap-1 bg-[#00D084] text-white px-2 py-2 rounded text-xs font-semibold hover:bg-[#0FA55F] transition-colors"
                       >
-                        <ExternalLink size={12} />
+                        <Download size={12} />
                         View
-                      </motion.a>
+                      </motion.button>
 
                       {/* Hover Description Overlay */}
                       <motion.div
@@ -395,6 +396,148 @@ export default function Certifications() {
           </div>
         </div>
       </motion.section>
+
+      {/* Certificate Modal Viewer */}
+      <AnimatePresence>
+        {selectedCertificate && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedCertificate(null)}
+            className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white rounded-lg max-w-2xl w-full max-h-[80vh] overflow-auto"
+            >
+              <div className="sticky top-0 bg-white border-b border-gray-200 p-4 flex items-center justify-between">
+                <div>
+                  <h2 className="text-2xl font-bold text-[#1E3A5F]">
+                    {selectedCertificate.title}
+                  </h2>
+                  <p className="text-gray-600 text-sm mt-1">
+                    {selectedCertificate.issuer}
+                  </p>
+                </div>
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setSelectedCertificate(null)}
+                  className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                >
+                  <X size={24} className="text-gray-600" />
+                </motion.button>
+              </div>
+
+              <div className="p-6">
+                {/* Certificate Image */}
+                <div className="mb-6 bg-gray-100 rounded-lg overflow-hidden">
+                  <img
+                    src={selectedCertificate.imageUrl}
+                    alt={selectedCertificate.title}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+
+                {/* Certificate Details */}
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="text-lg font-semibold text-[#1E3A5F] mb-2">
+                      Description
+                    </h3>
+                    <p className="text-gray-700">
+                      {selectedCertificate.description}
+                    </p>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <p className="text-sm font-semibold text-gray-600 mb-1">
+                        CATEGORY
+                      </p>
+                      <p className="text-lg font-bold text-[#1E3A5F]">
+                        {selectedCertificate.category}
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <p className="text-sm font-semibold text-gray-600 mb-1">
+                        STATUS
+                      </p>
+                      <p
+                        className={`text-lg font-bold ${
+                          isExpired(selectedCertificate.expiryDate)
+                            ? "text-red-600"
+                            : "text-green-600"
+                        }`}
+                      >
+                        {isExpired(selectedCertificate.expiryDate)
+                          ? "EXPIRED"
+                          : "ACTIVE"}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-blue-50 p-4 rounded-lg">
+                      <p className="text-sm font-semibold text-gray-600 mb-1">
+                        ISSUED DATE
+                      </p>
+                      <p className="text-lg font-bold text-[#1E3A5F]">
+                        {new Date(
+                          selectedCertificate.issueDate
+                        ).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })}
+                      </p>
+                    </div>
+                    <div className="bg-green-50 p-4 rounded-lg">
+                      <p className="text-sm font-semibold text-gray-600 mb-1">
+                        EXPIRY DATE
+                      </p>
+                      <p
+                        className={`text-lg font-bold ${
+                          isExpired(selectedCertificate.expiryDate)
+                            ? "text-red-600"
+                            : "text-[#1E3A5F]"
+                        }`}
+                      >
+                        {new Date(
+                          selectedCertificate.expiryDate
+                        ).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Download Button */}
+                <motion.a
+                  href={selectedCertificate.imageUrl}
+                  download={`${selectedCertificate.title.replace(
+                    /\s+/g,
+                    "_"
+                  )}_certificate.webp`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="mt-6 w-full inline-flex items-center justify-center gap-2 bg-[#00D084] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#0FA55F] transition-colors"
+                >
+                  <Download size={18} />
+                  Download Certificate
+                </motion.a>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

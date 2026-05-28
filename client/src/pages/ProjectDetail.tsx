@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, CheckCircle } from "lucide-react";
+import { ArrowLeft, CheckCircle, ChevronRight } from "lucide-react";
 import { Link, useParams } from "wouter";
+import { useState } from "react";
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
@@ -130,6 +131,12 @@ export default function ProjectDetail() {
   ];
 
   const project = projects.find((p) => p.id === projectId);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  // Get related projects (same category, excluding current project)
+  const relatedProjects = projects.filter(
+    (p) => p.category === project?.category && p.id !== projectId
+  );
 
   if (!project) {
     return (
@@ -287,6 +294,69 @@ export default function ProjectDetail() {
           </div>
         </div>
       </motion.section>
+
+      {/* Related Projects Section */}
+      {relatedProjects.length > 0 && (
+        <motion.section
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="py-20 bg-gray-50"
+        >
+          <div className="container mx-auto px-4">
+            <motion.h2
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-4xl font-bold text-[#1E3A5F] mb-12 text-center"
+            >
+              Related {project.category} Projects
+            </motion.h2>
+
+            <div className="relative">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                className="flex gap-6 overflow-x-auto pb-4 scroll-smooth"
+                onScroll={(e) => setScrollPosition((e.target as HTMLDivElement).scrollLeft)}
+              >
+                {relatedProjects.map((relatedProject, index) => (
+                  <Link key={relatedProject.id} href={`/portfolio/${relatedProject.id}`}>
+                    <motion.div
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0, 208, 132, 0.2)" }}
+                      className="flex-shrink-0 w-80 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all cursor-pointer"
+                    >
+                      <div
+                        className={`h-40 bg-gradient-to-r ${relatedProject.image} flex items-center justify-center`}
+                      >
+                        <div className="text-white text-center">
+                          <p className="text-sm font-semibold mb-2">{relatedProject.category}</p>
+                          <p className="text-lg font-bold">{relatedProject.title}</p>
+                        </div>
+                      </div>
+                      <div className="p-6">
+                        <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                          {relatedProject.description}
+                        </p>
+                        <div className="flex items-center justify-between">
+                          <p className="text-[#00D084] font-semibold text-sm">
+                            {relatedProject.client}
+                          </p>
+                          <ChevronRight size={18} className="text-[#00D084]" />
+                        </div>
+                      </div>
+                    </motion.div>
+                  </Link>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+        </motion.section>
+      )}
 
       {/* CTA Section */}
       <motion.section

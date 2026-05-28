@@ -28,8 +28,8 @@
 - [x] Reduce vertical padding in "Powering Possibilities" section
 - [x] Reduce vertical padding in "Your Trusted Solution Partner" section
 - [x] Optimize font sizes for compact layout
-- [ ] Implement "Related Projects" carousels on ProjectDetail pages
-- [ ] Add certificate download links or modal viewers
+- [x] Implement "Related Projects" carousels on ProjectDetail pages
+- [x] Add certificate download links or modal viewers
 - [ ] Integrate backend service for contact form submissions
 - [ ] Add smooth scroll animations for section transitions
 
