@@ -8,24 +8,6 @@ export default function Portfolio() {
 
   const projects = [
     {
-      id: 1,
-      title: "Commercial Solar Installation",
-      category: "Solar Energy",
-      client: "TechCorp Kenya",
-      description: "Large-scale solar panel installation for a major retail chain with 500kW capacity",
-      results: "40% reduction in energy costs, 2-year ROI",
-      image: "from-[#1E3A5F] to-[#00D084]",
-    },
-    {
-      id: 2,
-      title: "Security System Upgrade",
-      category: "Security",
-      client: "SecureNet Solutions",
-      description: "Complete CCTV and access control system for corporate offices spanning 5 floors",
-      results: "24/7 monitoring, 99.9% uptime achieved",
-      image: "from-[#FF6B35] to-[#1E3A5F]",
-    },
-    {
       id: 3,
       title: "Electrical Infrastructure",
       category: "Electrical",
@@ -44,15 +26,6 @@ export default function Portfolio() {
       image: "from-[#1E3A5F] to-[#FF6B35]",
     },
     {
-      id: 5,
-      title: "Access Control System",
-      category: "Security",
-      client: "Corporate Plaza",
-      description: "Biometric and card-based access control for multi-tenant building",
-      results: "Real-time access logs, 5000+ users managed",
-      image: "from-[#FF6B35] to-[#00D084]",
-    },
-    {
       id: 6,
       title: "ICT Infrastructure",
       category: "ICT",
@@ -61,9 +34,36 @@ export default function Portfolio() {
       results: "ISO 27001 certified, zero security incidents",
       image: "from-[#00D084] to-[#1E3A5F]",
     },
+    {
+      id: 1,
+      title: "Commercial Solar Installation",
+      category: "Solar Energy",
+      client: "TechCorp Kenya",
+      description: "Large-scale solar panel installation for a major retail chain with 500kW capacity",
+      results: "40% reduction in energy costs, 2-year ROI",
+      image: "from-[#1E3A5F] to-[#00D084]",
+    },
+    {
+      id: 2,
+      title: "Security System Upgrade",
+      category: "Security",
+      client: "SecureNet Solutions",
+      description: "Complete CCTV and access control system for corporate offices spanning 5 floors",
+      results: "24/7 monitoring, 99.9% uptime achieved",
+      image: "from-[#FF6B35] to-[#1E3A5F]",
+    },
+    {
+      id: 5,
+      title: "Access Control System",
+      category: "Security",
+      client: "Corporate Plaza",
+      description: "Biometric and card-based access control for multi-tenant building",
+      results: "Real-time access logs, 5000+ users managed",
+      image: "from-[#FF6B35] to-[#00D084]",
+    },
   ];
 
-  const categories = ["All", "Solar Energy", "Security", "Electrical", "Networking", "ICT"];
+  const categories = ["All", "Electrical", "Networking", "ICT", "Solar Energy", "Security"];
 
   const filteredProjects =
     selectedCategory === "All"
