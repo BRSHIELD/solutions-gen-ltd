@@ -204,7 +204,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="text-gray-200 mb-4 leading-relaxed max-w-2xl mx-auto"
             >
-              Founded in 2006, Solutions General Ltd has been a leading provider of engineering and technology solutions across East Africa. With over 15 years of experience, we've successfully completed 500+ projects and maintained a 98% client satisfaction rate.
+              Founded in 1996, Solutions General Ltd has been a leading provider of engineering and technology solutions across East Africa. With over 30 years of experience, we've successfully completed 500+ projects and maintained a 98% client satisfaction rate.
             </motion.p>
             
             {/* Second paragraph - narrower */}
