@@ -52,19 +52,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA Button */}
-        <div className="hidden md:block">
-          <motion.a
-            href="https://wa.me/254700000000"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(30, 58, 95, 0.3)" }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-[#1E3A5F] text-white px-6 py-2 rounded-lg hover:bg-[#0FA55F] transition-all duration-300 font-medium inline-block cursor-pointer"
-          >
-            Get Started
-          </motion.a>
-        </div>
+
 
         {/* Mobile Menu Button */}
         <button
@@ -95,16 +83,7 @@ export default function Navbar() {
                 </Link>
               </motion.div>
             ))}
-            <motion.a
-              href="https://wa.me/254700000000"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-[#1E3A5F] text-white px-6 py-2 rounded-lg hover:bg-[#0FA55F] transition-all duration-300 font-medium text-center cursor-pointer block"
-            >
-              Get Started
-            </motion.a>
+
           </div>
         </motion.div>
       )}
