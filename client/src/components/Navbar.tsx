@@ -5,6 +5,8 @@ import { useState } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isNavHovered, setIsNavHovered] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -41,12 +43,47 @@ export default function Navbar() {
         </motion.div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8 ml-auto">
+        <div 
+          className="hidden md:flex items-center gap-8 ml-auto"
+          onMouseEnter={() => setIsNavHovered(true)}
+          onMouseLeave={() => {
+            setIsNavHovered(false);
+            setHoveredItem(null);
+          }}
+        >
           {navItems.map((item) => (
-            <motion.div key={item.href} whileHover={{ y: -2 }}>
-              <Link href={item.href} className="text-gray-700 hover:text-[#1E3A5F] transition-colors font-medium relative group">
-                {item.label}
-                <motion.span className="absolute bottom-0 left-0 w-0 h-1 bg-[#00D084] group-hover:w-full transition-all duration-300 rounded-full" />
+            <motion.div 
+              key={item.href} 
+              onMouseEnter={() => setHoveredItem(item.href)}
+              onMouseLeave={() => setHoveredItem(null)}
+              animate={{
+                opacity: isNavHovered && hoveredItem !== item.href ? 0.4 : 1,
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              <Link 
+                href={item.href} 
+                className="text-gray-700 font-medium relative group inline-block"
+              >
+                <motion.span
+                  animate={{
+                    color: isNavHovered && hoveredItem === item.href ? "#00D084" : "#374151",
+                    textShadow: isNavHovered && hoveredItem === item.href 
+                      ? "0 0 10px rgba(0, 208, 132, 0.5)" 
+                      : "none",
+                  }}
+                  transition={{ duration: 0.3 }}
+                  className="block"
+                >
+                  {item.label}
+                </motion.span>
+                <motion.span 
+                  className="absolute bottom-0 left-0 h-1 bg-[#00D084] rounded-full" 
+                  animate={{
+                    width: isNavHovered && hoveredItem === item.href ? "100%" : "0%",
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
               </Link>
             </motion.div>
           ))}
