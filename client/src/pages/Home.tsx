@@ -497,16 +497,13 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
             {[
-              { name: "Manufacturing", image: "/manus-storage/manufacturing_92b6a132.jpg", description: "Industrial automation and electrical systems" },
-              { name: "Hospitality", image: "/manus-storage/hospitality_62e06c23.jpg", description: "Security and energy solutions for hotels" },
-              { name: "Healthcare", image: "/manus-storage/healthcare_53803bc2.jpg", description: "Critical power and security systems" },
-              { name: "Retail", image: "/manus-storage/retail_5df6e4bc.jpg", description: "Point of sale and security infrastructure" },
-              { name: "Education", image: "/manus-storage/education_f2cf0230.jpg", description: "Campus-wide networking and security" },
-              { name: "Finance", image: "/manus-storage/finance_cb085ca9.jpg", description: "Secure data centers and backup power" },
-              { name: "Government", image: "/manus-storage/government_68a3ad3a.jpg", description: "Infrastructure and security solutions" },
-              { name: "Agriculture", image: "/manus-storage/agriculture_4fd5c132.jpg", description: "Solar and renewable energy systems" },
+              { name: "Mechanical & Electrical", image: "/manus-storage/manufacturing_92b6a132.jpg", description: "Industrial automation and electrical systems" },
+              { name: "Construction", image: "/manus-storage/hospitality_62e06c23.jpg", description: "Infrastructure and construction solutions" },
+              { name: "Manufacturing", image: "/manus-storage/education_f2cf0230.jpg", description: "Industrial automation and electrical systems" },
+              { name: "Hospitality", image: "/manus-storage/retail_5df6e4bc.jpg", description: "Security and energy solutions for hotels" },
+              { name: "Education", image: "/manus-storage/finance_cb085ca9.jpg", description: "Campus-wide networking and security" },
             ].map((industry, index) => (
               <motion.div
                 key={index}
