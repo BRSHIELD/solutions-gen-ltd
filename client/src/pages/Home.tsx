@@ -177,9 +177,9 @@ export default function Home() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="py-20 bg-gradient-to-r from-[#1E3A5F] to-[#2A5A7F] text-white"
+        className="py-12 bg-gradient-to-r from-[#1E3A5F] to-[#2A5A7F] text-white"
       >
-        <div className="container mx-auto px-4 max-w-3xl">
+        <div className="container mx-auto px-4 max-w-2xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -190,19 +190,19 @@ export default function Home() {
             <motion.img
               src="/manus-storage/EnhancedOriginalLogo_20c92336.png"
               alt="Solutions General Ltd Logo"
-              className="w-24 h-24 mb-6 object-contain mx-auto"
+              className="w-16 h-16 mb-3 object-contain mx-auto"
               whileHover={{ scale: 1.05 }}
             />
             
             {/* Title */}
-            <h2 className="text-3xl font-bold mb-6">Powering Possibilities</h2>
+            <h2 className="text-2xl font-bold mb-3">Powering Possibilities</h2>
             
             {/* First paragraph - full width */}
             <motion.p
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-gray-200 mb-4 leading-relaxed max-w-2xl mx-auto"
+              className="text-gray-200 mb-2 leading-relaxed max-w-xl mx-auto text-sm"
             >
               Founded in 1996, Solutions General Ltd has been a leading provider of engineering and technology solutions across East Africa. With over 30 years of experience, we've successfully completed 500+ projects and maintained a 98% client satisfaction rate.
             </motion.p>
@@ -212,7 +212,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-gray-200 leading-relaxed mb-8 max-w-xl mx-auto"
+              className="text-gray-200 leading-relaxed mb-4 max-w-lg mx-auto text-sm"
             >
               Our team of 50+ expert engineers is dedicated to delivering innovative, reliable, and cost-effective solutions that drive business growth and operational excellence.
             </motion.p>
@@ -242,7 +242,7 @@ export default function Home() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="py-20 relative overflow-hidden"
+        className="py-12 relative overflow-hidden"
         style={{
           backgroundImage: 'url("/manus-storage/solar-panels-bg_961116f3.jpg")',
           backgroundSize: 'cover',
@@ -253,13 +253,13 @@ export default function Home() {
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/60 z-0"></div>
         
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 max-w-3xl">
           {/* Graffiti-style heading */}
           <motion.h2
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-2xl md:text-3xl font-black text-white mb-12 italic skew-x-[-12deg] drop-shadow-lg"
+            className="text-lg md:text-xl font-black text-white mb-8 italic skew-x-[-12deg] drop-shadow-lg"
             style={{
               fontFamily: '"Georgia", serif',
               letterSpacing: '-0.02em',
@@ -274,7 +274,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4"
           >
             {stats.map((stat, index) => (
               <motion.div
@@ -283,9 +283,9 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0, 208, 132, 0.3)" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white/10 backdrop-blur p-8 rounded-lg text-center border border-white/20 hover:border-[#00D084]/50 transition-colors"
+                className="bg-white/10 backdrop-blur p-4 rounded-lg text-center border border-white/20 hover:border-[#00D084]/50 transition-colors"
               >
-                <div className="text-4xl font-bold text-[#00D084] mb-3">
+                <div className="text-2xl font-bold text-[#00D084] mb-2">
                   <AnimatedCounter value={stat.value} label={stat.label} />
                 </div>
               </motion.div>
