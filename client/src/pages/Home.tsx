@@ -499,14 +499,14 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { name: "Manufacturing", icon: "🏭", description: "Industrial automation and electrical systems" },
-              { name: "Hospitality", icon: "🏨", description: "Security and energy solutions for hotels" },
-              { name: "Healthcare", icon: "🏥", description: "Critical power and security systems" },
-              { name: "Retail", icon: "🛍️", description: "Point of sale and security infrastructure" },
-              { name: "Education", icon: "🎓", description: "Campus-wide networking and security" },
-              { name: "Finance", icon: "🏦", description: "Secure data centers and backup power" },
-              { name: "Government", icon: "🏛️", description: "Infrastructure and security solutions" },
-              { name: "Agriculture", icon: "🌾", description: "Solar and renewable energy systems" },
+              { name: "Manufacturing", image: "/manus-storage/manufacturing_92b6a132.jpg", description: "Industrial automation and electrical systems" },
+              { name: "Hospitality", image: "/manus-storage/hospitality_62e06c23.jpg", description: "Security and energy solutions for hotels" },
+              { name: "Healthcare", image: "/manus-storage/healthcare_53803bc2.jpg", description: "Critical power and security systems" },
+              { name: "Retail", image: "/manus-storage/retail_5df6e4bc.jpg", description: "Point of sale and security infrastructure" },
+              { name: "Education", image: "/manus-storage/education_f2cf0230.jpg", description: "Campus-wide networking and security" },
+              { name: "Finance", image: "/manus-storage/finance_cb085ca9.jpg", description: "Secure data centers and backup power" },
+              { name: "Government", image: "/manus-storage/government_68a3ad3a.jpg", description: "Infrastructure and security solutions" },
+              { name: "Agriculture", image: "/manus-storage/agriculture_4fd5c132.jpg", description: "Solar and renewable energy systems" },
             ].map((industry, index) => (
               <motion.div
                 key={index}
@@ -514,17 +514,25 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0, 208, 132, 0.15)" }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#00D084] transition-all group cursor-pointer"
+                className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:border-[#00D084] transition-all group cursor-pointer h-full flex flex-col"
               >
-                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">
-                  {industry.icon}
+                <div className="relative h-48 overflow-hidden bg-gray-200">
+                  <img
+                    src={industry.image}
+                    alt={industry.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
                 </div>
-                <h3 className="text-xl font-bold text-[#1E3A5F] mb-2">
-                  {industry.name}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {industry.description}
-                </p>
+                <div className="p-6 flex-grow flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl font-bold text-[#1E3A5F] mb-2">
+                      {industry.name}
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      {industry.description}
+                    </p>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
