@@ -431,7 +431,7 @@ export default function Home() {
             Our Clients
           </motion.h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-6xl mx-auto">
             {[
               "/manus-storage/Aero Club of East africa_bf8b229c.jpg",
               "/manus-storage/ASL_21b8781b.PNG",
@@ -441,6 +441,10 @@ export default function Home() {
               "/manus-storage/Equity bank_ca4da59f.jpg",
               "/manus-storage/KCB Group_efcdf2bd.jpg",
               "/manus-storage/World Bank_84a90435.jpg",
+              "/manus-storage/Junction mall_df550afe.jpg",
+              "/manus-storage/KTR Hospital_46a943e0.jpg",
+              "/manus-storage/NSSF_37fa997f.jpg",
+              "/manus-storage/Tatu City_8b305adc.jpg",
             ].map((logo, index) => (
               <motion.div
                 key={index}
