@@ -431,31 +431,16 @@ export default function Home() {
             Our Clients
           </motion.h2>
 
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-5xl mx-auto">
             {[
               "/manus-storage/Aero Club of East africa_bf8b229c.jpg",
               "/manus-storage/ASL_21b8781b.PNG",
               "/manus-storage/British High Commission_e9b62005.jpg",
               "/manus-storage/Coast General Hospital_40156b3b.jpg",
               "/manus-storage/Cooperative Bank of Kenya_50703a72.jpg",
-              "/manus-storage/Cytonn Real Estate_4463844a.png",
               "/manus-storage/Equity bank_ca4da59f.jpg",
-              "/manus-storage/Junction mall_df550afe.jpg",
               "/manus-storage/KCB Group_efcdf2bd.jpg",
-              "/manus-storage/KTR Hospital_46a943e0.jpg",
-              "/manus-storage/Muthaiga Country club_b44a8b99.png",
-              "/manus-storage/Nairobi West Hospital_d17a2bfb.jpg",
-              "/manus-storage/Ndege Chai_3736b3de.jpg",
-              "/manus-storage/NSSF_37fa997f.jpg",
-              "/manus-storage/Tangaza University_15c687fa.png",
-              "/manus-storage/Tatu City_8b305adc.jpg",
-              "/manus-storage/Transglobal_29e87ca4.jpg",
-              "/manus-storage/United Nations_db07d75a.jpg",
-              "/manus-storage/Windsor club_4ad712d8.jpg",
               "/manus-storage/World Bank_84a90435.jpg",
-              "/manus-storage/World vision_f97cf3b3.jpg",
-              "/manus-storage/Zamani Busines park_cf0f645c.png",
-              "/manus-storage/images_e659f0b3.png",
             ].map((logo, index) => (
               <motion.div
                 key={index}
@@ -468,7 +453,7 @@ export default function Home() {
                 <img
                   src={logo}
                   alt={`Client ${index + 1}`}
-                  className="max-w-[120px] md:max-w-[140px] max-h-[80px] md:max-h-[90px] object-contain group-hover:opacity-70 transition-opacity"
+                  className="max-w-[160px] md:max-w-[180px] max-h-[120px] md:max-h-[140px] object-contain group-hover:opacity-70 transition-opacity"
                 />
               </motion.div>
             ))}
