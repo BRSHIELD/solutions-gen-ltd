@@ -431,7 +431,7 @@ export default function Home() {
             Our Clients
           </motion.h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 max-w-7xl mx-auto">
             {[
               "/manus-storage/Aero Club of East africa_bf8b229c.jpg",
               "/manus-storage/ASL_21b8781b.PNG",
