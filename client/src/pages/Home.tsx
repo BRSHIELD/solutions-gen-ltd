@@ -457,7 +457,7 @@ export default function Home() {
                 <img
                   src={logo}
                   alt={`Client ${index + 1}`}
-                  className="w-[180px] md:w-[220px] h-[180px] md:h-[220px] object-contain group-hover:opacity-70 transition-opacity"
+                  className="w-[240px] md:w-[280px] h-[140px] md:h-[160px] object-contain group-hover:opacity-70 transition-opacity"
                 />
               </motion.div>
             ))}
