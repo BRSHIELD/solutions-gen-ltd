@@ -431,7 +431,7 @@ export default function Home() {
             Our Clients
           </motion.h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-7xl mx-auto">
             {[
               "/manus-storage/Aero Club of East africa_bf8b229c.jpg",
               "/manus-storage/ASL_21b8781b.PNG",
@@ -450,14 +450,14 @@ export default function Home() {
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
-                className="flex items-center justify-center cursor-pointer group bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors"
+                className="flex items-center justify-center cursor-pointer group bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg hover:border-gray-300 transition-all"
               >
                 <img
                   src={logo}
                   alt={`Client ${index + 1}`}
-                  className="w-[240px] md:w-[280px] h-[140px] md:h-[160px] object-contain group-hover:opacity-70 transition-opacity"
+                  className="w-[160px] md:w-[200px] h-[100px] md:h-[120px] object-contain group-hover:opacity-80 transition-opacity"
                 />
               </motion.div>
             ))}
