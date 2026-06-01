@@ -433,29 +433,9 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-7xl mx-auto">
             {[
-              "/manus-storage/Aero Club of East africa_36480a3d.jpg",
-              "/manus-storage/ASL_c4f3c2a5.PNG",
-              "/manus-storage/British High Commission_354ddd0a.jpg",
-              "/manus-storage/Coast General Hospital_794d58f7.jpg",
-              "/manus-storage/Cooperative Bank of Kenya_66ecac8c.jpg",
-              "/manus-storage/Cytonn Real Estate_698e966b.png",
-              "/manus-storage/Equity bank_2d5cbe09.jpg",
-              "/manus-storage/Junction mall_b454f36e.jpg",
-              "/manus-storage/KCB Group_f9c11f19.jpg",
-              "/manus-storage/KTR Hospital_4a083184.jpg",
-              "/manus-storage/Muthaiga Country club_f4873425.png",
-              "/manus-storage/NSSF_1ae2360e.jpg",
-              "/manus-storage/Nairobi West Hospital_9f7a746f.jpg",
-              "/manus-storage/Ndege Chai_23563c8c.jpg",
-              "/manus-storage/Tangaza University_fda646cc.png",
-              "/manus-storage/Tatu City_eeb200c7.jpg",
-              "/manus-storage/Transglobal_0d03b319.jpg",
-              "/manus-storage/United Nations_0cd2d068.jpg",
-              "/manus-storage/Windsor club_21667f64.jpg",
-              "/manus-storage/World Bank_5ec10da0.jpg",
-              "/manus-storage/World vision_2f83af7b.jpg",
-              "/manus-storage/Zamani Busines park_4d988ada.png",
-              "/manus-storage/images_96410ccf.png",
+              "/manus-storage/Equity_Bank_Logo_86d1dd49.png",
+              "/manus-storage/NSSF_85e2a019.jpg",
+              "/manus-storage/co-operative-bank-of-kenya-logo-png_seeklogo-172668_8145d0b5.png",
             ].map((logo, index) => (
               <motion.div
                 key={index}
