@@ -431,7 +431,7 @@ export default function Home() {
             Our Clients
           </motion.h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
             {[
               "/manus-storage/Coop-Bank1_e5957a31.webp",
               "/manus-storage/KTRH-Logo-150x150_a9350940.webp",
@@ -459,12 +459,12 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
-                className="flex items-center justify-center cursor-pointer group bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg hover:border-gray-300 transition-all"
+                className="flex items-center justify-center cursor-pointer group bg-white border-2 border-dashed border-red-500 rounded-lg p-6 md:p-8 hover:shadow-lg hover:border-red-600 transition-all"
               >
                 <img
                   src={logo}
                   alt={`Client ${index + 1}`}
-                  className="w-[160px] md:w-[200px] h-[100px] md:h-[120px] object-contain group-hover:opacity-80 transition-opacity"
+                  className="w-[140px] md:w-[180px] h-[90px] md:h-[110px] object-contain group-hover:opacity-90 transition-opacity"
                 />
               </motion.div>
             ))}
