@@ -415,6 +415,66 @@ export default function Home() {
       </motion.section>
 
 
+      {/* Trusted by Customers & Partners Section */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="py-20 bg-white"
+      >
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left Column - Text */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="flex items-center justify-center lg:justify-start"
+            >
+              <h2 className="text-5xl lg:text-6xl font-bold text-[#1E3A5F] leading-tight">
+                Trusted by our customers & partners
+              </h2>
+            </motion.div>
+
+            {/* Right Column - Logo Grid */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="grid grid-cols-4 gap-6 divide-y divide-gray-200"
+            >
+              {[
+                "/manus-storage/Coop-Bank1_e5957a31.webp",
+                "/manus-storage/KTRH-Logo-150x150_a9350940.webp",
+                "/manus-storage/NSSF_91de52c5.webp",
+                "/manus-storage/world-vision-vector-logo_0c540441.webp",
+                "/manus-storage/Cytonn_d0c7f176.webp",
+                "/manus-storage/Equity_Bank_Logo_7ad137de.webp",
+                "/manus-storage/KCB Bank_a0848763.webp",
+                "/manus-storage/Muthaiga Country club_4de59201.webp",
+                "/manus-storage/Tangaza-University-College_17028af1.webp",
+                "/manus-storage/Transglobal_ea4bb7d3.webp",
+                "/manus-storage/Turkana basin institute_9ff74ade.webp",
+                "/manus-storage/british-high-commission-nairobi-office_d0359e8b.webp",
+              ].map((logo, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="flex items-center justify-center py-6 px-4 bg-white"
+                >
+                  <img
+                    src={logo}
+                    alt={`Partner ${index + 1}`}
+                    className="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
 
       {/* Industries We Serve Section */}
       <motion.section
