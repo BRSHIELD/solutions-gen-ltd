@@ -436,22 +436,16 @@ export default function Home() {
               "/manus-storage/Coop-Bank1_562ac8de.jpg",
               "/manus-storage/KTRH-Logo-150x150_8d8faaef.jpg",
               "/manus-storage/NSSF_8e84cf30.jpg",
-              "/manus-storage/Windsor Club_c17e42ef.jpg",
               "/manus-storage/world-vision-vector-logo_1c9e23b3.jpg",
               "/manus-storage/Cytonn_ff9ffb90.jpg",
               "/manus-storage/Equity_Bank_Logo_7d74c5cf.jpg",
               "/manus-storage/KCB Bank_5fe8375a.jpg",
-              "/manus-storage/Muthaiga country club_c4c90b3f.jpg",
               "/manus-storage/Tangaza-University-College_65fe5a77.jpg",
               "/manus-storage/Transglobal_02f307b4.jpg",
               "/manus-storage/Turkana basin institute_9af96dd3.jpg",
-              "/manus-storage/united-nations-logo-png_seeklogo-247981_90cd79a7.jpg",
               "/manus-storage/british-high-commission-nairobi-office_aa400707.jpg",
               "/manus-storage/Junction mall_58a8b6ae.jfif",
-              "/manus-storage/nairobiwesthospitalcom_logo_00fd74e4.jfif",
               "/manus-storage/TATU_0a0f3611.jpg",
-              "/manus-storage/World bank logo_cef10bdb.jfif",
-              "/manus-storage/coast_general_8d540695.jpg",
             ].map((logo, index) => (
               <motion.div
                 key={index}
