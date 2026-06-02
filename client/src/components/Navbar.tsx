@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Settings } from "lucide-react";
 import { useState } from "react";
+import { useAuth } from "@/_core/hooks/useAuth";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isNavHovered, setIsNavHovered] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const { user } = useAuth();
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -87,6 +89,41 @@ export default function Navbar() {
               </Link>
             </motion.div>
           ))}
+
+          {/* Admin Panel Link */}
+          {user && user.role === "admin" && (
+            <motion.div
+              onMouseEnter={() => setHoveredItem("admin")}
+              onMouseLeave={() => setHoveredItem(null)}
+              animate={{
+                opacity: isNavHovered && hoveredItem !== "admin" ? 0.4 : 1,
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              <Link
+                href="/admin/certificates"
+                className="text-gray-700 font-medium relative group inline-flex items-center gap-2"
+              >
+                <motion.div
+                  animate={{
+                    color: hoveredItem === "admin" ? "#00D084" : "#374151",
+                  }}
+                  transition={{ duration: 0.3 }}
+                  className="flex items-center gap-2"
+                >
+                  <Settings size={18} />
+                  <span>Admin</span>
+                </motion.div>
+                <motion.span 
+                  className="absolute bottom-0 left-0 h-1 bg-[#00D084] rounded-full" 
+                  animate={{
+                    width: isNavHovered && hoveredItem === "admin" ? "100%" : "0%",
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
+              </Link>
+            </motion.div>
+          )}
         </div>
 
 
@@ -121,6 +158,18 @@ export default function Navbar() {
               </motion.div>
             ))}
 
+            {user && user.role === "admin" && (
+              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: navItems.length * 0.05 }}>
+                <Link
+                  href="/admin/certificates"
+                  onClick={() => setIsOpen(false)}
+                  className="text-gray-700 hover:text-[#1E3A5F] transition-colors font-medium flex items-center gap-2"
+                >
+                  <Settings size={18} />
+                  <span>Admin Panel</span>
+                </Link>
+              </motion.div>
+            )}
           </div>
         </motion.div>
       )}
