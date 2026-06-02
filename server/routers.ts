@@ -70,6 +70,7 @@ export const appRouter = router({
         title: z.string(),
         issuer: z.string(),
         category: z.string(),
+        imageUrl: z.string().optional(),
         fileBuffer: z.string(),
       }))
       .mutation(async ({ input, ctx }) => {
@@ -88,6 +89,7 @@ export const appRouter = router({
             category: input.category,
             fileKey,
             fileUrl: url,
+            imageUrl: input.imageUrl || null,
             isActive: 1,
           });
           

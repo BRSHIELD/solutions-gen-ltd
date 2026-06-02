@@ -147,17 +147,26 @@ export default function Certifications() {
                   >
                     {/* Certificate Image */}
                     <div className="relative h-32 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
-                      <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        className="w-full h-full flex items-center justify-center"
-                      >
-                        <div className="text-center">
-                          <Award size={32} className="mx-auto text-[#00D084] mb-2 opacity-50" />
-                          <p className="text-gray-600 font-semibold text-xs px-2 line-clamp-2">
-                            {cert.title}
-                          </p>
-                        </div>
-                      </motion.div>
+                      {cert.imageUrl ? (
+                        <motion.img
+                          src={cert.imageUrl}
+                          alt={cert.title}
+                          whileHover={{ scale: 1.05 }}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          className="w-full h-full flex items-center justify-center"
+                        >
+                          <div className="text-center">
+                            <Award size={32} className="mx-auto text-[#00D084] mb-2 opacity-50" />
+                            <p className="text-gray-600 font-semibold text-xs px-2 line-clamp-2">
+                              {cert.title}
+                            </p>
+                          </div>
+                        </motion.div>
+                      )}
 
                       {/* Status Badge */}
                       <div className="absolute top-4 right-4">

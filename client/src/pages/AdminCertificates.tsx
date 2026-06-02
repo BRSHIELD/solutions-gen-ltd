@@ -19,6 +19,7 @@ export default function AdminCertificates() {
     title: "",
     issuer: "",
     category: "EPRA",
+    imageUrl: "",
   });
 
   // Queries and mutations
@@ -61,6 +62,7 @@ export default function AdminCertificates() {
           title: formData.title,
           issuer: formData.issuer,
           category: formData.category,
+          imageUrl: formData.imageUrl,
           fileBuffer: base64Data,
         });
 
@@ -69,6 +71,7 @@ export default function AdminCertificates() {
           title: "",
           issuer: "",
           category: "EPRA",
+          imageUrl: "",
         });
         setShowForm(false);
         refetch();
@@ -208,6 +211,20 @@ export default function AdminCertificates() {
                         <option value="KRA">KRA</option>
                         <option value="Others">Others</option>
                       </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        Image URL (Optional)
+                      </label>
+                      <Input
+                        type="url"
+                        placeholder="e.g., https://raw.githubusercontent.com/.../image.jpg"
+                        value={formData.imageUrl}
+                        onChange={(e) =>
+                          setFormData({ ...formData, imageUrl: e.target.value })
+                        }
+                      />
                     </div>
 
                   </div>
