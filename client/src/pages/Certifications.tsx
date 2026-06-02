@@ -282,19 +282,24 @@ export default function Certifications() {
                 </div>
 
                 {/* Download Button */}
-                <motion.a
-                  href={selectedCertificate.fileUrl}
-                  download={`${selectedCertificate.title.replace(
-                    /\s+/g,
-                    "_"
-                  )}_certificate.pdf`}
+                <motion.button
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = selectedCertificate.fileUrl;
+                    link.download = `${selectedCertificate.title.replace(/\s+/g, "_")}_certificate.pdf`;
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="mt-6 w-full inline-flex items-center justify-center gap-2 bg-[#00D084] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#0FA55F] transition-colors"
+                  className="mt-6 w-full inline-flex items-center justify-center gap-2 bg-[#00D084] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#0FA55F] transition-colors cursor-pointer"
                 >
                   <Download size={18} />
                   Download Certificate
-                </motion.a>
+                </motion.button>
               </div>
             </motion.div>
           </motion.div>

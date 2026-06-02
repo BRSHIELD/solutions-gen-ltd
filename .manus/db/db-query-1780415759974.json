@@ -1,0 +1,35 @@
+{
+  "query": "SELECT id, title, fileUrl FROM certificates LIMIT 5;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway06.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4Sgio9nLDKMXi8g.root --database oNqKyoxjmVUDpKzxmYxw2z --execute SELECT id, title, fileUrl FROM certificates LIMIT 5;",
+  "rows": [
+    {
+      "id": "120001",
+      "title": "Certificate of Incorporation",
+      "fileUrl": "/manus-storage/certificates/Others/1780414041032-Certificate of Incorporation_9d6e5073.pdf"
+    },
+    {
+      "id": "120002",
+      "title": "Certificate of Registration - NCA (Building Works)",
+      "fileUrl": "/manus-storage/certificates/NCA/1780414065010-Certificate of Registration - NCA (Building Works)_579721b4.pdf"
+    },
+    {
+      "id": "120003",
+      "title": "Certificate of Registration - NCA (Electrical Engineering)",
+      "fileUrl": "/manus-storage/certificates/NCA/1780414088404-Certificate of Registration - NCA (Electrical Engineering)_f7d891ac.pdf"
+    },
+    {
+      "id": "120004",
+      "title": "Certificate of Registration - NCA (Mechanical Engineering)",
+      "fileUrl": "/manus-storage/certificates/NCA/1780414122271-Certificate of Registration - NCA (Mechanical Engineering)_4fbf9485.pdf"
+    },
+    {
+      "id": "120005",
+      "title": "Certified Electrician Licence - EPRA",
+      "fileUrl": "/manus-storage/certificates/EPRA/1780414143561-Certified Electrician Licence - EPRA_8339aafe.pdf"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tfileUrl\n120001\tCertificate of Incorporation\t/manus-storage/certificates/Others/1780414041032-Certificate of Incorporation_9d6e5073.pdf\n120002\tCertificate of Registration - NCA (Building Works)\t/manus-storage/certificates/NCA/1780414065010-Certificate of Registration - NCA (Building Works)_579721b4.pdf\n120003\tCertificate of Registration - NCA (Electrical Engineering)\t/manus-storage/certificates/NCA/1780414088404-Certificate of Registration - NCA (Electrical Engineering)_f7d891ac.pdf\n120004\tCertificate of Registration - NCA (Mechanical Engineering)\t/manus-storage/certificates/NCA/1780414122271-Certificate of Registration - NCA (Mechanical Engineering)_4fbf9485.pdf\n120005\tCertified Electrician Licence - EPRA\t/manus-storage/certificates/EPRA/1780414143561-Certified Electrician Licence - EPRA_8339aafe.pdf\n",
+  "stderr": "",
+  "execution_time_ms": 730
+}
