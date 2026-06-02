@@ -3,7 +3,7 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router, protectedProcedure } from "./_core/trpc";
 import { getAllCertificates, createCertificate, deleteCertificate, createContactSubmission } from "./db";
-import { storagePut } from "./storage";
+import { storagePut, storageGetSignedUrl } from "./storage";
 import { z } from "zod";
 
 export const appRouter = router({
@@ -105,6 +105,17 @@ export const appRouter = router({
         }
         
         return await deleteCertificate(input.id);
+      }),
+    getDownloadUrl: publicProcedure
+      .input(z.object({ fileKey: z.string() }))
+      .query(async ({ input }) => {
+        try {
+          const signedUrl = await storageGetSignedUrl(input.fileKey);
+          return { url: signedUrl };
+        } catch (error) {
+          console.error('Failed to get signed URL:', error);
+          throw new Error('Failed to generate download URL');
+        }
       }),
     batchUpload: protectedProcedure
       .input(z.object({

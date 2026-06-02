@@ -9,7 +9,7 @@ export default function Certifications() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [autoScroll, setAutoScroll] = useState(true);
   const [selectedCertificate, setSelectedCertificate] = useState<any>(null);
-
+  const [isDownloading, setIsDownloading] = useState(false);
 
   // Fetch certificates from database
   const { data: certificates = [], isLoading } = trpc.certificates.list.useQuery();
@@ -283,22 +283,38 @@ export default function Certifications() {
 
                 {/* Download Button */}
                 <motion.button
-                  onClick={() => {
-                    const link = document.createElement('a');
-                    link.href = selectedCertificate.fileUrl;
-                    link.download = `${selectedCertificate.title.replace(/\s+/g, "_")}_certificate.pdf`;
-                    link.target = '_blank';
-                    link.rel = 'noopener noreferrer';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
+                  onClick={async () => {
+                    try {
+                      setIsDownloading(true);
+                      const fileKey = selectedCertificate.fileKey;
+                      const signedUrl = await trpc.certificates.getDownloadUrl.query({ fileKey });
+                      
+                      if (!signedUrl?.url) {
+                        throw new Error('Failed to get download URL');
+                      }
+                      
+                      const link = document.createElement('a');
+                      link.href = signedUrl.url;
+                      link.download = `${selectedCertificate.title.replace(/\s+/g, "_")}_certificate.pdf`;
+                      link.target = '_blank';
+                      link.rel = 'noopener noreferrer';
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                    } catch (error) {
+                      console.error('Download failed:', error);
+                      alert('Failed to download certificate. Please try again.');
+                    } finally {
+                      setIsDownloading(false);
+                    }
                   }}
+                  disabled={isDownloading}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="mt-6 w-full inline-flex items-center justify-center gap-2 bg-[#00D084] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#0FA55F] transition-colors cursor-pointer"
+                  className="mt-6 w-full inline-flex items-center justify-center gap-2 bg-[#00D084] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#0FA55F] transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Download size={18} />
-                  Download Certificate
+                  {isDownloading ? 'Downloading...' : 'Download Certificate'}
                 </motion.button>
               </div>
             </motion.div>
