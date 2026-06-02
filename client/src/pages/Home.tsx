@@ -433,19 +433,19 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-7xl mx-auto">
             {[
-              "/manus-storage/Coop-Bank1_562ac8de.jpg",
-              "/manus-storage/KTRH-Logo-150x150_8d8faaef.jpg",
-              "/manus-storage/NSSF_8e84cf30.jpg",
-              "/manus-storage/world-vision-vector-logo_1c9e23b3.jpg",
-              "/manus-storage/Cytonn_ff9ffb90.jpg",
-              "/manus-storage/Equity_Bank_Logo_7d74c5cf.jpg",
-              "/manus-storage/KCB Bank_5fe8375a.jpg",
-              "/manus-storage/Tangaza-University-College_65fe5a77.jpg",
-              "/manus-storage/Transglobal_02f307b4.jpg",
-              "/manus-storage/Turkana basin institute_9af96dd3.jpg",
-              "/manus-storage/british-high-commission-nairobi-office_aa400707.jpg",
-              "/manus-storage/Junction mall_58a8b6ae.jfif",
-              "/manus-storage/TATU_0a0f3611.jpg",
+              "/manus-storage/Coop-Bank1_f89ba01d.jpg",
+              "/manus-storage/KTRH-Logo-150x150_b931964c.jpg",
+              "/manus-storage/NSSF_34846790.jpg",
+              "/manus-storage/world-vision-vector-logo_b878e555.jpg",
+              "/manus-storage/Cytonn_8fc476a4.jpg",
+              "/manus-storage/Equity_Bank_Logo_fa3bbdec.jpg",
+              "/manus-storage/KCB Bank_f2affafc.jpg",
+              "/manus-storage/Tangaza-University-College_c1ac1fe7.jpg",
+              "/manus-storage/Transglobal_75093d8f.jpg",
+              "/manus-storage/Turkana basin institute_d9d3af82.jpg",
+              "/manus-storage/british-high-commission-nairobi-office_0af9f332.jpg",
+              "/manus-storage/Junction mall_dd2e2317.jpg",
+              "/manus-storage/TATU_a50f74ac.jpg",
             ].map((logo, index) => (
               <motion.div
                 key={index}
