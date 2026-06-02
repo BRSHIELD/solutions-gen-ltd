@@ -15,7 +15,7 @@ export default function Certifications() {
       id: 1,
       title: "ISO 9001:2015",
       issuer: "International Organization for Standardization",
-      category: "Quality",
+      category: "EPRA",
       issueDate: new Date("2020-03-15"),
       expiryDate: new Date("2030-03-15"),
       description: "Quality Management Systems Certification",
@@ -25,7 +25,7 @@ export default function Certifications() {
       id: 2,
       title: "ISO 27001:2013",
       issuer: "International Organization for Standardization",
-      category: "Security",
+      category: "NCA",
       issueDate: new Date("2021-06-20"),
       expiryDate: new Date("2027-06-20"),
       description: "Information Security Management Systems",
@@ -35,7 +35,7 @@ export default function Certifications() {
       id: 3,
       title: "OHSAS 18001:2007",
       issuer: "Occupational Health and Safety Assessment Series",
-      category: "Safety",
+      category: "KRA",
       issueDate: new Date("2019-09-10"),
       expiryDate: new Date("2029-09-10"),
       description: "Occupational Health and Safety Management",
@@ -45,7 +45,7 @@ export default function Certifications() {
       id: 4,
       title: "Electrical Contractor License",
       issuer: "Kenya Energy and Petroleum Regulatory Authority",
-      category: "Licensing",
+      category: "EPRA",
       issueDate: new Date("2018-01-15"),
       expiryDate: new Date("2028-01-15"),
       description: "Licensed Electrical Contractor in Kenya",
@@ -55,7 +55,7 @@ export default function Certifications() {
       id: 5,
       title: "Solar Installation Certification",
       issuer: "Kenya Renewable Energy Association",
-      category: "Solar",
+      category: "EPRA",
       issueDate: new Date("2021-05-20"),
       expiryDate: new Date("2030-05-20"),
       description: "Certified Solar Energy Installation Specialist",
@@ -65,7 +65,7 @@ export default function Certifications() {
       id: 6,
       title: "Cisco Certified Network Associate",
       issuer: "Cisco Systems Inc.",
-      category: "ICT",
+      category: "Others",
       issueDate: new Date("2020-11-10"),
       expiryDate: new Date("2029-11-10"),
       description: "CCNA Routing and Switching Certification",
@@ -75,7 +75,7 @@ export default function Certifications() {
       id: 7,
       title: "Microsoft Certified Solutions Associate",
       issuer: "Microsoft Corporation",
-      category: "ICT",
+      category: "Others",
       issueDate: new Date("2021-02-15"),
       expiryDate: new Date("2030-02-15"),
       description: "MCSA Windows Server 2016 Certification",
@@ -85,7 +85,7 @@ export default function Certifications() {
       id: 8,
       title: "CCTV Security System Certification",
       issuer: "British Standards Institution",
-      category: "Security",
+      category: "NCA",
       issueDate: new Date("2020-08-05"),
       expiryDate: new Date("2029-08-05"),
       description: "Certified CCTV System Designer and Installer",
@@ -93,7 +93,7 @@ export default function Certifications() {
     },
   ];
 
-  const categories = ["All", "Quality", "Security", "Safety", "Licensing", "Solar", "ICT"];
+  const categories = ["All", "EPRA", "NCA", "KRA", "Others"];
 
   const isExpired = (expiryDate: Date | null) => {
     if (!expiryDate) return false;
