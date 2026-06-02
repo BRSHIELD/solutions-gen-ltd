@@ -433,9 +433,26 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-7xl mx-auto">
             {[
-              "/manus-storage/Equity_Bank_Logo_86d1dd49.png",
-              "/manus-storage/NSSF_85e2a019.jpg",
-              "/manus-storage/co-operative-bank-of-kenya-logo-png_seeklogo-172668_8145d0b5.png",
+              "/manus-storage/Coop-Bank1_c603c3f5.jpg",
+              "/manus-storage/KTRH-Logo-150x150_854cef46.jpg",
+              "/manus-storage/NSSF_bd59c6c3.jpg",
+              "/manus-storage/Windsor Club_ceaf4aee.jpg",
+              "/manus-storage/world-vision-vector-logo_3c17469e.jpg",
+              "/manus-storage/Cytonn_7292fed0.png",
+              "/manus-storage/Equity_Bank_Logo_32b829a6.png",
+              "/manus-storage/KCB Group_83f3da37.png",
+              "/manus-storage/Muthaiga country club_fdadb19e.png",
+              "/manus-storage/Tangaza-University-College_af6f9e4f.png",
+              "/manus-storage/Transglobal_822ebf2e.png",
+              "/manus-storage/Turkana basin institute_ec3920f7.png",
+              "/manus-storage/co-operative-bank-of-kenya-logo-png_seeklogo-172668_01949a8f.png",
+              "/manus-storage/united-nations-logo-png_seeklogo-247981_ef7521cf.png",
+              "/manus-storage/British High commission_c668955c.jfif",
+              "/manus-storage/Junction mall_44a194d4.jfif",
+              "/manus-storage/Nairobi west_281009fe.jfif",
+              "/manus-storage/Tatu city_14d7f18c.jfif",
+              "/manus-storage/World bank logo_53d3de45.jfif",
+              "/manus-storage/coast_general_c1ed967c.webp",
             ].map((logo, index) => (
               <motion.div
                 key={index}
