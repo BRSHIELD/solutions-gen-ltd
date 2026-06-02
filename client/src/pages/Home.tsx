@@ -414,63 +414,6 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Our Clients Section */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="py-20 bg-white"
-      >
-        <div className="container mx-auto px-4">
-          <motion.h2
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl font-bold text-[#1E3A5F] text-center mb-16"
-          >
-            Our Clients
-          </motion.h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-7xl mx-auto">
-            {[
-              "/manus-storage/Coop-Bank1_e5957a31.webp",
-              "/manus-storage/KTRH-Logo-150x150_a9350940.webp",
-              "/manus-storage/NSSF_91de52c5.webp",
-              "/manus-storage/world-vision-vector-logo_0c540441.webp",
-              "/manus-storage/Cytonn_d0c7f176.webp",
-              "/manus-storage/Equity_Bank_Logo_7ad137de.webp",
-              "/manus-storage/KCB Bank_a0848763.webp",
-              "/manus-storage/Muthaiga Country club_4de59201.webp",
-              "/manus-storage/Tangaza-University-College_17028af1.webp",
-              "/manus-storage/Transglobal_ea4bb7d3.webp",
-              "/manus-storage/Turkana basin institute_9ff74ade.webp",
-              "/manus-storage/british-high-commission-nairobi-office_d0359e8b.webp",
-              "/manus-storage/Junction mall_d6df8e14.webp",
-              "/manus-storage/Nairobi west hospital_4e863f3c.webp",
-              "/manus-storage/TATU_dfe5a87f.webp",
-              "/manus-storage/Windsor Club_3b9d1488.webp",
-              "/manus-storage/coast_general_fb677789.webp",
-              "/manus-storage/united-nations-logo-png_seeklogo-247981_fdd68982.webp",
-              "/manus-storage/world bank_d8c4bd66.webp",
-            ].map((logo, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
-                className="flex items-center justify-center cursor-pointer group bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg hover:border-gray-300 transition-all"
-              >
-                <img
-                  src={logo}
-                  alt={`Client ${index + 1}`}
-                  className="w-[160px] md:w-[200px] h-[100px] md:h-[120px] object-contain group-hover:opacity-80 transition-opacity"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
 
 
       {/* Industries We Serve Section */}
