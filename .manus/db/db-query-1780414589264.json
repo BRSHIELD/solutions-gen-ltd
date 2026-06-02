@@ -1,0 +1,130 @@
+{
+  "query": "SELECT id, title, issuer, category, fileUrl, fileKey FROM certificates ORDER BY category, title;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway06.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4Sgio9nLDKMXi8g.root --database oNqKyoxjmVUDpKzxmYxw2z --execute SELECT id, title, issuer, category, fileUrl, fileKey FROM certificates ORDER BY category, title;",
+  "rows": [
+    {
+      "id": "120005",
+      "title": "Certified Electrician Licence - EPRA",
+      "issuer": "Energy and Petroleum Regulatory Authority",
+      "category": "EPRA",
+      "fileUrl": "/manus-storage/certificates/EPRA/1780414143561-Certified Electrician Licence - EPRA_8339aafe.pdf",
+      "fileKey": "certificates/EPRA/1780414143561-Certified Electrician Licence - EPRA.pdf"
+    },
+    {
+      "id": "120006",
+      "title": "Certified Solar Photovoltaic Licence",
+      "issuer": "Energy and Petroleum Regulatory Authority",
+      "category": "EPRA",
+      "fileUrl": "/manus-storage/certificates/EPRA/1780414163082-Certified Solar Photovoltaic Licence_50743339.pdf",
+      "fileKey": "certificates/EPRA/1780414163082-Certified Solar Photovoltaic Licence.pdf"
+    },
+    {
+      "id": "120011",
+      "title": "EPRA - Certificate of Registration for Solar Photovoltaic Systems Manufacturer",
+      "issuer": "Energy and Petroleum Regulatory Authority",
+      "category": "EPRA",
+      "fileUrl": "/manus-storage/certificates/EPRA/1780414303961-EPRA - Certificate of Registration for Solar Photovoltaic Systems Manufacturer_13fe02de.pdf",
+      "fileKey": "certificates/EPRA/1780414303961-EPRA - Certificate of Registration for Solar Photovoltaic Systems Manufacturer.pdf"
+    },
+    {
+      "id": "120012",
+      "title": "EPRA - Electrical Contractor Licence",
+      "issuer": "Energy and Petroleum Regulatory Authority",
+      "category": "EPRA",
+      "fileUrl": "/manus-storage/certificates/EPRA/1780414322413-EPRA - Electrical Contractor Licence_793d4294.pdf",
+      "fileKey": "certificates/EPRA/1780414322413-EPRA - Electrical Contractor Licence.pdf"
+    },
+    {
+      "id": "120015",
+      "title": "KRA PIN Certificate",
+      "issuer": "Kenya Revenue Authority",
+      "category": "KRA",
+      "fileUrl": "/manus-storage/certificates/KRA/1780414437402-KRA PIN Certificate_8aecc2ba.pdf",
+      "fileKey": "certificates/KRA/1780414437402-KRA PIN Certificate.pdf"
+    },
+    {
+      "id": "120014",
+      "title": "KRA Tax Compliance Certificate",
+      "issuer": "Kenya Revenue Authority",
+      "category": "KRA",
+      "fileUrl": "/manus-storage/certificates/KRA/1780414403925-KRA Tax Compliance Certificate_6ceb405b.pdf",
+      "fileKey": "certificates/KRA/1780414403925-KRA Tax Compliance Certificate.pdf"
+    },
+    {
+      "id": "120002",
+      "title": "Certificate of Registration - NCA (Building Works)",
+      "issuer": "National Construction Authority (NCA)",
+      "category": "NCA",
+      "fileUrl": "/manus-storage/certificates/NCA/1780414065010-Certificate of Registration - NCA (Building Works)_579721b4.pdf",
+      "fileKey": "certificates/NCA/1780414065010-Certificate of Registration - NCA (Building Works).pdf"
+    },
+    {
+      "id": "120003",
+      "title": "Certificate of Registration - NCA (Electrical Engineering)",
+      "issuer": "National Construction Authority (NCA)",
+      "category": "NCA",
+      "fileUrl": "/manus-storage/certificates/NCA/1780414088404-Certificate of Registration - NCA (Electrical Engineering)_f7d891ac.pdf",
+      "fileKey": "certificates/NCA/1780414088404-Certificate of Registration - NCA (Electrical Engineering).pdf"
+    },
+    {
+      "id": "120004",
+      "title": "Certificate of Registration - NCA (Mechanical Engineering)",
+      "issuer": "National Construction Authority (NCA)",
+      "category": "NCA",
+      "fileUrl": "/manus-storage/certificates/NCA/1780414122271-Certificate of Registration - NCA (Mechanical Engineering)_4fbf9485.pdf",
+      "fileKey": "certificates/NCA/1780414122271-Certificate of Registration - NCA (Mechanical Engineering).pdf"
+    },
+    {
+      "id": "120009",
+      "title": "Contractors Annual Practicing Licence - NCA",
+      "issuer": "National Construction Authority (NCA)",
+      "category": "NCA",
+      "fileUrl": "/manus-storage/certificates/NCA/1780414256369-Contractors Annual Practicing Licence - NCA_4df89cda.pdf",
+      "fileKey": "certificates/NCA/1780414256369-Contractors Annual Practicing Licence - NCA.pdf"
+    },
+    {
+      "id": "120008",
+      "title": "Contractors Annual Practicing Licence - NCA 2025",
+      "issuer": "National Construction Authority (NCA)",
+      "category": "NCA",
+      "fileUrl": "/manus-storage/certificates/NCA/1780414231683-Contractors Annual Practicing Licence - NCA 2025_216793cc.pdf",
+      "fileKey": "certificates/NCA/1780414231683-Contractors Annual Practicing Licence - NCA 2025.pdf"
+    },
+    {
+      "id": "120010",
+      "title": "Contractors Annual Practicing License - NCA (Building Works)",
+      "issuer": "National Construction Authority (NCA)",
+      "category": "NCA",
+      "fileUrl": "/manus-storage/certificates/NCA/1780414277119-Contractors Annual Practicing License - NCA (Building Works)_8febb1fb.pdf",
+      "fileKey": "certificates/NCA/1780414277119-Contractors Annual Practicing License - NCA (Building Works).pdf"
+    },
+    {
+      "id": "120001",
+      "title": "Certificate of Incorporation",
+      "issuer": "Government of Kenya",
+      "category": "Others",
+      "fileUrl": "/manus-storage/certificates/Others/1780414041032-Certificate of Incorporation_9d6e5073.pdf",
+      "fileKey": "certificates/Others/1780414041032-Certificate of Incorporation.pdf"
+    },
+    {
+      "id": "120007",
+      "title": "Company Business Permit",
+      "issuer": "County Government of Machakos",
+      "category": "Others",
+      "fileUrl": "/manus-storage/certificates/Others/1780414198636-Company Business Permit_7fc9df5f.pdf",
+      "fileKey": "certificates/Others/1780414198636-Company Business Permit.pdf"
+    },
+    {
+      "id": "120016",
+      "title": "OSHA - Certificate of Registration of Workplace",
+      "issuer": "Directorate of Occupational Safety and Health Services (DOSHS)",
+      "category": "Others",
+      "fileUrl": "/manus-storage/certificates/Others/1780414499620-OSHA - Certificate of Registration of Workplace_66fd52d9.pdf",
+      "fileKey": "certificates/Others/1780414499620-OSHA - Certificate of Registration of Workplace.pdf"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tissuer\tcategory\tfileUrl\tfileKey\n120005\tCertified Electrician Licence - EPRA\tEnergy and Petroleum Regulatory Authority\tEPRA\t/manus-storage/certificates/EPRA/1780414143561-Certified Electrician Licence - EPRA_8339aafe.pdf\tcertificates/EPRA/1780414143561-Certified Electrician Licence - EPRA.pdf\n120006\tCertified Solar Photovoltaic Licence\tEnergy and Petroleum Regulatory Authority\tEPRA\t/manus-storage/certificates/EPRA/1780414163082-Certified Solar Photovoltaic Licence_50743339.pdf\tcertificates/EPRA/1780414163082-Certified Solar Photovoltaic Licence.pdf\n120011\tEPRA - Certificate of Registration for Solar Photovoltaic Systems Manufacturer\tEnergy and Petroleum Regulatory Authority\tEPRA\t/manus-storage/certificates/EPRA/1780414303961-EPRA - Certificate of Registration for Solar Photovoltaic Systems Manufacturer_13fe02de.pdf\tcertificates/EPRA/1780414303961-EPRA - Certificate of Registration for Solar Photovoltaic Systems Manufacturer.pdf\n120012\tEPRA - Electrical Contractor Licence\tEnergy and Petroleum Regulatory Authority\tEPRA\t/manus-storage/certificates/EPRA/1780414322413-EPRA - Electrical Contractor Licence_793d4294.pdf\tcertificates/EPRA/1780414322413-EPRA - Electrical Contractor Licence.pdf\n120015\tKRA PIN Certificate\tKenya Revenue Authority\tKRA\t/manus-storage/certificates/KRA/1780414437402-KRA PIN Certificate_8aecc2ba.pdf\tcertificates/KRA/1780414437402-KRA PIN Certificate.pdf\n120014\tKRA Tax Compliance Certificate\tKenya Revenue Authority\tKRA\t/manus-storage/certificates/KRA/1780414403925-KRA Tax Compliance Certificate_6ceb405b.pdf\tcertificates/KRA/1780414403925-KRA Tax Compliance Certificate.pdf\n120002\tCertificate of Registration - NCA (Building Works)\tNational Construction Authority (NCA)\tNCA\t/manus-storage/certificates/NCA/1780414065010-Certificate of Registration - NCA (Building Works)_579721b4.pdf\tcertificates/NCA/1780414065010-Certificate of Registration - NCA (Building Works).pdf\n120003\tCertificate of Registration - NCA (Electrical Engineering)\tNational Construction Authority (NCA)\tNCA\t/manus-storage/certificates/NCA/1780414088404-Certificate of Registration - NCA (Electrical Engineering)_f7d891ac.pdf\tcertificates/NCA/1780414088404-Certificate of Registration - NCA (Electrical Engineering).pdf\n120004\tCertificate of Registration - NCA (Mechanical Engineering)\tNational Construction Authority (NCA)\tNCA\t/manus-storage/certificates/NCA/1780414122271-Certificate of Registration - NCA (Mechanical Engineering)_4fbf9485.pdf\tcertificates/NCA/1780414122271-Certificate of Registration - NCA (Mechanical Engineering).pdf\n120009\tContractors Annual Practicing Licence - NCA\tNational Construction Authority (NCA)\tNCA\t/manus-storage/certificates/NCA/1780414256369-Contractors Annual Practicing Licence - NCA_4df89cda.pdf\tcertificates/NCA/1780414256369-Contractors Annual Practicing Licence - NCA.pdf\n120008\tContractors Annual Practicing Licence - NCA 2025\tNational Construction Authority (NCA)\tNCA\t/manus-storage/certificates/NCA/1780414231683-Contractors Annual Practicing Licence - NCA 2025_216793cc.pdf\tcertificates/NCA/1780414231683-Contractors Annual Practicing Licence - NCA 2025.pdf\n120010\tContractors Annual Practicing License - NCA (Building Works)\tNational Construction Authority (NCA)\tNCA\t/manus-storage/certificates/NCA/1780414277119-Contractors Annual Practicing License - NCA (Building Works)_8febb1fb.pdf\tcertificates/NCA/1780414277119-Contractors Annual Practicing License - NCA (Building Works).pdf\n120001\tCertificate of Incorporation\tGovernment of Kenya\tOthers\t/manus-storage/certificates/Others/1780414041032-Certificate of Incorporation_9d6e5073.pdf\tcertificates/Others/1780414041032-Certificate of Incorporation.pdf\n120007\tCompany Business Permit\tCounty Government of Machakos\tOthers\t/manus-storage/certificates/Others/1780414198636-Company Business Permit_7fc9df5f.pdf\tcertificates/Others/1780414198636-Company Business Permit.pdf\n120016\tOSHA - Certificate of Registration of Workplace\tDirectorate of Occupational Safety and Health Services (DOSHS)\tOthers\t/manus-storage/certificates/Others/1780414499620-OSHA - Certificate of Registration of Workplace_66fd52d9.pdf\tcertificates/Others/1780414499620-OSHA - Certificate of Registration of Workplace.pdf\n",
+  "stderr": "",
+  "execution_time_ms": 638
+}
