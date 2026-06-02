@@ -29,6 +29,13 @@
       "when": 1780401860813,
       "tag": "0003_odd_penance",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1780412867652,
+      "tag": "0004_lonely_avengers",
+      "breakpoints": true
     }
   ]
 }

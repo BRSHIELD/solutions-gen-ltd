@@ -19,7 +19,6 @@ export default function AdminCertificates() {
     title: "",
     issuer: "",
     category: "EPRA",
-    issueDate: "",
   });
 
   // Queries and mutations
@@ -62,7 +61,6 @@ export default function AdminCertificates() {
           title: formData.title,
           issuer: formData.issuer,
           category: formData.category,
-          issueDate: formData.issueDate ? new Date(formData.issueDate) : undefined,
           fileBuffer: base64Data,
         });
 
@@ -71,7 +69,6 @@ export default function AdminCertificates() {
           title: "",
           issuer: "",
           category: "EPRA",
-          issueDate: "",
         });
         setShowForm(false);
         refetch();
@@ -212,20 +209,6 @@ export default function AdminCertificates() {
                         <option value="Others">Others</option>
                       </select>
                     </div>
-
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Issue Date
-                      </label>
-                      <Input
-                        type="date"
-                        value={formData.issueDate}
-                        onChange={(e) =>
-                          setFormData({ ...formData, issueDate: e.target.value })
-                        }
-                      />
-                    </div>
-
 
                   </div>
 

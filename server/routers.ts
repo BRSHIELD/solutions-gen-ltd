@@ -69,7 +69,6 @@ export const appRouter = router({
         title: z.string(),
         issuer: z.string(),
         category: z.string(),
-        issueDate: z.date().optional(),
         fileBuffer: z.string(),
       }))
       .mutation(async ({ input, ctx }) => {
@@ -88,7 +87,6 @@ export const appRouter = router({
             category: input.category,
             fileKey,
             fileUrl: url,
-            issueDate: input.issueDate,
             isActive: 1,
           });
           

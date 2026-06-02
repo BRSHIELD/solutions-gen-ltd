@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Award, Download, Calendar, X } from "lucide-react";
+import { Award, Download, X } from "lucide-react";
 import { useState, useMemo, useEffect, useRef } from "react";
 import { trpc } from "@/lib/trpc";
 
@@ -17,16 +17,7 @@ export default function Certifications() {
 
 
 
-  const formatDate = (date: Date | null | undefined) => {
-    if (!date) return "N/A";
-    const d = new Date(date);
-    if (isNaN(d.getTime())) return "N/A";
-    return d.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  };
+
 
   const filteredCertificates = useMemo(() => {
     return selectedCategory === "All"
@@ -187,17 +178,7 @@ export default function Certifications() {
                       <p className="text-gray-600 text-xs mb-3 line-clamp-2">
                         {cert.issuer}
                       </p>
-                      <div className="flex items-center gap-2 text-xs text-gray-500">
-                        <Calendar size={14} />
-                          <span>
-                            {cert.issueDate
-                              ? new Date(cert.issueDate).toLocaleDateString("en-US", {
-                                  year: "numeric",
-                                  month: "short",
-                                })
-                              : "N/A"}
-                          </span>
-                      </div>
+
                     </div>
 
                     {/* View Button */}
@@ -279,13 +260,6 @@ export default function Certifications() {
                       {selectedCertificate.category}
                     </p>
                   </div>
-                  <div>
-                    <p className="text-gray-500 text-sm mb-1">ISSUE DATE</p>
-                    <p className="text-lg font-bold text-[#1E3A5F]">
-                      {formatDate(selectedCertificate.issueDate)}
-                    </p>
-                  </div>
-
                 </div>
 
                 {/* Download Button */}
