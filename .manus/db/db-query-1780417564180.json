@@ -1,0 +1,25 @@
+{
+  "query": "SELECT id, title, fileKey FROM certificates LIMIT 3;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway06.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4Sgio9nLDKMXi8g.root --database oNqKyoxjmVUDpKzxmYxw2z --execute SELECT id, title, fileKey FROM certificates LIMIT 3;",
+  "rows": [
+    {
+      "id": "120001",
+      "title": "Certificate of Incorporation",
+      "fileKey": "certificates/Others/1780414041032-Certificate of Incorporation.pdf"
+    },
+    {
+      "id": "120002",
+      "title": "Certificate of Registration - NCA (Building Works)",
+      "fileKey": "certificates/NCA/1780414065010-Certificate of Registration - NCA (Building Works).pdf"
+    },
+    {
+      "id": "120003",
+      "title": "Certificate of Registration - NCA (Electrical Engineering)",
+      "fileKey": "certificates/NCA/1780414088404-Certificate of Registration - NCA (Electrical Engineering).pdf"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tfileKey\n120001\tCertificate of Incorporation\tcertificates/Others/1780414041032-Certificate of Incorporation.pdf\n120002\tCertificate of Registration - NCA (Building Works)\tcertificates/NCA/1780414065010-Certificate of Registration - NCA (Building Works).pdf\n120003\tCertificate of Registration - NCA (Electrical Engineering)\tcertificates/NCA/1780414088404-Certificate of Registration - NCA (Electrical Engineering).pdf\n",
+  "stderr": "",
+  "execution_time_ms": 656
+}

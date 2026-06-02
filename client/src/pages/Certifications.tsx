@@ -287,14 +287,14 @@ export default function Certifications() {
                     try {
                       setIsDownloading(true);
                       const fileKey = selectedCertificate.fileKey;
-                      const signedUrl = await trpc.certificates.getDownloadUrl.query({ fileKey });
+                      const result = await trpc.certificates.getDownloadUrl.query({ fileKey });
                       
-                      if (!signedUrl?.url) {
+                      if (!result?.url) {
                         throw new Error('Failed to get view URL');
                       }
                       
                       // Open PDF directly in a new tab for viewing
-                      window.open(signedUrl.url, '_blank', 'noopener,noreferrer');
+                      window.open(result.url, '_blank', 'noopener,noreferrer');
                     } catch (error) {
                       console.error('View failed:', error);
                       alert('Failed to view certificate. Please try again.');

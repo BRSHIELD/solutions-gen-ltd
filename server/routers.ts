@@ -110,11 +110,10 @@ export const appRouter = router({
       .input(z.object({ fileKey: z.string() }))
       .query(async ({ input }) => {
         try {
-          const signedUrl = await storageGetSignedUrl(input.fileKey);
-          return { url: signedUrl };
+          return { url: `/manus-storage/${input.fileKey}` };
         } catch (error) {
-          console.error('Failed to get signed URL:', error);
-          throw new Error('Failed to generate download URL');
+          console.error('Failed to get URL:', error);
+          throw new Error('Failed to get certificate URL');
         }
       }),
     batchUpload: protectedProcedure
