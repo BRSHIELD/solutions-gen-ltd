@@ -15,12 +15,7 @@ export default function Certifications() {
 
   const categories = ["All", "EPRA", "NCA", "KRA", "Others"];
 
-  const isExpired = (expiryDate: Date | null | undefined) => {
-    if (!expiryDate) return false;
-    const date = new Date(expiryDate);
-    if (isNaN(date.getTime())) return false;
-    return date < new Date();
-  };
+
 
   const formatDate = (date: Date | null | undefined) => {
     if (!date) return "N/A";
@@ -148,7 +143,6 @@ export default function Certifications() {
           ) : (
             <div className="flex gap-4 overflow-x-auto pb-4 scroll-smooth" ref={scrollContainerRef} onMouseEnter={() => setAutoScroll(false)} onMouseLeave={() => setAutoScroll(true)}>
               {filteredCertificates.map((cert, index) => {
-                const expired = isExpired(cert.expiryDate);
                 return (
                   <motion.div
                     key={cert.id}
@@ -175,23 +169,13 @@ export default function Certifications() {
 
                       {/* Status Badge */}
                       <div className="absolute top-4 right-4">
-                        {expired ? (
-                          <motion.div
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
-                            className="inline-block bg-red-500 text-white px-4 py-2 rounded-full text-xs font-bold"
-                          >
-                            EXPIRED
-                          </motion.div>
-                        ) : (
-                          <motion.div
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
-                            className="inline-block bg-green-500 text-white px-4 py-2 rounded-full text-xs font-bold"
-                          >
-                            ACTIVE
-                          </motion.div>
-                        )}
+                        <motion.div
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          className="inline-block bg-green-500 text-white px-4 py-2 rounded-full text-xs font-bold"
+                        >
+                          ACTIVE
+                        </motion.div>
                       </div>
                     </div>
 
@@ -301,20 +285,7 @@ export default function Certifications() {
                       {formatDate(selectedCertificate.issueDate)}
                     </p>
                   </div>
-                  <div>
-                    <p className="text-gray-500 text-sm mb-1">
-                      EXPIRY DATE
-                    </p>
-                    <p
-                      className={`text-lg font-bold ${
-                        isExpired(selectedCertificate.expiryDate)
-                          ? "text-red-600"
-                          : "text-[#1E3A5F]"
-                      }`}
-                    >
-                      {formatDate(selectedCertificate.expiryDate)}
-                    </p>
-                  </div>
+
                 </div>
 
                 {/* Download Button */}

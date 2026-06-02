@@ -20,7 +20,6 @@ export default function AdminCertificates() {
     issuer: "",
     category: "EPRA",
     issueDate: "",
-    expiryDate: "",
   });
 
   // Queries and mutations
@@ -64,7 +63,6 @@ export default function AdminCertificates() {
           issuer: formData.issuer,
           category: formData.category,
           issueDate: formData.issueDate ? new Date(formData.issueDate) : undefined,
-          expiryDate: formData.expiryDate ? new Date(formData.expiryDate) : undefined,
           fileBuffer: base64Data,
         });
 
@@ -74,7 +72,6 @@ export default function AdminCertificates() {
           issuer: "",
           category: "EPRA",
           issueDate: "",
-          expiryDate: "",
         });
         setShowForm(false);
         refetch();
@@ -229,18 +226,7 @@ export default function AdminCertificates() {
                       />
                     </div>
 
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Expiry Date
-                      </label>
-                      <Input
-                        type="date"
-                        value={formData.expiryDate}
-                        onChange={(e) =>
-                          setFormData({ ...formData, expiryDate: e.target.value })
-                        }
-                      />
-                    </div>
+
                   </div>
 
                   <div className="flex gap-4 pt-4">

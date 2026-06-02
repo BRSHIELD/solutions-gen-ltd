@@ -37,53 +37,7 @@ async function startServer() {
   registerStorageProxy(app);
   registerOAuthRoutes(app);
 
-  // Scheduled handler for certificate expiry notifications
-  app.post("/api/scheduled/checkCertificateExpiry", async (req, res) => {
-    try {
-      const { notifyOwner } = await import("./notification");
-      const { certificates } = await import("../../drizzle/schema");
-      const { sql } = await import("drizzle-orm");
-      const { db } = await import("../db");
 
-      // Get all active certificates expiring within 30 days
-      const thirtyDaysFromNow = new Date();
-      thirtyDaysFromNow.setDate(thirtyDaysFromNow.getDate() + 30);
-
-      const expiringCerts = await db.query.certificates.findMany({
-        where: (certs, { and, lte, gt, isNotNull, eq }) =>
-          and(
-            eq(certs.isActive, true),
-            isNotNull(certs.expiryDate),
-            lte(certs.expiryDate, thirtyDaysFromNow),
-            gt(certs.expiryDate, new Date())
-          ),
-      });
-
-      if (expiringCerts.length > 0) {
-        const certList = expiringCerts
-          .map(
-            (cert) =>
-              `- ${cert.title} (${cert.issuer}): Expires ${new Date(cert.expiryDate!).toLocaleDateString()}`
-          )
-          .join("\n");
-
-        await notifyOwner({
-          title: `Certificate Expiry Alert: ${expiringCerts.length} certificate(s) expiring soon`,
-          content: `The following certificates will expire within 30 days:\n\n${certList}\n\nPlease renew them to maintain compliance.`,
-        });
-      }
-
-      res.json({ ok: true, checked: expiringCerts.length });
-    } catch (error) {
-      console.error("Certificate expiry check failed:", error);
-      res.status(500).json({
-        error: error instanceof Error ? error.message : "Unknown error",
-        stack: error instanceof Error ? error.stack : undefined,
-        context: { url: req.url },
-        timestamp: new Date().toISOString(),
-      });
-    }
-  });
 
   // tRPC API
   app.use(

@@ -35,7 +35,6 @@ export const certificates = mysqlTable("certificates", {
   fileKey: varchar("fileKey", { length: 512 }).notNull(),
   fileUrl: text("fileUrl").notNull(),
   issueDate: timestamp("issueDate"),
-  expiryDate: timestamp("expiryDate"),
   isActive: int("isActive").default(1).notNull(),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
