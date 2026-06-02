@@ -10,6 +10,7 @@ export default function Certifications() {
   const [autoScroll, setAutoScroll] = useState(true);
   const [selectedCertificate, setSelectedCertificate] = useState<any>(null);
 
+
   // Fetch certificates from database
   const { data: certificates = [], isLoading } = trpc.certificates.list.useQuery();
 
@@ -233,16 +234,34 @@ export default function Certifications() {
 
               {/* Modal Content */}
               <div className="p-8">
-                {/* PDF Preview */}
-                <div className="mb-8 bg-gray-100 rounded-lg p-6 min-h-96 flex items-center justify-center">
-                  <div className="text-center">
-                    <Award size={64} className="mx-auto text-[#00D084] mb-4" />
-                    <p className="text-gray-600 font-semibold mb-4">
-                      PDF Certificate Preview
+                {/* PDF Preview Card */}
+                <div className="mb-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-8 border-2 border-dashed border-[#00D084]">
+                  <div className="flex flex-col items-center justify-center text-center">
+                    <div className="mb-6 p-4 bg-white rounded-full">
+                      <Award size={48} className="text-[#00D084]" />
+                    </div>
+                    <h3 className="text-xl font-bold text-[#1E3A5F] mb-2">
+                      Certificate PDF Ready
+                    </h3>
+                    <p className="text-gray-600 mb-6 max-w-sm">
+                      Click the button below to download and view the full certificate document
                     </p>
-                    <p className="text-gray-500 text-sm mb-6">
-                      Click "Download Certificate" to view the full PDF
-                    </p>
+                    <div className="flex items-center gap-2 text-sm text-gray-500 mb-6">
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                        />
+                      </svg>
+                      <span>PDF Document</span>
+                    </div>
                   </div>
                 </div>
 

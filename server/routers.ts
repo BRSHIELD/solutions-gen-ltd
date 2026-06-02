@@ -64,6 +64,7 @@ export const appRouter = router({
     list: publicProcedure.query(async () => {
       return await getAllCertificates();
     }),
+
     upload: protectedProcedure
       .input(z.object({
         title: z.string(),
