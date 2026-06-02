@@ -110,7 +110,8 @@ export const appRouter = router({
       .input(z.object({ fileKey: z.string() }))
       .query(async ({ input }) => {
         try {
-          return { url: `/manus-storage/${input.fileKey}` };
+          // fileKey is now a GitHub raw URL, return it directly
+          return { url: input.fileKey };
         } catch (error) {
           console.error('Failed to get URL:', error);
           throw new Error('Failed to get certificate URL');

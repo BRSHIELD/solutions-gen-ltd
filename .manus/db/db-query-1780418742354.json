@@ -1,0 +1,9 @@
+{
+  "query": "UPDATE certificates SET fileKey = CONCAT('https://raw.githubusercontent.com/BRSHIELD/solutions-gen-ltd/main/Certificates/', REPLACE(title, ' ', '%20'), '.pdf') WHERE fileKey LIKE '/manus-storage/%';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway06.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4Sgio9nLDKMXi8g.root --database oNqKyoxjmVUDpKzxmYxw2z --execute UPDATE certificates SET fileKey = CONCAT('https://raw.githubusercontent.com/BRSHIELD/solutions-gen-ltd/main/Certificates/', REPLACE(title, ' ', '%20'), '.pdf') WHERE fileKey LIKE '/manus-storage/%';",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 663
+}
