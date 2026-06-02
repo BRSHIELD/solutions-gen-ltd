@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Award, Download, X } from "lucide-react";
+import { Award, Download, X, Eye } from "lucide-react";
 import { useState, useMemo, useEffect, useRef } from "react";
 import { trpc } from "@/lib/trpc";
 
@@ -290,20 +290,14 @@ export default function Certifications() {
                       const signedUrl = await trpc.certificates.getDownloadUrl.query({ fileKey });
                       
                       if (!signedUrl?.url) {
-                        throw new Error('Failed to get download URL');
+                        throw new Error('Failed to get view URL');
                       }
                       
-                      const link = document.createElement('a');
-                      link.href = signedUrl.url;
-                      link.download = `${selectedCertificate.title.replace(/\s+/g, "_")}_certificate.pdf`;
-                      link.target = '_blank';
-                      link.rel = 'noopener noreferrer';
-                      document.body.appendChild(link);
-                      link.click();
-                      document.body.removeChild(link);
+                      // Open PDF directly in a new tab for viewing
+                      window.open(signedUrl.url, '_blank', 'noopener,noreferrer');
                     } catch (error) {
-                      console.error('Download failed:', error);
-                      alert('Failed to download certificate. Please try again.');
+                      console.error('View failed:', error);
+                      alert('Failed to view certificate. Please try again.');
                     } finally {
                       setIsDownloading(false);
                     }
@@ -313,8 +307,8 @@ export default function Certifications() {
                   whileTap={{ scale: 0.95 }}
                   className="mt-6 w-full inline-flex items-center justify-center gap-2 bg-[#00D084] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#0FA55F] transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <Download size={18} />
-                  {isDownloading ? 'Downloading...' : 'Download Certificate'}
+                  <Eye size={18} />
+                  {isDownloading ? 'Loading...' : 'View Certificate'}
                 </motion.button>
               </div>
             </motion.div>
