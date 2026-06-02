@@ -479,12 +479,12 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-6">
             {[
-              { name: "Mechanical & Electrical", image: "/manus-storage/manufacturing_92b6a132.jpg", description: "Industrial automation and electrical systems" },
-              { name: "Construction", image: "/manus-storage/hospitality_62e06c23.jpg", description: "Infrastructure and construction solutions" },
-              { name: "Manufacturing", image: "/manus-storage/education_f2cf0230.jpg", description: "Industrial automation and electrical systems" },
-              { name: "Hospitality", image: "/manus-storage/retail_5df6e4bc.jpg", description: "Security and energy solutions for hotels" },
-              { name: "Education", image: "/manus-storage/finance_cb085ca9.jpg", description: "Campus-wide networking and security" },
-              { name: "Real Estate", image: "/manus-storage/government_68a3ad3a.jpg", description: "Smart building systems and security infrastructure" },
+              { name: "Mechanical & Electrical", image: "/manus-storage/VxEHIjfLHdxI_489dc66c.jpg", description: "Industrial automation and electrical systems" },
+              { name: "Construction", image: "/manus-storage/ZRcJyPeCHNK0_adedf65a.jpeg", description: "Infrastructure and construction solutions" },
+              { name: "Manufacturing", image: "/manus-storage/h0eTmn7abxvG_0abe4390.jpg", description: "Industrial automation and electrical systems" },
+              { name: "Hospitality", image: "/manus-storage/g5UiPUS8FTcg_ff8a3510.jpg", description: "Security and energy solutions for hotels" },
+              { name: "Education", image: "/manus-storage/YSrmsUPAF1u2_c4ac1bcc.png", description: "Campus-wide networking and security" },
+              { name: "Real Estate", image: "/manus-storage/KpvVpjaW8U6h_276c4a59.jpeg", description: "Smart building systems and security infrastructure" },
             ].map((industry, index) => (
               <motion.div
                 key={index}
