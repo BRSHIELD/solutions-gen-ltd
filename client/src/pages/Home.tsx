@@ -446,7 +446,7 @@ export default function Home() {
               <img
                 src="/manus-storage/clients_template_d8f8396e.jpg"
                 alt="Trusted clients and partners"
-                className="w-full max-w-lg object-contain"
+                className="w-full max-w-3xl object-contain shadow-lg rounded-lg"
               />
             </motion.div>
           </div>
