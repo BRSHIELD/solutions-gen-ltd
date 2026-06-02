@@ -110,9 +110,9 @@ export default function Navbar() {
                   }}
                   transition={{ duration: 0.3 }}
                   className="flex items-center gap-2"
+                  title="Admin Panel"
                 >
                   <Settings size={18} />
-                  <span>Admin</span>
                 </motion.div>
                 <motion.span 
                   className="absolute bottom-0 left-0 h-1 bg-[#00D084] rounded-full" 
