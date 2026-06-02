@@ -433,19 +433,25 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-7xl mx-auto">
             {[
-              "/manus-storage/Coop-Bank1_f89ba01d.jpg",
-              "/manus-storage/KTRH-Logo-150x150_b931964c.jpg",
-              "/manus-storage/NSSF_34846790.jpg",
-              "/manus-storage/world-vision-vector-logo_b878e555.jpg",
-              "/manus-storage/Cytonn_8fc476a4.jpg",
-              "/manus-storage/Equity_Bank_Logo_fa3bbdec.jpg",
-              "/manus-storage/KCB Bank_f2affafc.jpg",
-              "/manus-storage/Tangaza-University-College_c1ac1fe7.jpg",
-              "/manus-storage/Transglobal_75093d8f.jpg",
-              "/manus-storage/Turkana basin institute_d9d3af82.jpg",
-              "/manus-storage/british-high-commission-nairobi-office_0af9f332.jpg",
-              "/manus-storage/Junction mall_dd2e2317.jpg",
-              "/manus-storage/TATU_a50f74ac.jpg",
+              "/manus-storage/Coop-Bank1_dcd8f48a.jpg",
+              "/manus-storage/KTRH-Logo-150x150_cc40f71a.jpg",
+              "/manus-storage/NSSF_bcc4e1d0.jpg",
+              "/manus-storage/world-vision-vector-logo_7cfc6817.jpg",
+              "/manus-storage/Cytonn_081d69e1.jpg",
+              "/manus-storage/Equity_Bank_Logo_548dad5a.jpg",
+              "/manus-storage/KCB Bank_44b2af94.jpg",
+              "/manus-storage/Muthaiga Country club_3c1794d5.jpg",
+              "/manus-storage/Tangaza-University-College_8eef1f84.jpg",
+              "/manus-storage/Transglobal_bf509c8f.jpg",
+              "/manus-storage/Turkana basin institute_72b5ae41.jpg",
+              "/manus-storage/british-high-commission-nairobi-office_c67619aa.jpg",
+              "/manus-storage/Junction mall_9f8a90be.jpg",
+              "/manus-storage/Nairobi west hospital_0d7587dc.jpg",
+              "/manus-storage/TATU_4cd6ab68.jpg",
+              "/manus-storage/Windsor Club_3ad1ea8f.jpg",
+              "/manus-storage/coast_general_3222e4ef.jpg",
+              "/manus-storage/united-nations-logo-png_seeklogo-247981_2b4fd0f3.jpg",
+              "/manus-storage/world bank_7ed7da50.jpg",
             ].map((logo, index) => (
               <motion.div
                 key={index}
