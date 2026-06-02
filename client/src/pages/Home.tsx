@@ -444,7 +444,7 @@ export default function Home() {
               className="flex items-center justify-center"
             >
               <img
-                src="/manus-storage/clients_template_d8f8396e.jpg"
+                src="/manus-storage/clients_template_new_45c67592.jpg"
                 alt="Trusted clients and partners"
                 className="w-full max-w-3xl object-contain shadow-lg rounded-lg"
               />
