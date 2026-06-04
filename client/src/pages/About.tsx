@@ -28,7 +28,7 @@ export default function About() {
 
   const team = [
     {
-      name: "Mr. Patrick K. Nduva",
+      name: "Eng. Patrick K. Nduva",
       role: "Managing Director & Founder",
       expertise: "Electrical Engineering & Strategic Leadership",
     },
@@ -92,7 +92,7 @@ export default function About() {
                 Our Journey
               </h2>
               <p className="text-gray-700 text-lg mb-4">
-                Solutions General Ltd was founded in 1996 by Mr. Patrick K. Nduva, a seasoned Electrical Engineer and visionary entrepreneur. From inception, we have been dedicated to delivering high-quality services, innovative solutions, and sustainable growth across East Africa.
+                Solutions General Ltd was founded in 1996 by Eng. Patrick K. Nduva, a seasoned Electrical Engineer and visionary entrepreneur. From inception, we have been dedicated to delivering high-quality services, innovative solutions, and sustainable growth across East Africa.
               </p>
               <p className="text-gray-700 text-lg mb-4">
                 Throughout our three-decade journey, Solutions General Ltd has demonstrated unwavering commitment to quality, safety, and innovation. Our growth has been both sustainable and strategic, driven by a focus on building long-term relationships with clients and partners across Kenya and beyond.
@@ -272,16 +272,16 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl font-bold mb-4">Mr. Patrick K. Nduva</h2>
+              <h2 className="text-4xl font-bold mb-4">Eng. Patrick K. Nduva</h2>
               <p className="text-xl text-gray-100 mb-2 font-semibold">Managing Director & Founder</p>
               <p className="text-gray-200 text-lg mb-6">
                 Electrical Engineer & Strategic Visionary
               </p>
               <p className="text-gray-100 mb-6 leading-relaxed">
-                With over 30 years of experience in electrical engineering and business development, Mr. Patrick K. Nduva founded Solutions General Ltd in 1996 with a vision to transform East Africa's engineering landscape. His strategic leadership, technical expertise, and commitment to excellence have positioned the company as a premier provider of comprehensive engineering and technology solutions.
+                With over 30 years of experience in electrical engineering and business development, Eng. Patrick K. Nduva founded Solutions General Ltd in 1996 with a vision to transform East Africa's engineering landscape. His strategic leadership, technical expertise, and commitment to excellence have positioned the company as a premier provider of comprehensive engineering and technology solutions.
               </p>
               <p className="text-gray-100 mb-8 leading-relaxed">
-                Mr. Nduva's visionary approach combines cutting-edge technology with sustainable practices, ensuring that every project delivers exceptional value to clients while contributing to regional development and environmental responsibility.
+                Eng. Nduva's visionary approach combines cutting-edge technology with sustainable practices, ensuring that every project delivers exceptional value to clients while contributing to regional development and environmental responsibility.
               </p>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">

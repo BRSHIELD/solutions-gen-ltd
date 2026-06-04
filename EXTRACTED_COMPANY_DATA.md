@@ -11,7 +11,7 @@ Solutions General Ltd is East Africa's leading Electrical, ICT, Security and Sol
 
 ## History
 - **Founded**: 2006 in Nairobi
-- **Founder/MD**: Mr. Patrick K. Nduva (Electrical Engineer and visionary entrepreneur)
+- **Founder/MD**: Eng. Patrick K. Nduva (Electrical Engineer and visionary entrepreneur)
 - **Journey**: Two-decade commitment to quality, safety, and innovation
 - **Growth**: Sustainable and strategic growth driven by long-term client relationships
 - **Scope**: Successfully delivered projects across Kenya and East Africa for government agencies, multinational corporations, local businesses, and communities
@@ -137,7 +137,7 @@ Solutions General Ltd has successfully completed numerous projects including:
 - **Risk Management**: Regular risk assessments, training, and health and safety concern management
 
 ## Key Personnel
-- **Managing Director**: Patrick K. Nduva (Electrical Engineer)
+- **Managing Director**: Eng. Patrick K. Nduva (Electrical Engineer)
 - **Certified Electrical Worker**: Patrick Kivai Nduvah (EPRA/EW/0002374)
 - **Solar PV Technicians**: Wilson Gathaiyu, Patrick Kivai Nduvah
 
