@@ -146,7 +146,7 @@ export default function Certifications() {
                     onClick={() => setSelectedCertificate(cert)}
                   >
                     {/* Certificate Image */}
-                    <div className="relative h-32 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                    <div className="relative h-64 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                       {cert.imageUrl ? (
                         <motion.img
                           src={cert.imageUrl}
@@ -191,18 +191,7 @@ export default function Certifications() {
 
                     </div>
 
-                    {/* View Button */}
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setSelectedCertificate(cert);
-                      }}
-                      className="w-full bg-[#00D084] text-white py-2 font-semibold hover:bg-[#0FA55F] transition-colors text-sm"
-                    >
-                      View
-                    </motion.button>
+
                   </motion.div>
                 );
               })}
