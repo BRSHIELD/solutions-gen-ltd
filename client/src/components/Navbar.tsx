@@ -16,7 +16,6 @@ export default function Navbar() {
     { label: "Services", href: "/services" },
     { label: "Portfolio", href: "/portfolio" },
     { label: "Gallery", href: "/gallery" },
-    { label: "Certifications", href: "/certifications" },
     { label: "Testimonials", href: "/testimonials" },
     { label: "Contact", href: "/contact" },
   ];
@@ -100,29 +99,7 @@ export default function Navbar() {
               }}
               transition={{ duration: 0.3 }}
             >
-              <Link
-                href="/admin/certificates"
-                className="text-gray-700 font-medium relative group inline-flex items-center gap-2"
-              >
-                <motion.div
-                  animate={{
-                    color: hoveredItem === "admin" ? "#00D084" : "#374151",
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className="flex items-center gap-2"
-                  title="Admin Panel"
-                >
-                  <Settings size={18} />
                 </motion.div>
-                <motion.span 
-                  className="absolute bottom-0 left-0 h-1 bg-[#00D084] rounded-full" 
-                  animate={{
-                    width: isNavHovered && hoveredItem === "admin" ? "100%" : "0%",
-                  }}
-                  transition={{ duration: 0.3 }}
-                />
-              </Link>
-            </motion.div>
           )}
         </div>
 
@@ -158,18 +135,7 @@ export default function Navbar() {
               </motion.div>
             ))}
 
-            {user && user.role === "admin" && (
-              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: navItems.length * 0.05 }}>
-                <Link
-                  href="/admin/certificates"
-                  onClick={() => setIsOpen(false)}
-                  className="text-gray-700 hover:text-[#1E3A5F] transition-colors font-medium flex items-center gap-2"
-                >
-                  <Settings size={18} />
-                  <span>Admin Panel</span>
-                </Link>
-              </motion.div>
-            )}
+
           </div>
         </motion.div>
       )}

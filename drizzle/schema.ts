@@ -26,23 +26,6 @@ export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 
 // TODO: Add your tables here
-// Certificates table for storing PDF certificates
-export const certificates = mysqlTable("certificates", {
-  id: int("id").autoincrement().primaryKey(),
-  title: varchar("title", { length: 255 }).notNull(),
-  issuer: varchar("issuer", { length: 255 }).notNull(),
-  category: varchar("category", { length: 100 }).notNull(),
-  fileKey: varchar("fileKey", { length: 512 }).notNull(),
-  fileUrl: text("fileUrl").notNull(),
-  imageUrl: text("imageUrl"),
-  isActive: int("isActive").default(1).notNull(),
-  createdAt: timestamp("createdAt").defaultNow().notNull(),
-  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
-});
-
-export type Certificate = typeof certificates.$inferSelect;
-export type InsertCertificate = typeof certificates.$inferInsert;
-
 // Contact form submissions table
 export const contactSubmissions = mysqlTable("contactSubmissions", {
   id: int("id").autoincrement().primaryKey(),

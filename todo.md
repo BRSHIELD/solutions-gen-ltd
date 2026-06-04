@@ -51,3 +51,14 @@
 - [x] Company founding year updated to 1996
 - [x] Navigation menu repositioned to right side
 - [x] Homepage sections made more compact
+
+## Phase 7: Certifications Section Removal
+- [x] Remove Certifications route from App.tsx
+- [x] Remove Certifications navigation links from Navbar (desktop and mobile)
+- [x] Remove Admin link from Navbar
+- [x] Delete Certifications.tsx page file
+- [x] Delete AdminCertificates.tsx page file
+- [x] Remove certificate tRPC procedures from server/routers.ts
+- [x] Remove certificate database functions from server/db.ts
+- [x] Remove certificates table definition from drizzle/schema.ts
+- [ ] Drop certificates table from database (blocked by safety restrictions - requires manual database action)

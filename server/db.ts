@@ -1,6 +1,6 @@
 import { eq, desc } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users, certificates, InsertCertificate, contactSubmissions, InsertContactSubmission } from "../drizzle/schema";
+import { InsertUser, users, contactSubmissions, InsertContactSubmission } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -90,71 +90,6 @@ export async function getUserByOpenId(openId: string) {
 }
 
 // TODO: add feature queries here as your schema grows.
-
-// Certificate queries
-export async function getAllCertificates() {
-  const db = await getDb();
-  if (!db) {
-    console.warn("[Database] Cannot get certificates: database not available");
-    return [];
-  }
-
-  try {
-    const result = await db.select().from(certificates).where(eq(certificates.isActive, 1)).orderBy(desc(certificates.createdAt));
-    return result;
-  } catch (error) {
-    console.error("[Database] Failed to get certificates:", error);
-    return [];
-  }
-}
-
-export async function getCertificatesByCategory(category: string) {
-  const db = await getDb();
-  if (!db) {
-    console.warn("[Database] Cannot get certificates: database not available");
-    return [];
-  }
-
-  try {
-    const result = await db.select().from(certificates).where(eq(certificates.category, category)).orderBy(desc(certificates.createdAt));
-    return result;
-  } catch (error) {
-    console.error("[Database] Failed to get certificates by category:", error);
-    return [];
-  }
-}
-
-export async function createCertificate(cert: InsertCertificate) {
-  const db = await getDb();
-  if (!db) {
-    console.warn("[Database] Cannot create certificate: database not available");
-    return null;
-  }
-
-  try {
-    const result = await db.insert(certificates).values(cert);
-    return result;
-  } catch (error) {
-    console.error("[Database] Failed to create certificate:", error);
-    throw error;
-  }
-}
-
-export async function deleteCertificate(id: number) {
-  const db = await getDb();
-  if (!db) {
-    console.warn("[Database] Cannot delete certificate: database not available");
-    return false;
-  }
-
-  try {
-    await db.delete(certificates).where(eq(certificates.id, id));
-    return true;
-  } catch (error) {
-    console.error("[Database] Failed to delete certificate:", error);
-    throw error;
-  }
-}
 
 // Contact submission queries
 export async function createContactSubmission(submission: InsertContactSubmission) {
