@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 
 export default function WhatsAppButton() {
-  const whatsappNumber = "254700000000";
+  const whatsappNumber = "254722763156";
   const message = "Hi, I'm interested in Solutions Gen Ltd services.";
 
   return (

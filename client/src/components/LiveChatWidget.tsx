@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function LiveChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const whatsappNumber = "+254700000000";
+  const whatsappNumber = "+254722763156";
   const whatsappMessage = "Hello! I'm interested in your services. Can you help me?";
   const whatsappLink = `https://wa.me/${whatsappNumber.replace(/\D/g, "")}?text=${encodeURIComponent(whatsappMessage)}`;
 
