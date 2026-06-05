@@ -5,21 +5,21 @@ export default function Testimonials() {
   const commercialTestimonials = [
     {
       name: "John Mwangi",
-      company: "TechCorp Kenya",
+      company: "United Nations",
       project: "Office Complex Electrical Installation",
       text: "Solutions Gen Ltd transformed our facility with their professional electrical engineering services. The team was punctual, professional, and delivered exceptional results. Highly recommended!",
       rating: 5,
     },
     {
       name: "Sarah Kipchoge",
-      company: "Green Energy Ltd",
+      company: "World Bank",
       project: "Solar Panel Installation - Retail Center",
       text: "Their solar energy solutions have reduced our operational costs significantly. The installation was seamless and the team provided excellent after-sales support. Excellent team!",
       rating: 5,
     },
     {
       name: "Michael Ochieng",
-      company: "SecureNet Solutions",
+      company: "Equity Group",
       project: "Security System Integration",
       text: "Professional, reliable, and innovative. Solutions Gen is our trusted partner for all security needs. They understand our requirements and deliver beyond expectations.",
       rating: 5,
@@ -29,21 +29,21 @@ export default function Testimonials() {
   const industrialTestimonials = [
     {
       name: "Dr. James Kariuki",
-      company: "Kenya Manufacturing Ltd",
+      company: "Tatu City",
       project: "Industrial Plant Electrical Upgrade",
       text: "Solutions Gen's expertise in industrial electrical systems is unmatched. They upgraded our entire plant's electrical infrastructure with minimal downtime. Outstanding work!",
       rating: 5,
     },
     {
       name: "Peter Mwangi",
-      company: "East Africa Logistics",
+      company: "Transglobal Logistics",
       project: "Warehouse Automation & Power Systems",
       text: "The team designed and implemented a comprehensive power management system for our warehouse. Their technical knowledge and attention to detail were impressive.",
       rating: 5,
     },
     {
       name: "Grace Omondi",
-      company: "Nairobi Steel Works",
+      company: "Cooperative Bank of Kenya",
       project: "Heavy Industrial Equipment Installation",
       text: "Working with Solutions Gen on our industrial equipment installation was seamless. They handled complex technical requirements with ease and professionalism.",
       rating: 5,
