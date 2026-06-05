@@ -46,11 +46,11 @@ export default function Gallery() {
 
   const categories = [
     { value: "all", label: "All Projects" },
-    { value: "solar", label: "Solar" },
     { value: "electrical", label: "Electrical" },
-    { value: "security", label: "Security" },
     { value: "networking", label: "Networking" },
-    { value: "access", label: "Access Control" },
+    { value: "ict", label: "ICT" },
+    { value: "solar", label: "Solar" },
+    { value: "security", label: "Security" },
   ];
 
   const filteredItems = selectedFilter === "all"
