@@ -336,6 +336,7 @@ export default function Contact() {
 
       {/* Contact Form */}
       <motion.section
+        id="contact-form"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}

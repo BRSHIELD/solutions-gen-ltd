@@ -357,7 +357,7 @@ export default function Home() {
                         Request a Quote
                       </motion.button>
                     </Link>
-                    <Link href={`/services?service=${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                    <Link href={`/contact?service=${encodeURIComponent(service.title)}&type=site-visit#contact-form`}>
                       <motion.button
                         whileHover={{ x: 5 }}
                         className="text-[#00D084] font-semibold flex items-center gap-2 hover:text-[#00B870] transition-colors"

@@ -147,7 +147,7 @@ export default function Services() {
                           </motion.li>
                         ))}
                       </ul>
-                      <Link href={`/contact?service=${encodeURIComponent(service.title)}&type=site-visit`} className="inline-block w-full">
+                      <Link href={`/contact?service=${encodeURIComponent(service.title)}&type=site-visit#contact-form`} className="inline-block w-full">
                         <motion.button whileHover={{ scale: 1.05, boxShadow: "0 15px 35px rgba(0, 208, 132, 0.3)" }} whileTap={{ scale: 0.95 }} className="w-full bg-[#00D084] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#0FA55F] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer">
                           Request for Site Visit
                           <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
