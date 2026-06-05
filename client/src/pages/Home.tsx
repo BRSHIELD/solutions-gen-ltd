@@ -48,7 +48,7 @@ export default function Home() {
     "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/service-solar-green-energy-2Yh2YQ6DNp9JaTnx55qZMw.webp",
     "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/service-security-systems-BXH8QsiCs39t3FNeoZGtdQ.webp",
     "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/service-networking-communication-bYyowKL4YKKyHp3MiDLo9F.webp",
-    "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/service-access-control-AuMmvhwSovWkY2GCW62pYW.webp",
+    "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/access-control-systems-WoTtUqSoDz33XWGJDzoJcm.webp",
     "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/service-ict-solutions-Prei2sFUthrrGDfXaQtMxt.webp",
   ];
 
