@@ -72,13 +72,20 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}\n      <motion.section
+      {/* Hero Section */}
+      <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="bg-gradient-to-r from-[#1E3A5F] to-[#0FA55F] text-white py-20"
+        className="bg-gradient-to-r from-[#1E3A5F] to-[#0FA55F] text-white py-20 relative overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(rgba(30, 58, 95, 0.6), rgba(15, 165, 95, 0.6)), url('https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+        }}
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
