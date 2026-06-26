@@ -141,7 +141,7 @@ export default function About() {
                 Our Vision
               </h2>
               <p className="text-xl text-gray-100 mb-4">
-                To be the premier and most trusted provider of innovative, sustainable, and high-quality electrical and engineering solutions in East Africa.
+                To be the premier and most trusted partner providing clean and Quality services, Honesty and Diligently before all men for the Glory of God.
               </p>
               <p className="text-xl text-gray-100">
                 We strive to set industry standards through excellence, integrity, and cutting-edge technology, empowering communities and businesses to build a resilient and prosperous future.
