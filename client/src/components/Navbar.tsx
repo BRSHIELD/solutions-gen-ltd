@@ -38,7 +38,7 @@ export default function Navbar() {
               whileHover={{ boxShadow: "0 0 20px rgba(0, 208, 132, 0.4)" }}
             />
             <span className="font-bold text-lg text-[#1E3A5F] hidden sm:inline">
-              Solutions Gen
+              Solutions General Limited
             </span>
           </Link>
         </motion.div>
