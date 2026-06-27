@@ -432,7 +432,7 @@ export default function Home() {
               className="flex items-center justify-center lg:justify-start relative"
             >
               <h2 className="text-5xl lg:text-6xl font-bold text-[#1E3A5F] leading-tight">
-                Trusted by our customers & partners
+                Some of our Trusted customers & partners
               </h2>
               {/* Vertical Divider Line */}
               <div className="hidden lg:block absolute right-0 top-1/2 transform -translate-y-1/2 h-3/4 w-px bg-gray-300"></div>
