@@ -392,7 +392,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: "✓", title: "Expert Team", description: "50+ experienced engineers with proven track record" },
+              { icon: "✓", title: "Expert Team", description: "Certified and experienced engineers with a proven track record" },
               { icon: "✓", title: "Quality Assurance", description: "ISO certified processes and quality standards" },
               { icon: "✓", title: "On-Time Delivery", description: "Committed to project timelines and deadlines" },
               { icon: "✓", title: "24/7 Support", description: "Dedicated customer support and maintenance" },

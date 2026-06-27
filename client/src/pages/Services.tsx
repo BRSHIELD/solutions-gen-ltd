@@ -214,7 +214,7 @@ export default function Services() {
             {[
               {
                 title: "Expert Team",
-                description: "50+ experienced engineers with proven track records",
+                description: "Certified and experienced engineers with a proven track record",
               },
               {
                 title: "Quality Assurance",
