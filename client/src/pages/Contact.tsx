@@ -276,7 +276,7 @@ export default function Contact() {
                 +254 722 588 932
               </p>
               <p className="text-gray-600 text-sm hover:text-[#00D084] transition-colors">
-                +254 792 405 667
+                +254 757 850 465
               </p>
             </motion.a>
 
