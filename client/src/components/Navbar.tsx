@@ -13,7 +13,18 @@ export default function Navbar() {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
-    { label: "Services", href: "/services" },
+    { 
+      label: "Services", 
+      href: "/services",
+      submenu: [
+        { label: "Electrical Engineering", href: "/services#electrical" },
+        { label: "Solar & Green Energy", href: "/services#solar" },
+        { label: "CCTV & Security Systems", href: "/services#security" },
+        { label: "Networking & Communication", href: "/services#networking" },
+        { label: "Access Control Systems", href: "/services#access" },
+        { label: "ICT Solutions", href: "/services#ict" },
+      ]
+    },
     { label: "Portfolio", href: "/portfolio" },
     { label: "Gallery", href: "/gallery" },
     { label: "Testimonials", href: "/testimonials" },
@@ -52,7 +63,7 @@ export default function Navbar() {
             setHoveredItem(null);
           }}
         >
-          {navItems.map((item) => (
+          {navItems.map((item: any) => (
             <motion.div 
               key={item.href} 
               onMouseEnter={() => setHoveredItem(item.href)}
@@ -61,6 +72,7 @@ export default function Navbar() {
                 opacity: isNavHovered && hoveredItem !== item.href ? 0.4 : 1,
               }}
               transition={{ duration: 0.3 }}
+              className="relative"
             >
               <Link 
                 href={item.href} 
@@ -86,6 +98,27 @@ export default function Navbar() {
                   transition={{ duration: 0.3 }}
                 />
               </Link>
+              
+              {/* Dropdown Menu */}
+              {item.submenu && hoveredItem === item.href && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute left-0 mt-0 w-56 bg-white shadow-lg rounded-lg py-2 z-50 border border-gray-100"
+                >
+                  {item.submenu.map((subitem: any) => (
+                    <Link
+                      key={subitem.href}
+                      href={subitem.href}
+                      className="block px-4 py-2 text-gray-700 hover:bg-[#f0f9f7] hover:text-[#00D084] transition-colors text-sm"
+                    >
+                      {subitem.label}
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
             </motion.div>
           ))}
 
@@ -123,7 +156,7 @@ export default function Navbar() {
           className="md:hidden bg-white border-t border-gray-100"
         >
           <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
-            {navItems.map((item, index) => (
+            {navItems.map((item: any, index) => (
               <motion.div key={item.href} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * 0.05 }}>
                 <Link
                   href={item.href}
@@ -132,6 +165,20 @@ export default function Navbar() {
                 >
                   {item.label}
                 </Link>
+                {item.submenu && (
+                  <div className="pl-4 mt-2 space-y-2">
+                    {item.submenu.map((subitem: any) => (
+                      <Link
+                        key={subitem.href}
+                        href={subitem.href}
+                        onClick={() => setIsOpen(false)}
+                        className="text-gray-600 hover:text-[#00D084] transition-colors text-sm block"
+                      >
+                        {subitem.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </motion.div>
             ))}
 
