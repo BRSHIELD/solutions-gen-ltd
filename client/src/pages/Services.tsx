@@ -218,7 +218,7 @@ export default function Services() {
               },
               {
                 title: "Quality Assurance",
-                description: "ISO certified processes and international standards",
+                description: "Quality assured through EPRA- and NCA-certified processes.",
               },
               {
                 title: "24/7 Support",
