@@ -46,9 +46,9 @@ export default function About() {
 
   const certifications = [
     { title: "NCA 1 License", description: "National Construction Authority - Electrical Engineering Service Contractor" },
-    { title: "EPRA Class A-1", description: "Energy and Petroleum Regulatory Authority - Electrical Contractor License" },
+    { title: "EPRA Class A-1 and C-1", description: "Energy and Petroleum Regulatory Authority - Electrical Contractor License" },
     { title: "Solar PV License T3", description: "EPRA Solar Photovoltaic Manufacturer/Importer License" },
-    { title: "ISO Compliant", description: "Quality Management and Safety Standards" },
+    { title: "KNCCI Member", description: "Registered Member of the Kenya National Chamber of Commerce and Industry" },
   ];
 
   return (
