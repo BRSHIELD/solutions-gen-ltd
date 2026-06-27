@@ -483,7 +483,7 @@ export default function Home() {
               { name: "Construction", image: "/manus-storage/ZRcJyPeCHNK0_adedf65a.jpeg", description: "Infrastructure and construction solutions" },
               { name: "Manufacturing", image: "/manus-storage/h0eTmn7abxvG_0abe4390.jpg", description: "Industrial automation and electrical systems" },
               { name: "Hospitality", image: "/manus-storage/g5UiPUS8FTcg_ff8a3510.jpg", description: "Security and energy solutions for hotels" },
-              { name: "Education", image: "/manus-storage/YSrmsUPAF1u2_c4ac1bcc.png", description: "Campus-wide networking and security" },
+              { name: "Health", image: "/manus-storage/YSrmsUPAF1u2_c4ac1bcc.png", description: "Promoting health through safe, compliant installations." },
               { name: "Real Estate", image: "/manus-storage/KpvVpjaW8U6h_276c4a59.jpeg", description: "Smart building systems and security infrastructure" },
             ].map((industry, index) => (
               <motion.div
