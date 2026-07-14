@@ -598,6 +598,88 @@ export default function Contact() {
         </div>
       </motion.section>
 
+      {/* FAQ Section */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="py-20 bg-white"
+      >
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-4 text-[#1E3A5F]">Frequently Asked Questions</h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Find answers to common questions about our services and processes
+            </p>
+          </motion.div>
+
+          <div className="max-w-3xl mx-auto space-y-4">
+            {[
+              {
+                question: "What services does Solutions General Limited offer?",
+                answer: "We provide comprehensive engineering and technology solutions including Electrical Engineering, Solar & Green Energy, CCTV & Security Systems, Networking & Communication, Access Control Systems, and ICT Solutions."
+              },
+              {
+                question: "How long have you been in business?",
+                answer: "Solutions General Limited was founded in 1994 and has been serving clients across East Africa for over 30 years with proven expertise in engineering and technology solutions."
+              },
+              {
+                question: "Do you provide maintenance and support services?",
+                answer: "Yes, we offer comprehensive maintenance, troubleshooting, and ongoing support services for all our installations to ensure optimal performance and longevity."
+              },
+              {
+                question: "Are your services compliant with international standards?",
+                answer: "Yes, all our services comply with international standards. We are EPRA Class A-1 and C-1 certified, and are registered members of the Kenya National Chamber of Commerce and Industry (KNCCI)."
+              },
+              {
+                question: "How can I request a site visit or quotation?",
+                answer: "You can request a site visit or quotation by filling out the contact form above or contacting us directly via phone at +254 722 588 932 or WhatsApp for immediate assistance."
+              },
+              {
+                question: "What is your typical project timeline?",
+                answer: "Project timelines vary depending on scope and complexity. We provide detailed timelines during the quotation phase. Our team works efficiently to meet deadlines while maintaining quality standards."
+              }
+            ].map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+              >
+                <details className="group">
+                  <summary className="flex items-center justify-between cursor-pointer p-6 hover:bg-gray-100 transition-colors">
+                    <h3 className="text-lg font-semibold text-[#1E3A5F] pr-4">{faq.question}</h3>
+                    <motion.div
+                      animate={{ rotate: 0 }}
+                      className="text-[#00D084] flex-shrink-0"
+                    >
+                      <svg className="w-6 h-6 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                      </svg>
+                    </motion.div>
+                  </summary>
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="px-6 pb-6 text-gray-700 border-t border-gray-200 bg-white"
+                  >
+                    {faq.answer}
+                  </motion.div>
+                </details>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
       {/* Quick Contact */}
       <motion.section
         initial={{ opacity: 0 }}
