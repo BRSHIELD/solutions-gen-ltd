@@ -140,7 +140,7 @@ export default function About() {
               className="rounded-lg overflow-hidden shadow-2xl"
             >
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/director-portrait-ESNL7f2KGPid4BZdR8NbLr.webp"
+                src="/manus-storage/pasted_file_g9OACs_FounderandCEO_6036e14f.png"
                 alt="Patrick K. Nduva - Managing Director & Founder"
                 className="w-full h-full object-cover"
               />
