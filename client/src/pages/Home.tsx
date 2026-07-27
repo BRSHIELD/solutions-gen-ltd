@@ -55,7 +55,7 @@ export default function Home() {
   const stats = [
     { value: 500, label: "Projects Completed" },
     { value: 98, label: "Client Satisfaction %" },
-    { value: 50, label: "Expert Engineers" },
+    { value: 50, label: "Experienced Engineers" },
     { value: 15, label: "Years Experience" },
   ];
 
@@ -234,7 +234,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-gray-200 leading-relaxed mb-4 text-sm"
               >
-                Our team of 50+ expert engineers is dedicated to delivering innovative, reliable, and cost-effective solutions that drive business growth and operational excellence.
+                Our team of experienced engineers is dedicated to delivering innovative, reliable, and cost-effective solutions that drive business growth and operational excellence.
               </motion.p>
               
               {/* Button */}
