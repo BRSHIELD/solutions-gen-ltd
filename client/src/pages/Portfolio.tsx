@@ -79,7 +79,7 @@ export default function Portfolio() {
         transition={{ duration: 0.8 }}
         className="bg-gradient-to-r from-[#1E3A5F] to-[#0FA55F] text-white py-20 relative overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(rgba(30, 58, 95, 0.6), rgba(15, 165, 95, 0.6)), url('https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg')`,
+          backgroundImage: `linear-gradient(rgba(30, 58, 95, 0.3), rgba(15, 165, 95, 0.3)), url('https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',

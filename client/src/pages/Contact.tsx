@@ -244,7 +244,7 @@ export default function Contact() {
           <source src="https://videos.pexels.com/video-files/4571169/4571169-hd_1920_1080_24fps.mp4" type="video/mp4" />
         </video>
         {/* Enhanced Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1E3A5F]/70 to-[#0FA55F]/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1E3A5F]/30 to-[#0FA55F]/30" />
         {/* Subtle animated accent */}
         <motion.div
           animate={{ opacity: [0.2, 0.4, 0.2] }}
