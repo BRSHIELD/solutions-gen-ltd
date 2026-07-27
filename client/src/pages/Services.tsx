@@ -83,7 +83,7 @@ export default function Services() {
       >
         {/* Image Background */}
         <img
-          src="https://images.unsplash.com/photo-1621905167918-48416bd8575a?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.1.0"
+          src="https://images.unsplash.com/photo-1509390144018-eeaf65052242?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="White electric power generator"
           className="absolute inset-0 w-full h-full object-cover"
         />
