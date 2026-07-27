@@ -81,18 +81,12 @@ export default function Services() {
         transition={{ duration: 0.8 }}
         className="relative text-white py-20 overflow-hidden min-h-[400px] flex items-center"
       >
-        {/* Video Background */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
+        {/* Image Background */}
+        <img
+          src="https://images.unsplash.com/photo-1621905167918-48416bd8575a?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.1.0"
+          alt="White electric power generator"
           className="absolute inset-0 w-full h-full object-cover"
-          poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect fill='%231E3A5F' width='1920' height='1080'/%3E%3C/svg%3E"
-        >
-          <source src="https://videos.pexels.com/video-files/2927691/2927691-hd_1920_1080_24fps.mp4" type="video/mp4" />
-        </video>
+        />
         {/* Enhanced Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#1E3A5F]/70 to-[#0FA55F]/70" />
         {/* Subtle animated accent */}
