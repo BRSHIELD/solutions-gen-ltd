@@ -79,14 +79,28 @@ export default function Services() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="bg-gradient-to-r from-[#1E3A5F] to-[#0FA55F] text-white py-20 relative overflow-hidden"
-        style={{
-          backgroundImage: `linear-gradient(rgba(30, 58, 95, 0.6), rgba(15, 165, 95, 0.6)), url('https://plus.unsplash.com/premium_photo-1740363268539-cd9093c3b5d1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-        }}
+        className="relative text-white py-20 overflow-hidden min-h-[400px] flex items-center"
       >
+        {/* Video Background */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 w-full h-full object-cover"
+          poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect fill='%231E3A5F' width='1920' height='1080'/%3E%3C/svg%3E"
+        >
+          <source src="https://videos.pexels.com/video-files/2927691/2927691-hd_1920_1080_24fps.mp4" type="video/mp4" />
+        </video>
+        {/* Enhanced Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1E3A5F]/70 to-[#0FA55F]/70" />
+        {/* Subtle animated accent */}
+        <motion.div
+          animate={{ opacity: [0.2, 0.4, 0.2] }}
+          transition={{ duration: 4, repeat: Infinity }}
+          className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+        />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

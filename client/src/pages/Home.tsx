@@ -122,9 +122,12 @@ export default function Home() {
             muted
             loop
             playsInline
+            preload="metadata"
             className="w-full h-full object-cover"
-            src="https://videos.pexels.com/video-files/16499745/16499745-hd_1920_1080_24fps.mp4"
-          />
+            poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect fill='%23000' width='1920' height='1080'/%3E%3C/svg%3E"
+          >
+            <source src="https://videos.pexels.com/video-files/16499745/16499745-hd_1920_1080_24fps.mp4" type="video/mp4" />
+          </video>
           {/* Enhanced Overlay with subtle gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-black/55 via-black/50 to-black/60" />
           {/* Subtle animated accent */}
@@ -534,13 +537,27 @@ export default function Home() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="py-20 bg-gradient-to-r from-[#00D084] to-[#00B870] relative overflow-hidden"
+        className="py-20 relative overflow-hidden min-h-[400px] flex items-center"
       >
+        {/* Video Background */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 w-full h-full object-cover"
+          poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect fill='%2300D084' width='1920' height='1080'/%3E%3C/svg%3E"
+        >
+          <source src="https://videos.pexels.com/video-files/3129674/3129674-hd_1920_1080_24fps.mp4" type="video/mp4" />
+        </video>
+        {/* Enhanced Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#00D084]/70 to-[#00B870]/70" />
         {/* Animated background accent */}
         <motion.div
           animate={{ opacity: [0.1, 0.2, 0.1] }}
           transition={{ duration: 5, repeat: Infinity }}
-          className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"
+          className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
         />
         <div className="container mx-auto px-4 text-center relative z-10">
           <motion.h2
