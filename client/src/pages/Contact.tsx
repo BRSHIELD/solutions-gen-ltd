@@ -237,11 +237,11 @@ export default function Contact() {
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           className="absolute inset-0 w-full h-full object-cover"
           poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect fill='%231E3A5F' width='1920' height='1080'/%3E%3C/svg%3E"
         >
-          <source src="https://videos.pexels.com/video-files/4571169/4571169-hd_1920_1080_24fps.mp4" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/4571169/4571169-hd_1920_1080_24fps.mp4?width=1920&height=1080" type="video/mp4" />
         </video>
         {/* Enhanced Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#1E3A5F]/30 to-[#0FA55F]/30" />
