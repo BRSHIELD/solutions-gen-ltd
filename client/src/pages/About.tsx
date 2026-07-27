@@ -67,7 +67,7 @@ export default function About() {
           className="absolute inset-0 w-full h-full object-cover"
         />
         {/* Enhanced Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1E3A5F]/70 to-[#0FA55F]/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1E3A5F]/40 to-[#0FA55F]/40" />
         {/* Subtle animated accent */}
         <motion.div
           animate={{ opacity: [0.2, 0.4, 0.2] }}

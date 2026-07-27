@@ -195,7 +195,7 @@ export default function Home() {
         }}
       >
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/60 z-0"></div>
+        <div className="absolute inset-0 bg-black/30 z-0"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-8">
@@ -552,7 +552,7 @@ export default function Home() {
           <source src="https://videos.pexels.com/video-files/3129674/3129674-hd_1920_1080_24fps.mp4" type="video/mp4" />
         </video>
         {/* Enhanced Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#00D084]/70 to-[#00B870]/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#00D084]/40 to-[#00B870]/40" />
         {/* Animated background accent */}
         <motion.div
           animate={{ opacity: [0.1, 0.2, 0.1] }}
