@@ -125,8 +125,14 @@ export default function Home() {
             className="w-full h-full object-cover"
             src="https://videos.pexels.com/video-files/16499745/16499745-hd_1920_1080_24fps.mp4"
           />
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black/50" />
+          {/* Enhanced Overlay with subtle gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/55 via-black/50 to-black/60" />
+          {/* Subtle animated accent */}
+          <motion.div
+            animate={{ opacity: [0.3, 0.5, 0.3] }}
+            transition={{ duration: 4, repeat: Infinity }}
+            className="absolute inset-0 bg-gradient-to-t from-[#00D084]/5 to-transparent"
+          />
         </div>
 
         {/* Content */}
@@ -151,18 +157,18 @@ export default function Home() {
             >
               <Link href="/contact">
                 <motion.button
-                  whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0, 208, 132, 0.4)" }}
+                  whileHover={{ scale: 1.08, boxShadow: "0 15px 35px rgba(0, 208, 132, 0.5)", y: -3 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-[#00D084] text-white px-8 py-4 rounded-lg font-semibold flex items-center gap-2 hover:bg-[#00B870] transition-colors"
+                  className="bg-[#00D084] text-white px-8 py-4 rounded-lg font-semibold flex items-center gap-2 hover:bg-[#00B870] transition-all duration-300 shadow-lg btn-premium"
                 >
                   Get Started <ArrowRight size={20} />
                 </motion.button>
               </Link>
               <Link href="/services">
                 <motion.button
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.08, boxShadow: "0 15px 35px rgba(255, 255, 255, 0.2)", y: -3 }}
                   whileTap={{ scale: 0.95 }}
-                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#1E3A5F] transition-colors"
+                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 hover:text-white transition-all duration-300 backdrop-blur-sm btn-premium"
                 >
                   Learn More
                 </motion.button>
@@ -324,19 +330,20 @@ export default function Home() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -12, boxShadow: "0 25px 50px rgba(0, 0, 0, 0.1)" }}
+                whileHover={{ y: -16, boxShadow: "0 30px 60px rgba(0, 208, 132, 0.15)" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gradient-to-br from-gray-50 to-white rounded-lg shadow-md border border-gray-100 cursor-pointer group overflow-hidden"
+                className="premium-card bg-gradient-to-br from-gray-50 to-white cursor-pointer group overflow-hidden"
               >
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="w-full h-48 overflow-hidden"
+                  whileHover={{ scale: 1.08 }}
+                  className="w-full h-48 overflow-hidden relative"
                 >
                   <img
                     src={serviceImages[index]}
                     alt={service.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:brightness-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </motion.div>
                 <div className="p-8 flex flex-col h-full">
                   <div className="flex-1">
@@ -350,17 +357,17 @@ export default function Home() {
                   <div className="flex flex-col gap-3 mt-6">
                     <Link href={`/contact?service=${service.title}`}>
                       <motion.button
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.06, boxShadow: "0 8px 20px rgba(0, 208, 132, 0.3)", y: -2 }}
                         whileTap={{ scale: 0.95 }}
-                        className="w-full bg-[#00D084] text-white px-4 py-3 rounded-lg font-semibold hover:bg-[#00B870] transition-colors"
+                        className="w-full bg-[#00D084] text-white px-4 py-3 rounded-lg font-semibold hover:bg-[#00B870] transition-all duration-300 shadow-md btn-premium"
                       >
                         Request a Quote
                       </motion.button>
                     </Link>
                     <Link href={`/contact?service=${encodeURIComponent(service.title)}&type=site-visit#contact-form`}>
                       <motion.button
-                        whileHover={{ x: 5 }}
-                        className="text-[#00D084] font-semibold flex items-center gap-2 hover:text-[#00B870] transition-colors"
+                        whileHover={{ x: 5, color: "#00B870" }}
+                        className="text-[#00D084] font-semibold flex items-center gap-2 hover:text-[#00B870] transition-all duration-300"
                       >
                         Request for Site Visit <ArrowRight size={16} />
                       </motion.button>
@@ -401,13 +408,17 @@ export default function Home() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -8 }}
+                whileHover={{ y: -12, boxShadow: "0 20px 40px rgba(0, 208, 132, 0.1)" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white p-8 rounded-lg shadow-md text-center cursor-pointer"
+                className="premium-card bg-white p-8 text-center cursor-pointer group"
               >
-                <div className="text-4xl font-bold text-[#00D084] mb-4">{item.icon}</div>
+                <motion.div 
+                  className="text-4xl font-bold text-[#00D084] mb-4 group-hover:scale-110 transition-transform duration-300"
+                >
+                  {item.icon}
+                </motion.div>
                 <h3 className="text-xl font-bold text-[#1E3A5F] mb-3">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+                <p className="text-gray-600 leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -490,16 +501,17 @@ export default function Home() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0, 208, 132, 0.15)" }}
+                whileHover={{ y: -12, boxShadow: "0 25px 50px rgba(0, 208, 132, 0.2)" }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:border-[#00D084] transition-all group cursor-pointer h-full flex flex-col"
+                className="premium-card bg-white border-2 border-gray-200 hover:border-[#00D084] group cursor-pointer h-full flex flex-col"
               >
-                <div className="relative h-48 overflow-hidden bg-gray-200">
+                <div className="relative h-48 overflow-hidden bg-gray-200 group-hover:brightness-110 transition-all duration-300">
                   <img
                     src={industry.image}
                     alt={industry.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-115"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <div className="p-6 flex-grow flex flex-col justify-between">
                   <div>
@@ -522,9 +534,15 @@ export default function Home() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="py-20 bg-[#00D084]"
+        className="py-20 bg-gradient-to-r from-[#00D084] to-[#00B870] relative overflow-hidden"
       >
-        <div className="container mx-auto px-4 text-center">
+        {/* Animated background accent */}
+        <motion.div
+          animate={{ opacity: [0.1, 0.2, 0.1] }}
+          transition={{ duration: 5, repeat: Infinity }}
+          className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"
+        />
+        <div className="container mx-auto px-4 text-center relative z-10">
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -543,9 +561,9 @@ export default function Home() {
           </motion.p>
           <Link href="/contact">
             <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.2)" }}
+              whileHover={{ scale: 1.08, boxShadow: "0 15px 40px rgba(0, 0, 0, 0.3)", y: -3 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-[#00D084] px-10 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
+              className="bg-white text-[#00D084] px-10 py-4 rounded-lg font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg btn-premium"
             >
               Get In Touch
             </motion.button>

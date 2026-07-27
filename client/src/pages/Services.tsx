@@ -120,7 +120,8 @@ export default function Services() {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.8 }}
-                  className="bg-white rounded-lg shadow-md overflow-hidden"
+                  whileHover={{ boxShadow: "0 20px 50px rgba(0, 208, 132, 0.15)" }}
+                  className="premium-card bg-white overflow-hidden"
                 >
                   <div className={`grid md:grid-cols-2 gap-0 items-center ${isEven ? "" : "md:grid-flow-dense"}`}>
                     {/* Content */}
@@ -175,9 +176,9 @@ export default function Services() {
                           "https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/services-security-GCvfCrxGWkqjTgQKK9g73F.webp",
                         ][index % 3]}
                         alt={service.title}
-                        whileHover={{ scale: 1.1 }}
+                        whileHover={{ scale: 1.12 }}
                         transition={{ duration: 0.5 }}
-                        className="w-full h-full object-cover cursor-pointer"
+                        className="w-full h-full object-cover cursor-pointer transition-all duration-500 group-hover:brightness-110"
                       />
                     </motion.div>
                   </div>
