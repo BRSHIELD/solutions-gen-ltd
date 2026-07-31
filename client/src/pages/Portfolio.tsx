@@ -209,7 +209,7 @@ export default function Portfolio() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="text-5xl font-bold mb-2">{stat.number}</div>
+                {stat.number && <div className="text-5xl font-bold mb-2">{stat.number}</div>}
                 <p className="text-gray-100">{stat.label}</p>
               </motion.div>
             ))}
