@@ -200,7 +200,7 @@ export default function Portfolio() {
             {[
               { number: "500+", label: "Projects Completed" },
               { number: "98%", label: "Client Satisfaction" },
-              { number: "50+", label: "Experienced Engineers" },
+              { number: "", label: "Experienced Engineers" },
               { number: "15+", label: "Years Experience" },
             ].map((stat, index) => (
               <motion.div
