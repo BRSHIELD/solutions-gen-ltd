@@ -4,22 +4,22 @@ import { Star } from "lucide-react";
 export default function Testimonials() {
   const commercialTestimonials = [
     {
-      name: "John Mwangi",
-      company: "TechCorp Kenya",
+      name: "World Vision International",
+      company: "World Vision International",
       project: "Commercial Solar Installation",
       text: "Solutions Gen Ltd transformed our facility with their professional electrical engineering services. The team was punctual, professional, and delivered exceptional results. Highly recommended!",
       rating: 5,
     },
     {
-      name: "Sarah Kipchoge",
-      company: "Financial Services Group",
+      name: "East African Cables Limited",
+      company: "East African Cables Limited",
       project: "ICT Infrastructure",
       text: "Their ICT infrastructure solutions have significantly improved our operational efficiency. The installation was seamless and the team provided excellent after-sales support. Excellent team!",
       rating: 5,
     },
     {
-      name: "Michael Ochieng",
-      company: "Corporate Plaza",
+      name: "Tire Data Limited",
+      company: "Tire Data Limited",
       project: "Access Control System",
       text: "Professional, reliable, and innovative. Solutions Gen is our trusted partner for all security needs. They understand our requirements and deliver beyond expectations.",
       rating: 5,
@@ -28,22 +28,22 @@ export default function Testimonials() {
 
   const industrialTestimonials = [
     {
-      name: "Dr. James Kariuki",
-      company: "Industrial Manufacturing Ltd",
+      name: "Junction Mall",
+      company: "Junction Mall",
       project: "Electrical Infrastructure",
       text: "Solutions Gen's expertise in industrial electrical systems is unmatched. They upgraded our entire plant's electrical infrastructure with minimal downtime. Outstanding work!",
       rating: 5,
     },
     {
-      name: "Peter Mwangi",
-      company: "TeleCom Solutions",
+      name: "Ndege Chai Sacco Society Ltd",
+      company: "Ndege Chai Sacco Society Ltd",
       project: "Network Infrastructure",
       text: "The team designed and implemented a comprehensive network infrastructure system for our operations. Their technical knowledge and attention to detail were impressive.",
       rating: 5,
     },
     {
-      name: "Grace Omondi",
-      company: "SecureNet Solutions",
+      name: "Airline Services & Logistics PLC",
+      company: "Airline Services & Logistics PLC",
       project: "Security System Upgrade",
       text: "Working with Solutions Gen on our security system upgrade was seamless. They handled complex technical requirements with ease and professionalism.",
       rating: 5,
