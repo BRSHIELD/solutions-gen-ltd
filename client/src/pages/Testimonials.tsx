@@ -4,21 +4,18 @@ import { Star } from "lucide-react";
 export default function Testimonials() {
   const commercialTestimonials = [
     {
-      name: "World Vision International",
       company: "World Vision International",
       project: "Commercial Solar Installation",
       text: "Solutions Gen Ltd transformed our facility with their professional electrical engineering services. The team was punctual, professional, and delivered exceptional results. Highly recommended!",
       rating: 5,
     },
     {
-      name: "East African Cables Limited",
       company: "East African Cables Limited",
       project: "ICT Infrastructure",
       text: "Their ICT infrastructure solutions have significantly improved our operational efficiency. The installation was seamless and the team provided excellent after-sales support. Excellent team!",
       rating: 5,
     },
     {
-      name: "Tire Data Limited",
       company: "Tire Data Limited",
       project: "Access Control System",
       text: "Professional, reliable, and innovative. Solutions Gen is our trusted partner for all security needs. They understand our requirements and deliver beyond expectations.",
@@ -28,21 +25,18 @@ export default function Testimonials() {
 
   const industrialTestimonials = [
     {
-      name: "Junction Mall",
       company: "Junction Mall",
       project: "Electrical Infrastructure",
       text: "Solutions Gen's expertise in industrial electrical systems is unmatched. They upgraded our entire plant's electrical infrastructure with minimal downtime. Outstanding work!",
       rating: 5,
     },
     {
-      name: "Ndege Chai Sacco Society Ltd",
       company: "Ndege Chai Sacco Society Ltd",
       project: "Network Infrastructure",
       text: "The team designed and implemented a comprehensive network infrastructure system for our operations. Their technical knowledge and attention to detail were impressive.",
       rating: 5,
     },
     {
-      name: "Airline Services & Logistics PLC",
       company: "Airline Services & Logistics PLC",
       project: "Security System Upgrade",
       text: "Working with Solutions Gen on our security system upgrade was seamless. They handled complex technical requirements with ease and professionalism.",
@@ -65,8 +59,7 @@ export default function Testimonials() {
       </div>
       <p className="text-gray-600 mb-4 italic text-lg">"{testimonial.text}"</p>
       <div className="border-t-2 border-gray-200 pt-4">
-        <p className="font-bold text-[#1E3A5F] text-lg">{testimonial.name}</p>
-        <p className="text-[#00D084] font-semibold">{testimonial.company}</p>
+        <p className="font-bold text-[#1E3A5F] text-lg">{testimonial.company}</p>
         <p className="text-gray-600 text-sm mt-2">{testimonial.project}</p>
       </div>
     </motion.div>
