@@ -32,16 +32,6 @@ export default function About() {
       role: "Managing Director & Founder",
       expertise: "Electrical Engineering & Strategic Leadership",
     },
-    {
-      name: "Patrick Kivai Nduvah",
-      role: "Certified Electrical Worker",
-      expertise: "Electrical Installation & Solar PV Systems",
-    },
-    {
-      name: "Wilson Gathaiyu",
-      role: "Solar PV Technician",
-      expertise: "Renewable Energy & Solar Installation",
-    },
   ];
 
   const certifications = [
