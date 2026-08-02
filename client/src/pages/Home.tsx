@@ -125,8 +125,10 @@ export default function Home() {
             preload="none"
             className="w-full h-full object-cover"
             poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect fill='%23000' width='1920' height='1080'/%3E%3C/svg%3E"
+            width="1920"
+            height="1080"
           >
-            <source src="https://cdn.pixabay.com/video/2024/09/09/230552_large.mp4?width=1920&height=1080" type="video/mp4" />
+            <source src="https://cdn.pixabay.com/video/2024/09/09/230552_large.mp4?width=1280&height=720" type="video/mp4" />
           </video>
           {/* Enhanced Overlay with subtle gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-black/55 via-black/50 to-black/60" />
@@ -548,8 +550,10 @@ export default function Home() {
           preload="none"
           className="absolute inset-0 w-full h-full object-cover"
           poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect fill='%2300D084' width='1920' height='1080'/%3E%3C/svg%3E"
+          width="1920"
+          height="1080"
         >
-          <source src="https://videos.pexels.com/video-files/3129674/3129674-hd_1920_1080_24fps.mp4?width=1920&height=1080" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/3129674/3129674-hd_1920_1080_24fps.mp4?width=1280&height=720" type="video/mp4" />
         </video>
         {/* Enhanced Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#00D084]/40 to-[#00B870]/40" />
