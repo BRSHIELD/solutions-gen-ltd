@@ -6,8 +6,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#1E3A5F] text-white">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div className="container mx-auto px-4 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 mb-8">
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -15,17 +15,18 @@ export default function Footer() {
                 src="/manus-storage/EnhancedOriginalLogo_20c92336.png" 
                 alt="Solutions General Ltd Logo"
                 className="w-10 h-10 object-contain"
+                loading="lazy"
               />
-              <span className="font-bold text-lg">Solutions Gen Ltd</span>
+              <span className="font-bold text-base md:text-lg">Solutions Gen Ltd</span>
             </div>
-            <p className="text-gray-300 text-sm">
+            <p className="text-gray-300 text-xs md:text-sm">
               Premium engineering and smart technology solutions for East Africa.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-bold text-base md:text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2 text-gray-300">
               <li>
                 <Link href="/" className="hover:text-[#00D084] transition-colors">
@@ -62,7 +63,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Services</h3>
+            <h3 className="font-bold text-base md:text-lg mb-4">Services</h3>
             <ul className="space-y-2 text-gray-300 text-sm">
               <li className="hover:text-[#00D084] transition-colors cursor-pointer">
                 Electrical Engineering

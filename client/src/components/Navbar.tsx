@@ -38,17 +38,17 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
       className="sticky top-0 z-50 bg-white shadow-md border-b border-gray-100"
     >
-      <div className="container mx-auto px-4 py-4 flex items-center">
+      <div className="container mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
         {/* Logo */}
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-shrink-0">
           <Link href="/" className="flex items-center gap-2 cursor-pointer">
-            <motion.img 
+            <img 
               src="/manus-storage/EnhancedOriginalLogo_20c92336.png" 
               alt="Solutions General Ltd Logo"
-              className="w-10 h-10 object-contain"
-              whileHover={{ boxShadow: "0 0 20px rgba(0, 208, 132, 0.4)" }}
+              className="w-9 h-9 md:w-10 md:h-10 object-contain"
+              loading="lazy"
             />
-            <span className="font-bold text-lg text-[#1E3A5F] hidden sm:inline">
+            <span className="font-bold text-sm md:text-lg text-[#1E3A5F] hidden sm:inline">
               Solutions General Limited
             </span>
           </Link>
@@ -56,7 +56,7 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <div 
-          className="hidden md:flex items-center gap-8 ml-auto"
+          className="hidden md:flex items-center gap-6 lg:gap-8 ml-auto"
           onMouseEnter={() => setIsNavHovered(true)}
           onMouseLeave={() => {
             setIsNavHovered(false);
@@ -141,9 +141,10 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-gray-700 hover:text-[#1E3A5F]"
+          className="md:hidden text-gray-700 hover:text-[#1E3A5F] ml-auto flex-shrink-0"
+          aria-label="Toggle menu"
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
@@ -153,33 +154,34 @@ export default function Navbar() {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-white border-t border-gray-100"
+          transition={{ duration: 0.2 }}
+          className="md:hidden bg-white border-t border-gray-100 max-h-[70vh] overflow-y-auto"
         >
-          <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
-            {navItems.map((item: any, index) => (
-              <motion.div key={item.href} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * 0.05 }}>
+          <div className="container mx-auto px-4 py-3 flex flex-col gap-2">
+            {navItems.map((item: any) => (
+              <div key={item.href}>
                 <Link
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-gray-700 hover:text-[#1E3A5F] transition-colors font-medium block"
+                  className="text-gray-700 hover:text-[#1E3A5F] transition-colors font-medium block py-2 px-2 rounded"
                 >
                   {item.label}
                 </Link>
                 {item.submenu && (
-                  <div className="pl-4 mt-2 space-y-2">
+                  <div className="pl-4 space-y-1">
                     {item.submenu.map((subitem: any) => (
                       <Link
                         key={subitem.href}
                         href={subitem.href}
                         onClick={() => setIsOpen(false)}
-                        className="text-gray-600 hover:text-[#00D084] transition-colors text-sm block"
+                        className="text-gray-600 hover:text-[#00D084] transition-colors text-sm block py-1 px-2 rounded"
                       >
                         {subitem.label}
                       </Link>
                     ))}
                   </div>
                 )}
-              </motion.div>
+              </div>
             ))}
 
 

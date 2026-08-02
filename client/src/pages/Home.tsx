@@ -329,7 +329,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
@@ -347,15 +347,16 @@ export default function Home() {
                     src={serviceImages[index]}
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:brightness-110"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </motion.div>
-                <div className="p-8 flex flex-col h-full">
+                <div className="p-6 md:p-8 flex flex-col h-full">
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-[#1E3A5F] mb-3">
+                    <h3 className="text-xl md:text-2xl font-bold text-[#1E3A5F] mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed mb-4">
+                    <p className="text-gray-600 leading-relaxed mb-4 text-sm md:text-base">
                       {service.description}
                     </p>
                   </div>
