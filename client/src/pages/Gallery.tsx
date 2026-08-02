@@ -114,42 +114,16 @@ export default function Gallery() {
         </div>
       </motion.section>
 
-      {/* Gallery Grid */}
+      {/* Gallery Grid - Coming Soon */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         className="py-20 bg-white"
       >
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredItems.map((item, index) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                onClick={() => setSelectedImage(item.id)}
-                className="group cursor-pointer"
-              >
-                <motion.div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 h-64" whileHover={{ boxShadow: "0 25px 50px rgba(0, 0, 0, 0.2)" }}>
-                  <motion.img
-                    src={item.image}
-                    alt={item.title}
-                    whileHover={{ scale: 1.15 }}
-                    transition={{ duration: 0.5 }}
-                    className="w-full h-full object-cover cursor-pointer"
-                  />
-                  <motion.div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center" whileHover={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}>
-                    <motion.div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center" initial={{ opacity: 0, scale: 0.8 }} whileHover={{ opacity: 1, scale: 1 }}>
-                      <p className="text-white text-lg font-bold">{item.title}</p>
-                      <p className="text-gray-200 text-sm">{item.description}</p>
-                    </motion.div>
-                  </motion.div>
-                </motion.div>
-              </motion.div>
-            ))}
-          </div>
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-[#1E3A5F] mb-4">Gallery Coming Soon</h2>
+          <p className="text-gray-600 text-lg">We're curating our best project photos. Check back soon!</p>
         </div>
       </motion.section>
 

@@ -124,67 +124,16 @@ export default function Portfolio() {
         </div>
       </motion.section>
 
-      {/* Projects Grid */}
+      {/* Projects Grid - Coming Soon */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         className="py-20 bg-white"
       >
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
-              >
-                {/* Project Image */}
-                <div className="h-48 overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                  <img
-                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663637917309/oNqKyoxjmVUDpKzxmYxw2z/portfolio-commercial-FwiMkmWHhFpNbZttmgw8on.webp"
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  <p className="text-[#00D084] font-semibold text-sm mb-2">
-                    {project.category}
-                  </p>
-                  <h3 className="text-xl font-bold text-[#1E3A5F] mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-4">
-                    Client: <span className="font-semibold">{project.client}</span>
-                  </p>
-                  <p className="text-gray-700 text-sm mb-4">
-                    {project.description}
-                  </p>
-                  <div className="bg-gray-50 p-3 rounded-lg mb-4">
-                    <p className="text-[#FF6B35] font-semibold text-sm">
-                      Results: {project.results}
-                    </p>
-                  </div>
-                  <Link href={`/portfolio/${project.id}`}>
-                    <motion.button
-                      whileHover={{ x: 5 }}
-                      className="w-full text-[#1E3A5F] font-semibold hover:text-[#00D084] transition-colors flex items-center justify-center gap-2 group"
-                    >
-                      View Details
-                      <ArrowRight
-                        size={16}
-                        className="group-hover:translate-x-1 transition-transform"
-                      />
-                    </motion.button>
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-[#1E3A5F] mb-4">Portfolio Coming Soon</h2>
+          <p className="text-gray-600 text-lg">We're preparing detailed case studies of our recent projects. Check back soon!</p>
         </div>
       </motion.section>
 
