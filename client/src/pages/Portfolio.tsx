@@ -131,9 +131,45 @@ export default function Portfolio() {
         transition={{ duration: 0.8 }}
         className="py-20 bg-white"
       >
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-[#1E3A5F] mb-4">Portfolio Coming Soon</h2>
-          <p className="text-gray-600 text-lg">We're preparing detailed case studies of our recent projects. Check back soon!</p>
+        <div className="container mx-auto px-4 text-center max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <h2 className="text-3xl font-bold text-[#1E3A5F] mb-4">Portfolio Coming Soon</h2>
+            <p className="text-gray-600 text-lg mb-8">We're preparing detailed case studies of our recent projects. Check back soon!</p>
+            
+            {/* Notify Me Email Input */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="mb-8"
+            >
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <input
+                  type="email"
+                  placeholder="Enter your email to be notified"
+                  className="px-6 py-3 rounded-lg border-2 border-[#1E3A5F] focus:outline-none focus:border-[#00D084] transition-all duration-300 flex-1 sm:flex-initial"
+                />
+                <button className="bg-[#00D084] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#0FA55F] transition-all duration-300">
+                  Notify Me
+                </button>
+              </div>
+            </motion.div>
+            
+            {/* View Our Services Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <a href="/services" className="inline-block bg-[#1E3A5F] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#0FA55F] transition-all duration-300">
+                View Our Services
+              </a>
+            </motion.div>
+          </motion.div>
         </div>
       </motion.section>
 
