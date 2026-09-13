@@ -91,3 +91,6 @@
 - [x] Test video autoplay, muting, and looping on all browsers
 - [x] Verify text readability with overlay effects
 - [x] Verify responsive behavior on mobile devices
+
+## Phase 10: Custom Domain Deployment
+- [ ] Connect and configure the custom domain solutionsgeneral.co.ke, complete DNS verification, and publish the website.
