@@ -190,7 +190,7 @@ export default function Home() {
         transition={{ duration: 0.8 }}
         className="py-12 relative overflow-hidden"
         style={{
-          backgroundImage: 'url("/manus-storage/solar-panels-bg_961116f3.jpg")',
+          backgroundImage: 'url("/images/solar-panels-bg_961116f3.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
@@ -210,7 +210,7 @@ export default function Home() {
             >
               {/* Logo */}
               <motion.img
-                src="/manus-storage/EnhancedOriginalLogo_20c92336.png"
+                src="/images/EnhancedOriginalLogo_20c92336.png"
                 alt="Solutions General Ltd Logo"
                 className="w-12 h-12 mb-3 object-contain md:mx-0 mx-auto"
                 whileHover={{ scale: 1.05 }}
@@ -463,7 +463,7 @@ export default function Home() {
               className="flex items-center justify-center"
             >
               <img
-                src="/manus-storage/clients_template_new_45c67592.jpg"
+                src="/images/clients_template_new_45c67592.jpg"
                 alt="Trusted clients and partners"
                 className="w-full max-w-3xl object-contain shadow-lg rounded-lg"
               />
@@ -496,12 +496,12 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-6">
             {[
-              { name: "Mechanical & Electrical", image: "/manus-storage/VxEHIjfLHdxI_489dc66c.jpg", description: "Industrial automation and electrical systems" },
-              { name: "Construction", image: "/manus-storage/ZRcJyPeCHNK0_adedf65a.jpeg", description: "Infrastructure and construction solutions" },
-              { name: "Assembly", image: "/manus-storage/h0eTmn7abxvG_0abe4390.jpg", description: "Reliable switchboards for safe power distribution." },
-              { name: "Hospitality", image: "/manus-storage/g5UiPUS8FTcg_ff8a3510.jpg", description: "Security and energy solutions for hotels" },
-              { name: "Health", image: "/manus-storage/YSrmsUPAF1u2_c4ac1bcc.png", description: "Promoting health through safe, compliant installations." },
-              { name: "Real Estate", image: "/manus-storage/KpvVpjaW8U6h_276c4a59.jpeg", description: "Smart building systems and security infrastructure" },
+              { name: "Mechanical & Electrical", image: "/images/VxEHIjfLHdxI_489dc66c.jpg", description: "Industrial automation and electrical systems" },
+              { name: "Construction", image: "/images/ZRcJyPeCHNK0_adedf65a.jpeg", description: "Infrastructure and construction solutions" },
+              { name: "Assembly", image: "/images/h0eTmn7abxvG_0abe4390.jpg", description: "Reliable switchboards for safe power distribution." },
+              { name: "Hospitality", image: "/images/g5UiPUS8FTcg_ff8a3510.jpg", description: "Security and energy solutions for hotels" },
+              { name: "Health", image: "/images/YSrmsUPAF1u2_c4ac1bcc.png", description: "Promoting health through safe, compliant installations." },
+              { name: "Real Estate", image: "/images/KpvVpjaW8U6h_276c4a59.jpeg", description: "Smart building systems and security infrastructure" },
             ].map((industry, index) => (
               <motion.div
                 key={index}

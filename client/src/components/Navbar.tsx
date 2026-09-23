@@ -43,7 +43,7 @@ export default function Navbar() {
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-shrink-0">
           <Link href="/" className="flex items-center gap-2 cursor-pointer">
             <img 
-              src="/manus-storage/EnhancedOriginalLogo_20c92336.png" 
+              src="/images/EnhancedOriginalLogo_20c92336.png" 
               alt="Solutions General Ltd Logo"
               className="w-9 h-9 md:w-10 md:h-10 object-contain"
               loading="lazy"
