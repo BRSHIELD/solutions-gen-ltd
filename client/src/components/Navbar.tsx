@@ -40,15 +40,15 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
         {/* Logo */}
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 min-w-0 md:flex-none">
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 min-w-0 lg:flex-none">
           <Link href="/" className="flex items-center gap-2 cursor-pointer">
             <img 
               src="/images/EnhancedOriginalLogo_20c92336.png" 
               alt="Solutions General Ltd Logo"
               className="w-9 h-9 md:w-10 md:h-10 object-contain"
             />
-            {/* Centred between the logo and the menu button on phones; left-aligned on larger screens. */}
-            <span className="flex-1 text-center md:flex-none md:text-left font-bold text-base sm:text-sm md:text-lg leading-tight text-[#1E3A5F]">
+            {/* Centred between the logo and the menu button below 1024px; left-aligned once the full menu shows. */}
+            <span className="flex-1 text-center lg:flex-none lg:text-left font-bold text-base sm:text-sm md:text-lg leading-tight text-[#1E3A5F]">
               Solutions General Limited
             </span>
           </Link>
@@ -56,7 +56,7 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <div 
-          className="hidden md:flex items-center gap-6 lg:gap-8 ml-auto"
+          className="hidden lg:flex items-center gap-6 xl:gap-8 ml-auto"
           onMouseEnter={() => setIsNavHovered(true)}
           onMouseLeave={() => {
             setIsNavHovered(false);
@@ -141,7 +141,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-gray-700 hover:text-[#1E3A5F] ml-auto flex-shrink-0"
+          className="lg:hidden text-gray-700 hover:text-[#1E3A5F] ml-auto flex-shrink-0"
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -155,7 +155,7 @@ export default function Navbar() {
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.2 }}
-          className="md:hidden bg-white border-t border-gray-100 max-h-[70vh] overflow-y-auto"
+          className="lg:hidden bg-white border-t border-gray-100 max-h-[70vh] overflow-y-auto"
         >
           <div className="container mx-auto px-4 py-3 flex flex-col gap-2">
             {navItems.map((item: any) => (
