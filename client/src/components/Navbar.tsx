@@ -46,9 +46,8 @@ export default function Navbar() {
               src="/images/EnhancedOriginalLogo_20c92336.png" 
               alt="Solutions General Ltd Logo"
               className="w-9 h-9 md:w-10 md:h-10 object-contain"
-              loading="lazy"
             />
-            <span className="font-bold text-sm md:text-lg text-[#1E3A5F] hidden sm:inline">
+            <span className="font-bold text-base sm:text-sm md:text-lg leading-tight text-[#1E3A5F]">
               Solutions General Limited
             </span>
           </Link>
