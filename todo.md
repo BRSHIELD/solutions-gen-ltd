@@ -93,4 +93,4 @@
 - [x] Verify responsive behavior on mobile devices
 
 ## Phase 10: Custom Domain Deployment
-- [ ] Connect and configure the custom domain solutionsgeneral.co.ke, complete DNS verification, and publish the website.
+- [x] Deploy to solutionsgen.co.ke (Kenya Web Experts cPanel). Done 2026-10-16 via `pnpm build:static` and a tar.gz upload to public_html; see deploy/cpanel/.

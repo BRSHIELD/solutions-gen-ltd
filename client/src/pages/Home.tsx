@@ -122,13 +122,14 @@ export default function Home() {
             muted
             loop
             playsInline
-            preload="none"
+            preload="auto"
             className="w-full h-full object-cover"
-            poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect fill='%23000' width='1920' height='1080'/%3E%3C/svg%3E"
-            width="1920"
-            height="1080"
+            poster="/images/hero-poster.jpg"
+            width="1280"
+            height="720"
           >
-            <source src="https://cdn.pixabay.com/video/2024/09/09/230552_large.mp4?width=1280&height=720" type="video/mp4" />
+            {/* Self-hosted 720p clip (~1 MB) re-encoded from the original 87 MB Pixabay 4K file. */}
+            <source src="/videos/hero.mp4" type="video/mp4" />
           </video>
           {/* Enhanced Overlay with subtle gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-black/55 via-black/50 to-black/60" />

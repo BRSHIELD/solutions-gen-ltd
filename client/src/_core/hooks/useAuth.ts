@@ -16,6 +16,8 @@ export function useAuth(options?: UseAuthOptions) {
   const meQuery = trpc.auth.me.useQuery(undefined, {
     retry: false,
     refetchOnWindowFocus: false,
+    // Static (standalone) builds have no API server to ask.
+    enabled: !import.meta.env.VITE_STANDALONE,
   });
 
   const logoutMutation = trpc.auth.logout.useMutation({

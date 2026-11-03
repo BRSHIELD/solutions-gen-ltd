@@ -7,6 +7,10 @@ export const getLoginUrl = () => {
   const redirectUri = `${window.location.origin}/api/oauth/callback`;
   const state = btoa(redirectUri);
 
+  // Outside the Manus platform there is no OAuth portal; fall back to the
+  // home page instead of crashing on an invalid URL.
+  if (!oauthPortalUrl) return "/";
+
   const url = new URL(`${oauthPortalUrl}/app-auth`);
   url.searchParams.set("appId", appId);
   url.searchParams.set("redirectUri", redirectUri);

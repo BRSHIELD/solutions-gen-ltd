@@ -150,10 +150,30 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
+// STANDALONE_BUILD=1 produces a static site for ordinary web hosting (cPanel):
+// no Manus runtime, no debug collector, no Manus analytics tag.
+const isStandalone = process.env.STANDALONE_BUILD === "1";
+
+function stripManusAnalytics(): Plugin {
+  return {
+    name: "strip-manus-analytics",
+    transformIndexHtml: {
+      order: "pre",
+      handler: html =>
+        html.replace(/\s*<script[^>]*%VITE_ANALYTICS_ENDPOINT%[\s\S]*?<\/script>/, ""),
+    },
+  };
+}
+
+const plugins = isStandalone
+  ? [react(), tailwindcss(), stripManusAnalytics()]
+  : [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
 
 export default defineConfig({
   plugins,
+  define: {
+    "import.meta.env.VITE_STANDALONE": JSON.stringify(isStandalone ? "true" : ""),
+  },
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
