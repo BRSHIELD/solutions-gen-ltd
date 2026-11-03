@@ -40,14 +40,15 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
         {/* Logo */}
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-shrink-0">
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 min-w-0 md:flex-none">
           <Link href="/" className="flex items-center gap-2 cursor-pointer">
             <img 
               src="/images/EnhancedOriginalLogo_20c92336.png" 
               alt="Solutions General Ltd Logo"
               className="w-9 h-9 md:w-10 md:h-10 object-contain"
             />
-            <span className="font-bold text-base sm:text-sm md:text-lg leading-tight text-[#1E3A5F]">
+            {/* Centred between the logo and the menu button on phones; left-aligned on larger screens. */}
+            <span className="flex-1 text-center md:flex-none md:text-left font-bold text-base sm:text-sm md:text-lg leading-tight text-[#1E3A5F]">
               Solutions General Limited
             </span>
           </Link>
