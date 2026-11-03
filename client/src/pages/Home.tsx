@@ -345,11 +345,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ y: -16, boxShadow: "0 30px 60px rgba(0, 208, 132, 0.15)" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="premium-card bg-gradient-to-br from-gray-50 to-white cursor-pointer group overflow-hidden"
+                className="premium-card bg-gradient-to-br from-gray-50 to-white cursor-pointer group overflow-hidden flex flex-col"
               >
                 <motion.div
                   whileHover={{ scale: 1.08 }}
-                  className="w-full h-48 overflow-hidden relative"
+                  className="w-full h-48 overflow-hidden relative shrink-0"
                 >
                   <img
                     src={serviceImages[index]}
@@ -359,16 +359,16 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </motion.div>
-                <div className="p-6 md:p-8 flex flex-col h-full">
+                <div className="p-6 md:p-8 flex flex-col flex-1">
                   <div className="flex-1">
                     <h3 className="text-xl md:text-2xl font-bold text-[#1E3A5F] mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed mb-4 text-sm md:text-base">
+                    <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                       {service.description}
                     </p>
                   </div>
-                  <div className="flex flex-col gap-3 mt-6">
+                  <div className="flex flex-col gap-3 mt-5">
                     <Link href={`/contact?service=${service.title}`}>
                       <motion.button
                         whileHover={{ scale: 1.06, boxShadow: "0 8px 20px rgba(0, 208, 132, 0.3)", y: -2 }}
