@@ -5,6 +5,10 @@ import { Link } from "wouter";
 import { useState, useEffect } from "react";
 import { useAuth } from "@/_core/hooks/useAuth";
 
+// Banner video: 1080p for desktops, a lighter 720p file for phones and tablets.
+const HERO_VIDEO_SRC =
+  typeof window !== "undefined" && window.innerWidth <= 1024 ? "/videos/hero-720.mp4" : "/videos/hero.mp4";
+
 export default function Home() {
   useSEO({ title: "Electrical, Solar, Security & ICT Engineering in Kenya", path: "/", description: "Nairobi-based electrical engineering contractor delivering power distribution, solar PV, security systems and ICT infrastructure across East Africa since 2006." });
   // The userAuth hooks provides authentication state
@@ -127,11 +131,12 @@ export default function Home() {
             preload="auto"
             className="w-full h-full object-cover"
             poster="/images/hero-poster.jpg"
-            width="1280"
-            height="720"
+            width="1920"
+            height="1080"
           >
-            {/* Self-hosted 720p clip (~1 MB) re-encoded from the original 87 MB Pixabay 4K file. */}
-            <source src="/videos/hero.mp4" type="video/mp4" />
+            {/* Self-hosted clips re-encoded from the original 87 MB Pixabay 4K file:
+                hero.mp4 is 1080p (~5 MB), hero-720.mp4 is 720p (~1.1 MB) for small screens. */}
+            <source src={HERO_VIDEO_SRC} type="video/mp4" />
           </video>
           {/* Enhanced Overlay with subtle gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-black/55 via-black/50 to-black/60" />
