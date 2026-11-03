@@ -17,10 +17,12 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 import LiveChatWidget from "./components/LiveChatWidget";
+import ScrollToTop from "./components/ScrollToTop";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <div className="flex flex-col min-h-screen">
+      <ScrollToTop />
       <Navbar />
       <main className="flex-grow">
         <Switch>
