@@ -141,10 +141,10 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden text-gray-700 hover:text-[#1E3A5F] ml-auto flex-shrink-0"
+          className="lg:hidden text-[#1E3A5F] hover:text-[#00D084] ml-auto flex-shrink-0 -mr-2 p-2 rounded-md"
           aria-label="Toggle menu"
         >
-          {isOpen ? <X size={20} /> : <Menu size={20} />}
+          {isOpen ? <X size={30} strokeWidth={2.25} /> : <Menu size={30} strokeWidth={2.25} />}
         </button>
       </div>
 
