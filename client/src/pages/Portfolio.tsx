@@ -1,9 +1,11 @@
+import { useSEO } from "@/lib/seo";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { useState } from "react";
 
 export default function Portfolio() {
+  useSEO({ title: "Our Portfolio", path: "/portfolio", description: "Completed electrical, solar, security and ICT projects delivered by Solutions General Ltd for clients across Kenya and East Africa." });
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const projects = [

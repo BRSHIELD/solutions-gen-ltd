@@ -1,8 +1,10 @@
+import { useSEO } from "@/lib/seo";
 import { motion } from "framer-motion";
 import { Zap, Sun, Shield, Wifi, Lock, Code, CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Services() {
+  useSEO({ title: "Our Services", path: "/services", description: "Power distribution, electrical installations, fire and security systems, structured cabling, solar PV and hybrid power for industrial, commercial and institutional clients." });
   const serviceDetails = [
     {
       icon: Zap,

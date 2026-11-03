@@ -1,9 +1,11 @@
+import { useSEO } from "@/lib/seo";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { X } from "lucide-react";
 import { useState as useStateHook } from "react";;
 
 export default function Gallery() {
+  useSEO({ title: "Project Gallery", path: "/gallery", description: "Photos from Solutions General Ltd electrical, solar, security and networking installations across Kenya." });
   const [selectedFilter, setSelectedFilter] = useState("all");
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 

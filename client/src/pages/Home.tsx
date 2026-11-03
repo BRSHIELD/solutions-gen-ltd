@@ -1,3 +1,4 @@
+import { useSEO } from "@/lib/seo";
 import { motion } from "framer-motion";
 import { ArrowRight, Zap, Sun, Shield, Wifi, Lock, Code, TrendingUp } from "lucide-react";
 import { Link } from "wouter";
@@ -5,6 +6,7 @@ import { useState, useEffect } from "react";
 import { useAuth } from "@/_core/hooks/useAuth";
 
 export default function Home() {
+  useSEO({ title: "Electrical, Solar, Security & ICT Engineering in Kenya", path: "/", description: "Nairobi-based electrical engineering contractor delivering power distribution, solar PV, security systems and ICT infrastructure across East Africa since 2006." });
   // The userAuth hooks provides authentication state
   // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
   let { user, loading, error, isAuthenticated, logout } = useAuth();

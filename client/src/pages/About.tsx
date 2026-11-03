@@ -1,8 +1,10 @@
+import { useSEO } from "@/lib/seo";
 import { motion } from "framer-motion";
 import { CheckCircle, Users, Target, Lightbulb, Award, Shield } from "lucide-react";
 import { Link } from "wouter";
 
 export default function About() {
+  useSEO({ title: "About Us", path: "/about", description: "Founded in Nairobi in 2006 by Eng. Patrick K. Nduva, Solutions General Ltd provides electrical, solar, security and ICT engineering services across Kenya and East Africa." });
   const values = [
     {
       icon: Target,

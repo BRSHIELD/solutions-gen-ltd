@@ -1,7 +1,9 @@
+import { useSEO } from "@/lib/seo";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 export default function Testimonials() {
+  useSEO({ title: "Client Testimonials", path: "/testimonials", description: "What clients say about working with Solutions General Ltd on electrical, solar, security and ICT projects in Kenya." });
   const commercialTestimonials = [
     {
       company: "World Vision International",

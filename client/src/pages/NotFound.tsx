@@ -1,9 +1,11 @@
+import { useSEO } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle, Home } from "lucide-react";
 import { useLocation } from "wouter";
 
 export default function NotFound() {
+  useSEO({ title: "Page Not Found", path: "/404", description: "The page you are looking for does not exist.", noindex: true });
   const [, setLocation] = useLocation();
 
   const handleGoHome = () => {

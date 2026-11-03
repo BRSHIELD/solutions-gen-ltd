@@ -3,8 +3,11 @@ import { Mail, Phone, MapPin, Clock, CheckCircle, AlertCircle } from "lucide-rea
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
+import { useSEO } from "@/lib/seo";
+import { RECAPTCHA_ENABLED, getRecaptchaToken, loadRecaptcha } from "@/lib/recaptcha";
 
 export default function Contact() {
+  useSEO({ title: "Contact Us", path: "/contact", description: "Get a quote from Solutions General Ltd. Call +254 722 588 932, email info@solutionsgen.co.ke or visit Fortis Industrial Park, Off Mombasa Road, Nairobi." });
   const [location] = useLocation();
   const [formData, setFormData] = useState({
     name: "",
@@ -31,6 +34,12 @@ export default function Contact() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  // Honeypot: invisible to people, filled in by bots. Checked by contact.php.
+  const [honeypot, setHoneypot] = useState("");
+
+  useEffect(() => {
+    if (RECAPTCHA_ENABLED) loadRecaptcha();
+  }, []);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
   // Validation rules
@@ -214,10 +223,11 @@ export default function Contact() {
     try {
       if (import.meta.env.VITE_STANDALONE) {
         // Static hosting: contact.php emails the submission to the company inbox.
+        const recaptchaToken = RECAPTCHA_ENABLED ? await getRecaptchaToken("contact") : "";
         const response = await fetch("/contact.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
+          body: JSON.stringify({ ...payload, website: honeypot, recaptchaToken }),
         });
         const result = await response.json().catch(() => null);
         if (!response.ok || !result?.success) {
@@ -421,6 +431,19 @@ export default function Contact() {
               onSubmit={handleSubmit}
               className="bg-gray-50 p-8 rounded-lg shadow-md space-y-6"
             >
+              {/* Honeypot field: hidden from people, bots tend to fill it in. */}
+              <div className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+                <label htmlFor="website">Website</label>
+                <input
+                  id="website"
+                  name="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                />
+              </div>
               <div className="grid md:grid-cols-2 gap-6">
                 {/* Name Field */}
                 <div>

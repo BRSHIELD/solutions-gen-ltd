@@ -1,3 +1,4 @@
+import { useSEO } from "@/lib/seo";
 import { motion } from "framer-motion";
 import { ArrowLeft, CheckCircle, ChevronRight } from "lucide-react";
 import { Link, useParams } from "wouter";
@@ -131,6 +132,11 @@ export default function ProjectDetail() {
   ];
 
   const project = projects.find((p) => p.id === projectId);
+  useSEO(
+    project
+      ? { title: project.title, path: `/portfolio/${project.id}`, description: project.description }
+      : { title: "Project Not Found", path: "/portfolio", description: "This project does not exist.", noindex: true }
+  );
   const [scrollPosition, setScrollPosition] = useState(0);
 
   // Get related projects (same category, excluding current project)
