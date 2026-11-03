@@ -310,7 +310,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0 }}
-              className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow cursor-pointer group"
+              className="bg-white p-4 md:p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow cursor-pointer group"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Phone size={32} className="text-white" />
@@ -330,7 +330,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow cursor-pointer group"
+              className="bg-white p-4 md:p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow cursor-pointer group"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Mail size={32} className="text-white" />
@@ -352,7 +352,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow cursor-pointer group"
+              className="bg-white p-4 md:p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow cursor-pointer group"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <MapPin size={32} className="text-white" />
@@ -371,7 +371,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow"
+              className="bg-white p-4 md:p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Clock size={32} className="text-white" />
@@ -429,7 +429,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               onSubmit={handleSubmit}
-              className="bg-gray-50 p-8 rounded-lg shadow-md space-y-6"
+              className="bg-gray-50 p-5 md:p-8 rounded-lg shadow-md space-y-6"
             >
               {/* Honeypot field: hidden from people, bots tend to fill it in. */}
               <div className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
@@ -710,7 +710,7 @@ export default function Contact() {
                 className="bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
               >
                 <details className="group">
-                  <summary className="flex items-center justify-between cursor-pointer p-6 hover:bg-gray-100 transition-colors">
+                  <summary className="flex items-center justify-between cursor-pointer p-4 md:p-6 hover:bg-gray-100 transition-colors">
                     <h3 className="text-lg font-semibold text-[#1E3A5F] pr-4">{faq.question}</h3>
                     <motion.div
                       animate={{ rotate: 0 }}

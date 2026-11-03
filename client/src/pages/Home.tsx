@@ -359,7 +359,7 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </motion.div>
-                <div className="p-6 md:p-8 flex flex-col flex-1">
+                <div className="p-4 md:p-8 flex flex-col flex-1">
                   <div className="flex-1">
                     <h3 className="text-xl md:text-2xl font-bold text-[#1E3A5F] mb-3">
                       {service.title}
@@ -424,7 +424,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ y: -12, boxShadow: "0 20px 40px rgba(0, 208, 132, 0.1)" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="premium-card bg-white p-8 text-center cursor-pointer group"
+                className="premium-card bg-white p-5 md:p-8 text-center cursor-pointer group"
               >
                 <motion.div 
                   className="text-4xl font-bold text-[#00D084] mb-4 group-hover:scale-110 transition-transform duration-300"
@@ -527,7 +527,7 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <div className="p-6 flex-grow flex flex-col justify-between">
+                <div className="p-4 md:p-6 flex-grow flex flex-col justify-between">
                   <div>
                     <h3 className="text-xl font-bold text-[#1E3A5F] mb-2">
                       {industry.name}

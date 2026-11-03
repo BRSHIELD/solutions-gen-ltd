@@ -260,7 +260,7 @@ export default function About() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition-all duration-300"
+                  className="bg-gray-50 p-5 md:p-8 rounded-lg text-center hover:shadow-lg transition-all duration-300"
                 >
                   <Icon size={48} className="text-[#00D084] mx-auto mb-4" />
                   <h3 className="text-xl font-bold text-[#1E3A5F] mb-3">{value.title}</h3>
@@ -301,7 +301,7 @@ export default function About() {
                 initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white p-8 rounded-lg shadow-md border-l-4 border-[#00D084]"
+                className="bg-white p-5 md:p-8 rounded-lg shadow-md border-l-4 border-[#00D084]"
               >
                 <Award size={32} className="text-[#1E3A5F] mb-4" />
                 <h3 className="text-xl font-bold text-[#1E3A5F] mb-2">{cert.title}</h3>
@@ -341,7 +341,7 @@ export default function About() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-gradient-to-br from-gray-50 to-white p-5 md:p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
               >
                 <div className="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
                   {member.name.charAt(0)}

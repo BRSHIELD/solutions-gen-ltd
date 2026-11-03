@@ -209,7 +209,7 @@ export default function ProjectDetail() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-white p-8 rounded-lg shadow-md"
+              className="bg-white p-5 md:p-8 rounded-lg shadow-md"
             >
               <h3 className="text-sm font-semibold text-gray-500 mb-2">CLIENT</h3>
               <p className="text-2xl font-bold text-[#1E3A5F]">{project.client}</p>
@@ -219,7 +219,7 @@ export default function ProjectDetail() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-white p-8 rounded-lg shadow-md"
+              className="bg-white p-5 md:p-8 rounded-lg shadow-md"
             >
               <h3 className="text-sm font-semibold text-gray-500 mb-2">TIMELINE</h3>
               <p className="text-2xl font-bold text-[#00D084]">{project.timeline}</p>
@@ -229,7 +229,7 @@ export default function ProjectDetail() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white p-8 rounded-lg shadow-md"
+              className="bg-white p-5 md:p-8 rounded-lg shadow-md"
             >
               <h3 className="text-sm font-semibold text-gray-500 mb-2">TEAM SIZE</h3>
               <p className="text-2xl font-bold text-[#FF6B35]">{project.team}</p>
@@ -268,10 +268,10 @@ export default function ProjectDetail() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="bg-white p-8 rounded-lg shadow-md"
+              className="bg-white p-5 md:p-8 rounded-lg shadow-md"
             >
               <h3 className="text-2xl font-bold text-[#1E3A5F] mb-6">Results & Impact</h3>
-              <div className="bg-gradient-to-br from-[#00D084] to-[#0FA55F] text-white p-8 rounded-lg mb-6">
+              <div className="bg-gradient-to-br from-[#00D084] to-[#0FA55F] text-white p-5 md:p-8 rounded-lg mb-6">
                 <p className="text-lg font-semibold mb-2">Measurable Outcomes</p>
                 <p className="text-3xl font-bold">{project.results}</p>
               </div>
@@ -344,7 +344,7 @@ export default function ProjectDetail() {
                           <p className="text-lg font-bold">{relatedProject.title}</p>
                         </div>
                       </div>
-                      <div className="p-6">
+                      <div className="p-4 md:p-6">
                         <p className="text-gray-600 text-sm mb-3 line-clamp-2">
                           {relatedProject.description}
                         </p>

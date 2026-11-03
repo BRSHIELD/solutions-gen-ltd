@@ -52,7 +52,7 @@ export default function Testimonials() {
       whileInView={{ opacity: 1, y: 0 }}
       whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0, 208, 132, 0.15)" }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="bg-white p-8 rounded-lg shadow-md border-2 border-gray-200 hover:border-[#00D084] transition-all"
+      className="bg-white p-5 md:p-8 rounded-lg shadow-md border-2 border-gray-200 hover:border-[#00D084] transition-all"
     >
       <div className="flex gap-1 mb-4">
         {[...Array(testimonial.rating)].map((_, i) => (

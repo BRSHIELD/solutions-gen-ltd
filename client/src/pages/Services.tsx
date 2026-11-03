@@ -139,7 +139,7 @@ export default function Services() {
                       initial={{ opacity: 0, x: isEven ? -30 : 30 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.8 }}
-                      className="p-8 md:p-12"
+                      className="p-5 md:p-12"
                     >
                       <motion.div className="w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#00D084] rounded-lg flex items-center justify-center mb-6" whileHover={{ scale: 1.1, rotate: 5, boxShadow: "0 10px 25px rgba(0, 208, 132, 0.3)" }}>
                         <Icon size={32} className="text-white" />
@@ -253,7 +253,7 @@ export default function Services() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-100"
+                className="bg-gradient-to-br from-gray-50 to-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-100"
               >
                 <h3 className="text-xl font-bold text-[#1E3A5F] mb-3">
                   {item.title}
